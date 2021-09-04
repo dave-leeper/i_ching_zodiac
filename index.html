@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>I Ching And Western Zodiac</title>
+    <style>
+        columns {display: flex; flex-direction: column;}
+        rows {display: flex; flex-direction: row;}
+    </style>
     <script>
         function build_symbol_index() {
             let data = iChingData;
@@ -630,7 +634,7 @@
         </script>  
     </head>
   <body onload="build_symbol_index()">
-    <div id="SymbolIndexes">
+    <div id="SymbolIndexes" style="columns">
         
     </div>
   </body>
