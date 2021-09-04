@@ -7,6 +7,7 @@
         rows {display: flex; flex-direction: row;}
     </style>
     <script>
+        let currentSymbol = 0
         function get_trigram(trigram) {
             let data = iChingData;
             let trigrams = data.trigrams
@@ -26,15 +27,17 @@
             let symbol = data.symbols[symbolNumber]
             let trigrams = data.trigrams
             let zodiac = data.zodiac
-            let symbolTitle = document.getElementById("SymbolTitle");
-            let symbolTrigram1 = document.getElementById("SymbolTrigram1");
-            let symbolTrigram2 = document.getElementById("SymbolTrigram2");
-            let symbolZodiac1 = document.getElementById("SymbolZodiac1");
-            let symbolZodiac2 = document.getElementById("SymbolZodiac2");
-            let externalTrigram = document.getElementById("ExternalTrigram");
-            let externalZodiac = document.getElementById("ExternalZodiac");
-            let internalTrigram = document.getElementById("InternalTrigram");
-            let internalZodiac = document.getElementById("InternalZodiac");
+            let symbolTitle = document.getElementById("SymbolTitle")
+            let symbolTrigram1 = document.getElementById("SymbolTrigram1")
+            let symbolTrigram2 = document.getElementById("SymbolTrigram2")
+            let symbolZodiac1 = document.getElementById("SymbolZodiac1")
+            let symbolZodiac2 = document.getElementById("SymbolZodiac2")
+            let externalTrigram = document.getElementById("ExternalTrigram")
+            let externalZodiac = document.getElementById("ExternalZodiac")
+            let internalTrigram = document.getElementById("InternalTrigram")
+            let internalZodiac = document.getElementById("InternalZodiac")
+            let currentSelected = document.getElementById("symbol" + currentSymbol) 
+            let newSelected = document.getElementById("symbol" + symbolNumber) 
             let trigram1 = get_trigram(symbol.trigram1)
             let trigram2 = get_trigram(symbol.trigram2)
             let zodiac1 = get_zodiac(symbol.zodiac1)
@@ -48,6 +51,9 @@
             externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac1.name + ' (' + zodiac1.energy + ')'
             internalTrigram.innerText = symbol.trigram2 + ' ' + trigram2.name
             internalZodiac.innerText = symbol.zodiac2 + ' ' + zodiac2.name + ' (' + zodiac2.energy + ')'
+            currentSelected.style.background = 'white'
+            newSelected.style.background = 'grey'
+            currentSymbol = symbolNumber
         }
         function build_symbol_index() {
             let data = iChingData;
@@ -60,6 +66,7 @@
                 let symbolName = symbol.name
                 let divnode = document.createElement("DIV")
                 let textnode = document.createTextNode(symbolNumber + '. ' + symbolName)
+                divnode.id = "symbol" + loop
                 divnode.style = "cursor: pointer;"
                 divnode.onclick = function() { show_symbol(symbolNumber - 1); }
                 parentNode.appendChild(divnode)
