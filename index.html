@@ -25,7 +25,7 @@
             SymbolTrigram1.innerText = symbol.trigram1
             SymbolTrigram2.innerText = symbol.trigram2
             symbolZodiac1.innerText = symbol.zodiac1
-            symbolZodiac2.innerText = symbol.zodiac2
+            symbolZodiac2.innerText = symboams[symbol.trigram2]
             externalTrigram.innerText = symbol.trigram1 + ' ' + trigrams[symbol.trigram1]
             externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac[symbol.zodiac1]
             internalTrigram.innerText = symbol.trigram2 + ' ' + trigrams[symbol.trigram2]
@@ -675,12 +675,12 @@
                 <div id="SymbolZodiac2" style="padding: 0px 2px 0px 0px;"></div>
             </div>
             <div style="display: flex; flex-direction: row;">
-                <div id="ExternalEnergy" style="padding: 0px 0px 0px 0px;">External</div>
+                <div id="ExternalEnergy" style="padding: 0px 5px 0px 0px;">External</div>
                 <div id="ExternalTrigram" style="padding: 0px 10px 0px 0px;"></div>
                 <div id="ExternalZodiac" style="padding: 0px 2px 0px 0px;"></div>
             </div>
             <div style="display: flex; flex-direction: row;">
-                <div id="InternalEnergy" style="padding: 0px 0px 0px 0px;">Internal</div>
+                <div id="InternalEnergy" style="padding: 0px 5px 0px 0px;">Internal</div>
                 <div id="InternalTrigram" style="padding: 0px 10px 0px 0px;"></div>
                 <div id="InternalZodiac" style="padding: 0px 2px 0px 0px;"></div>
             </div>
