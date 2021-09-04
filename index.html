@@ -11,14 +11,14 @@
             let data = iChingData;
             let trigrams = data.trigrams
             for (let loop = 0; loop < trigrams.length; loop++) {
-                if (trigram = trigrams[loop].symbol) { return trigrams[loop] }
+                if (trigram === trigrams[loop].symbol) { return trigrams[loop] }
             }
         }
         function get_zodiac(sign) {
             let data = iChingData;
             let zodiac = data.zodiac
             for (let loop = 0; loop < zodiac.length; loop++) {
-                if (sign = zodiac[loop].symbol) { return zodiac[loop] }
+                if (sign === zodiac[loop].symbol) { return zodiac[loop] }
             }
         }
         function show_symbol(symbolNumber) {
