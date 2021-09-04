@@ -45,9 +45,9 @@
             symbolZodiac1.innerText = symbol.zodiac1
             symbolZodiac2.innerText = symbol.zodiac2
             externalTrigram.innerText = symbol.trigram1 + ' ' + trigram1.name
-            externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac1.name + ' ' + zodiac1.energy
+            externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac1.name + ' (' + zodiac1.energy + ')'
             internalTrigram.innerText = symbol.trigram2 + ' ' + trigram2.name
-            internalZodiac.innerText = symbol.zodiac2 + ' ' + zodiac2.name + ' ' + zodiac2.energy
+            internalZodiac.innerText = symbol.zodiac2 + ' ' + zodiac2.name + ' (' + zodiac2.energy + ')'
         }
         function build_symbol_index() {
             let data = iChingData;
