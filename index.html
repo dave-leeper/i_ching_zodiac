@@ -7,6 +7,20 @@
         rows {display: flex; flex-direction: row;}
     </style>
     <script>
+        function get_trigram(trigram) {
+            let data = iChingData;
+            let trigrams = data.trigrams
+            for (let loop = 0; loop < trigrams.length; loop++) {
+                if (trigram = trigrams[loop].symbol) { return trigrams[loop] }
+            }
+        }
+        function get_zodiac(sign) {
+            let data = iChingData;
+            let zodiac = data.zodiac
+            for (let loop = 0; loop < zodiac.length; loop++) {
+                if (sign = zodiac[loop].symbol) { return zodiac[loop] }
+            }
+        }
         function show_symbol(symbolNumber) {
             let data = iChingData;
             let symbol = data.symbols[symbolNumber]
@@ -26,10 +40,10 @@
             SymbolTrigram2.innerText = symbol.trigram2
             symbolZodiac1.innerText = symbol.zodiac1
             symbolZodiac2.innerText = symbol.zodiac2
-            externalTrigram.innerText = symbol.trigram1 + ' ' + trigrams[symbol.trigram1].name
-            externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac[symbol.zodiac1].name
-            internalTrigram.innerText = symbol.trigram2 + ' ' + trigrams[symbol.trigram2].name
-            internalZodiac.innerText = symbol.zodiac2 + ' ' + zodiac[symbol.zodiac2].name
+            externalTrigram.innerText = symbol.trigram1 + ' ' + get_trigram(symbol.trigram1).name
+            externalZodiac.innerText = symbol.zodiac1 + ' ' + get_zodiac(symbol.zodiac1).name
+            internalTrigram.innerText = symbol.trigram2 + ' ' + get_trigram(symbol.trigram2).name
+            internalZodiac.innerText = symbol.zodiac2 + ' ' + get_zodiac(symbol.zodiac2).name
         }
         function build_symbol_index() {
             let data = iChingData;
