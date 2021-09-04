@@ -35,15 +35,19 @@
             let externalZodiac = document.getElementById("ExternalZodiac");
             let internalTrigram = document.getElementById("InternalTrigram");
             let internalZodiac = document.getElementById("InternalZodiac");
+            let trigram1 = get_trigram(symbol.trigram1)
+            let trigram2 = get_trigram(symbol.trigram2)
+            let zodiac1 = get_trigram(symbol.zodiac1)
+            let zodiac2 = get_trigram(symbol.zodiac2)
             symbolTitle.innerText = symbol.name
             SymbolTrigram1.innerText = symbol.trigram1
             SymbolTrigram2.innerText = symbol.trigram2
             symbolZodiac1.innerText = symbol.zodiac1
             symbolZodiac2.innerText = symbol.zodiac2
-            externalTrigram.innerText = symbol.trigram1 + ' ' + get_trigram(symbol.trigram1).name
-            externalZodiac.innerText = symbol.zodiac1 + ' ' + get_zodiac(symbol.zodiac1).name
-            internalTrigram.innerText = symbol.trigram2 + ' ' + get_trigram(symbol.trigram2).name
-            internalZodiac.innerText = symbol.zodiac2 + ' ' + get_zodiac(symbol.zodiac2).name
+            externalTrigram.innerText = symbol.trigram1 + ' ' + trigram1.name
+            externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac1.name + ' ' + zodiac1.energy
+            internalTrigram.innerText = symbol.trigram2 + ' ' + trigram2.name
+            internalZodiac.innerText = symbol.zodiac2 + ' ' + zodiac2.name + ' ' + zodiac2.energy
         }
         function build_symbol_index() {
             let data = iChingData;
