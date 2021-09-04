@@ -10,8 +10,16 @@
         function show_symbol(symbolNumber) {
             let data = iChingData;
             let symbol = data.symbols[symbolNumber]
-            let symbolName = symbol.name
-            alert(symbolName)
+            let symbolTitle = document.getElementById("SymbolTitle");
+            let symbolTrigram1 = document.getElementById("SymbolTrigram1");
+            let symbolTrigram2 = document.getElementById("SymbolTrigram2");
+            let symbolZodiac1 = document.getElementById("SymbolZodiac1");
+            let symbolZodiac2 = document.getElementById("SymbolZodiac2");
+            symbolTitle.innerText = symbol.name
+            SymbolTrigram1.innerText = symbol.trigram1
+            SymbolTrigram2.innerText = symbol.trigram2
+            symbolZodiac1.innerText = symbol.zodiac1
+            symbolZodiac2.innerText = symbol.zodiac2
         }
         function build_symbol_index() {
             let data = iChingData;
@@ -28,6 +36,7 @@
                 parentNode.appendChild(divnode)
                 divnode.appendChild(textnode)
             }
+            show_symbol(0)
         }
         
         var iChingData = {
@@ -647,7 +656,15 @@
   <body onload="build_symbol_index()">
     <div  style="display: flex; flex-direction: row; width: 100%; height: 100%;">
         <div id="SymbolIndexes" style="display: flex; flex-direction: column; width: 230px; height: 100%; position: fixed; bottom: 0; overflow-y: auto;"></div>
-        <div id="SymbolData" style="width: 100%; position: fixed; left: 250px;">data</div>
+        <div id="SymbolData" style="width: 100%; position: fixed; left: 250px;">
+            <div id="SymbolTitle"></div>
+            <div>
+                <div id="SymbolTrigram1"></div>
+                <div id="SymbolTrigram2"></div>
+                <div id="SymbolZodiac1"></div>
+                <div id="SymbolZodiac2"></div>
+            </div>
+        </div>
     </div>
   </body>
 </html>
