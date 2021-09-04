@@ -26,10 +26,10 @@
             SymbolTrigram2.innerText = symbol.trigram2
             symbolZodiac1.innerText = symbol.zodiac1
             symbolZodiac2.innerText = symbol.zodiac2
-            externalTrigram.innerText = symbol.trigram1 + ' ' + trigrams[symbol.trigram1]
-            externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac[symbol.zodiac1]
-            internalTrigram.innerText = symbol.trigram2 + ' ' + trigrams[symbol.trigram2]
-            internalZodiac.innerText = symbol.zodiac2 + ' ' + zodiac[symbol.zodiac2]
+            externalTrigram.innerText = symbol.trigram1 + ' ' + trigrams[symbol.trigram1].name
+            externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac[symbol.zodiac1].name
+            internalTrigram.innerText = symbol.trigram2 + ' ' + trigrams[symbol.trigram2].name
+            internalZodiac.innerText = symbol.zodiac2 + ' ' + zodiac[symbol.zodiac2].name
         }
         function build_symbol_index() {
             let data = iChingData;
