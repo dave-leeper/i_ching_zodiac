@@ -36,6 +36,7 @@
             let externalZodiac = document.getElementById("ExternalZodiac")
             let internalTrigram = document.getElementById("InternalTrigram")
             let internalZodiac = document.getElementById("InternalZodiac")
+            let meaning = document.getElementById("Meaning")
             let currentSelected = document.getElementById("symbol" + currentSymbol) 
             let newSelected = document.getElementById("symbol" + symbolNumber) 
             let trigram1 = get_trigram(symbol.trigram1)
@@ -51,6 +52,7 @@
             externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac1.name + ' (' + zodiac1.energy + ')'
             internalTrigram.innerText = symbol.trigram2 + ' ' + trigram2.name
             internalZodiac.innerText = symbol.zodiac2 + ' ' + zodiac2.name + ' (' + zodiac2.energy + ')'
+            meaning.innerText = symbol.meaning
             currentSelected.style.background = 'white'
             newSelected.style.background = 'lightgrey'
             currentSymbol = symbolNumber
@@ -176,6 +178,7 @@
                 {
                     "number" : 1, 
                     "name": "Heaven",
+                    "meaning" : "Possessing creative power and skill.",
                     "trigram1" : "☰", 
                     "trigram2" : "☰", 
                     "zodiac1" : "♈︎", 
@@ -184,6 +187,7 @@
                 {
                     "number" : 2, 
                     "name": "Earth",
+                    "meaning" : "Needing knowledge and skill. Do not force matters and go with the flow.",
                     "trigram1" : "☷", 
                     "trigram2" : "☷", 
                     "zodiac1" : "♍︎", 
@@ -192,6 +196,7 @@
                 {
                     "number" : 3, 
                     "name": "Difficulty",
+                    "meaning" : "Sprouting.",
                     "trigram1" : "☵", 
                     "trigram2" : "☳", 
                     "zodiac1" : "♊︎", 
@@ -200,6 +205,7 @@
                 {
                     "number" : 4, 
                     "name": "Innocence",
+                    "meaning" : "Detained, enveloped, and inexperienced.",
                     "trigram1" : "☶", 
                     "trigram2" : "☵", 
                     "zodiac1" : "♑︎", 
@@ -208,6 +214,7 @@
                 {
                     "number" : 5, 
                     "name": "Waiting",
+                    "meaning" : "Uninvolved (waiting for now), nourishment.",
                     "trigram1" : "☵", 
                     "trigram2" : "☰", 
                     "zodiac1" : "♊︎", 
@@ -216,6 +223,7 @@
                 {
                     "number" : 6, 
                     "name": "Contention",
+                    "meaning" : "Engagement in conflict.",
                     "trigram1" : "☰", 
                     "trigram2" : "☵", 
                     "zodiac1" : "♈︎", 
@@ -224,6 +232,7 @@
                 {
                     "number" : 7, 
                     "name": "An Army",
+                    "meaning" : "Bringing together. Teamwork.",
                     "trigram1" : "☷", 
                     "trigram2" : "☵", 
                     "zodiac1" : "♍︎", 
@@ -232,6 +241,7 @@
                 {
                     "number" : 8, 
                     "name": "Accord",
+                    "meaning" : "Union.",
                     "trigram1" : "☵", 
                     "trigram2" : "☷", 
                     "zodiac1" : "♊︎", 
@@ -240,6 +250,7 @@
                 {
                     "number" : 9, 
                     "name": "Nurture of the Small",
+                    "meaning" : "Accumulating resources.",
                     "trigram1" : "☴", 
                     "trigram2" : "☰", 
                     "zodiac1" : "♎︎", 
@@ -248,6 +259,7 @@
                 {
                     "number" : 10, 
                     "name": "Treading",
+                    "meaning" : "Continuing with alertness.",
                     "trigram1" : "☰", 
                     "trigram2" : "☱", 
                     "zodiac1" : "♈︎", 
@@ -256,6 +268,7 @@
                 {
                     "number" : 11, 
                     "name": "Tranquillity",
+                    "meaning" : "Prevading.",
                     "trigram1" : "☷", 
                     "trigram2" : "☰", 
                     "zodiac1" : "♍︎", 
@@ -264,6 +277,7 @@
                 {
                     "number" : 12, 
                     "name": "Obstruction",
+                    "meaning" : "Stagnation.",
                     "trigram1" : "☰", 
                     "trigram2" : "☷", 
                     "zodiac1" : "♈︎", 
@@ -272,6 +286,7 @@
                 {
                     "number" : 13, 
                     "name": "Sameness With People",
+                    "meaning" : "Fellowship. Partnership.",
                     "trigram1" : "☰", 
                     "trigram2" : "☲", 
                     "zodiac1" : "♈︎", 
@@ -280,6 +295,7 @@
                 {
                     "number" : 14, 
                     "name": "Great Possession",
+                    "meaning" : "Independance. Freedom.",
                     "trigram1" : "☲", 
                     "trigram2" : "☰", 
                     "zodiac1" : "♋︎", 
@@ -288,6 +304,7 @@
                 {
                     "number" : 15, 
                     "name": "Humility",
+                    "meaning" : "Being reserved, refraining.",
                     "trigram1" : "☷", 
                     "trigram2" : "☶", 
                     "zodiac1" : "♍︎", 
@@ -296,6 +313,7 @@
                 {
                     "number" : 16, 
                     "name": "Happiness",
+                    "meaning" : "Inducement, new stimulus.",
                     "trigram1" : "☳", 
                     "trigram2" : "☷", 
                     "zodiac1" : "♓︎", 
@@ -304,6 +322,7 @@
                 {
                     "number" : 17, 
                     "name": "Following",
+                    "meaning" : "Following.",
                     "trigram1" : "☱", 
                     "trigram2" : "☳", 
                     "zodiac1" : "♐︎", 
@@ -312,6 +331,7 @@
                 {
                     "number" : 18, 
                     "name": "Disruption",
+                    "meaning" : "Repairing.",
                     "trigram1" : "☶", 
                     "trigram2" : "☴", 
                     "zodiac1" : "♑︎", 
@@ -320,6 +340,7 @@
                 {
                     "number" : 19, 
                     "name": "Overseeing",
+                    "meaning" : "Approching goal, arriving.",
                     "trigram1" : "☷", 
                     "trigram2" : "☱", 
                     "zodiac1" : "♍︎", 
@@ -328,6 +349,7 @@
                 {
                     "number" : 20, 
                     "name": "Observing",
+                    "meaning" : "The WIthholding.",
                     "trigram1" : "☴", 
                     "trigram2" : "☰", 
                     "zodiac1" : "♎︎", 
@@ -336,6 +358,7 @@
                 {
                     "number" : 21, 
                     "name": "Biting Through",
+                    "meaning" : "Deciding.",
                     "trigram1" : "☲", 
                     "trigram2" : "☳", 
                     "zodiac1" : "♋︎", 
@@ -344,6 +367,7 @@
                 {
                     "number" : 22, 
                     "name": "Adornment",
+                    "meaning" : "Embellishing.",
                     "trigram1" : "☶", 
                     "trigram2" : "☲", 
                     "zodiac1" : "♑︎", 
@@ -352,6 +376,7 @@
                 {
                     "number" : 23, 
                     "name": "Stripping Away",
+                    "meaning" : "Stripping, flaying.",
                     "trigram1" : "☶", 
                     "trigram2" : "☷", 
                     "zodiac1" : "♑︎", 
@@ -360,6 +385,7 @@
                 {
                     "number" : 24, 
                     "name": "Return",
+                    "meaning" : "Returning.",
                     "trigram1" : "☷", 
                     "trigram2" : "☳", 
                     "zodiac1" : "♍︎", 
@@ -368,6 +394,7 @@
                 {
                     "number" : 25, 
                     "name": "Fidelity",
+                    "meaning" : "Without rashness.",
                     "trigram1" : "☰", 
                     "trigram2" : "☳", 
                     "zodiac1" : "♈︎", 
@@ -376,6 +403,7 @@
                 {
                     "number" : 26, 
                     "name": "Great Buildup",
+                    "meaning" : "Accumulating wisdom.",
                     "trigram1" : "☶", 
                     "trigram2" : "☰", 
                     "zodiac1" : "♑︎", 
@@ -384,6 +412,7 @@
                 {
                     "number" : 27, 
                     "name": "Nourishment",
+                    "meaning" : "Seeking nourishment.",
                     "trigram1" : "☶", 
                     "trigram2" : "☳", 
                     "zodiac1" : "♑︎", 
@@ -392,6 +421,7 @@
                 {
                     "number" : 28, 
                     "name": "Predominance of the Great",
+                    "meaning" : "Great surpassing.",
                     "trigram1" : "☱", 
                     "trigram2" : "☴", 
                     "zodiac1" : "♐︎", 
@@ -400,6 +430,7 @@
                 {
                     "number" : 29, 
                     "name": "Constant Pitfalls",
+                    "meaning" : "Darkness. Gorge.",
                     "trigram1" : "☵", 
                     "trigram2" : "☵", 
                     "zodiac1" : "♊︎", 
@@ -408,6 +439,7 @@
                 {
                     "number" : 30, 
                     "name": "Fire",
+                    "meaning" : "Clinging. Attachment.",
                     "trigram1" : "☲", 
                     "trigram2" : "☲", 
                     "zodiac1" : "♋︎", 
@@ -416,6 +448,7 @@
                 {
                     "number" : 31, 
                     "name": "Sensitivity",
+                    "meaning" : "Attraction.",
                     "trigram1" : "☱", 
                     "trigram2" : "☶", 
                     "zodiac1" : "♐︎", 
@@ -424,6 +457,7 @@
                 {
                     "number" : 32, 
                     "name": "Persistance",
+                    "meaning" : "Constancy.",
                     "trigram1" : "☳", 
                     "trigram2" : "☴", 
                     "zodiac1" : "♓︎", 
@@ -432,6 +466,7 @@
                 {
                     "number" : 33, 
                     "name": "Withdrawal",
+                    "meaning" : "Withdrawing.",
                     "trigram1" : "☰", 
                     "trigram2" : "☶", 
                     "zodiac1" : "♈︎", 
@@ -440,6 +475,7 @@
                 {
                     "number" : 34, 
                     "name": "The Power of Greatness",
+                    "meaning" : "Great boldness.",
                     "trigram1" : "☳", 
                     "trigram2" : "☰", 
                     "zodiac1" : "♓︎", 
@@ -448,6 +484,7 @@
                 {
                     "number" : 35, 
                     "name": "Advance",
+                    "meaning" : "Expansion, promotion.",
                     "trigram1" : "☲", 
                     "trigram2" : "☰", 
                     "zodiac1" : "♋︎", 
@@ -456,6 +493,7 @@
                 {
                     "number" : 36, 
                     "name": "Injury to the Enlightened",
+                    "meaning" : "Brilliance injured.",
                     "trigram1" : "☷", 
                     "trigram2" : "☲", 
                     "zodiac1" : "♍︎", 
@@ -464,6 +502,7 @@
                 {
                     "number" : 37, 
                     "name": "People in the Home",
+                    "meaning" : "Family.",
                     "trigram1" : "☴", 
                     "trigram2" : "☲", 
                     "zodiac1" : "♎︎", 
@@ -472,6 +511,7 @@
                 {
                     "number" : 38, 
                     "name": "Opposition",
+                    "meaning" : "Division, divergence.",
                     "trigram1" : "☲", 
                     "trigram2" : "☱", 
                     "zodiac1" : "♋︎", 
@@ -480,6 +520,7 @@
                 {
                     "number" : 39, 
                     "name": "Halting",
+                    "meaning" : "Trouble, hardship.",
                     "trigram1" : "☵", 
                     "trigram2" : "☶", 
                     "zodiac1" : "♊︎", 
@@ -488,6 +529,7 @@
                 {
                     "number" : 40, 
                     "name": "Solution",
+                    "meaning" : "Liberation, solution.",
                     "trigram1" : "☳", 
                     "trigram2" : "☵", 
                     "zodiac1" : "♓︎", 
@@ -496,6 +538,7 @@
                 {
                     "number" : 41, 
                     "name": "Reduction",
+                    "meaning" : "Decrease.",
                     "trigram1" : "☶", 
                     "trigram2" : "☱", 
                     "zodiac1" : "♑︎", 
@@ -504,6 +547,7 @@
                 {
                     "number" : 42, 
                     "name": "Increase",
+                    "meaning" : "Increase.",
                     "trigram1" : "☴", 
                     "trigram2" : "☳", 
                     "zodiac1" : "♎︎", 
@@ -512,6 +556,7 @@
                 {
                     "number" : 43, 
                     "name": "Decisiveness",
+                    "meaning" : "Seperation.",
                     "trigram1" : "☱", 
                     "trigram2" : "☰", 
                     "zodiac1" : "♐︎", 
@@ -520,6 +565,7 @@
                 {
                     "number" : 44, 
                     "name": "Meeting",
+                    "meaning" : "Encountering.",
                     "trigram1" : "☰", 
                     "trigram2" : "☴", 
                     "zodiac1" : "♈︎", 
@@ -528,6 +574,7 @@
                 {
                     "number" : 45, 
                     "name": "Gathering",
+                    "meaning" : "Association, companionship.",
                     "trigram1" : "☱", 
                     "trigram2" : "☷", 
                     "zodiac1" : "♐︎", 
@@ -536,6 +583,7 @@
                 {
                     "number" : 46, 
                     "name": "Rising",
+                    "meaning" : "Growing upward.",
                     "trigram1" : "☷", 
                     "trigram2" : "☴", 
                     "zodiac1" : "♍︎", 
@@ -544,6 +592,7 @@
                 {
                     "number" : 47, 
                     "name": "Exhaustion",
+                    "meaning" : "Exhaustion.",
                     "trigram1" : "☱", 
                     "trigram2" : "☵", 
                     "zodiac1" : "♐︎", 
@@ -552,6 +601,7 @@
                 {
                     "number" : 48, 
                     "name": "The Well",
+                    "meaning" : "Replenishment, renewal.",
                     "trigram1" : "☵", 
                     "trigram2" : "☴", 
                     "zodiac1" : "♊︎", 
@@ -560,6 +610,7 @@
                 {
                     "number" : 49, 
                     "name": "Change",
+                    "meaning" : "Abolishing the old.",
                     "trigram1" : "☱", 
                     "trigram2" : "☲", 
                     "zodiac1" : "♐︎", 
@@ -568,6 +619,7 @@
                 {
                     "number" : 50, 
                     "name": "The Cauldron",
+                    "meaning" : "Establishing the new.",
                     "trigram1" : "☲", 
                     "trigram2" : "☴", 
                     "zodiac1" : "♋︎", 
@@ -576,6 +628,7 @@
                 {
                     "number" : 51, 
                     "name": "Thunder",
+                    "meaning" : "Mobilizing.",
                     "trigram1" : "☳", 
                     "trigram2" : "☳", 
                     "zodiac1" : "♓︎", 
@@ -584,6 +637,7 @@
                 {
                     "number" : 52, 
                     "name": "Mountains",
+                    "meaning" : "Immobility.",
                     "trigram1" : "☶", 
                     "trigram2" : "☶", 
                     "zodiac1" : "♑︎", 
@@ -592,6 +646,7 @@
                 {
                     "number" : 53, 
                     "name": "Gradual Progress",
+                    "meaning" : "Auspicious outlook, infiltration.",
                     "trigram1" : "☴", 
                     "trigram2" : "☶", 
                     "zodiac1" : "♎︎", 
@@ -600,6 +655,7 @@
                 {
                     "number" : 54, 
                     "name": "A Young Woman Going to Marry",
+                    "meaning" : "Marrying.",
                     "trigram1" : "☳", 
                     "trigram2" : "☱", 
                     "zodiac1" : "♓︎", 
@@ -608,6 +664,7 @@
                 {
                     "number" : 55, 
                     "name": "Abundance",
+                    "meaning" : "Goalreach. Ambition achieved.",
                     "trigram1" : "☳", 
                     "trigram2" : "☲", 
                     "zodiac1" : "♓︎", 
@@ -616,6 +673,7 @@
                 {
                     "number" : 56, 
                     "name": "Travel",
+                    "meaning" : "Travel.",
                     "trigram1" : "☲", 
                     "trigram2" : "☶", 
                     "zodiac1" : "♋︎", 
@@ -624,6 +682,7 @@
                 {
                     "number" : 57, 
                     "name": "Conformity",
+                    "meaning" : "Subtle influence.",
                     "trigram1" : "☴", 
                     "trigram2" : "☴", 
                     "zodiac1" : "♎︎", 
@@ -632,6 +691,7 @@
                 {
                     "number" : 58, 
                     "name": "Pleasing",
+                    "meaning" : "Overt influence.",
                     "trigram1" : "☱", 
                     "trigram2" : "☱", 
                     "zodiac1" : "♐︎", 
@@ -640,6 +700,7 @@
                 {
                     "number" : 59, 
                     "name": "Dispersal",
+                    "meaning" : "Dispersal.",
                     "trigram1" : "☴", 
                     "trigram2" : "☵", 
                     "zodiac1" : "♎︎", 
@@ -648,6 +709,7 @@
                 {
                     "number" : 60, 
                     "name": "Regulation",
+                    "meaning" : "Discipline.",
                     "trigram1" : "☵", 
                     "trigram2" : "☱", 
                     "zodiac1" : "♊︎", 
@@ -656,6 +718,7 @@
                 {
                     "number" : 61, 
                     "name": "Truthfulness in the Center",
+                    "meaning" : "Staying focused, avoiding misrepresentation.",
                     "trigram1" : "☴", 
                     "trigram2" : "☱", 
                     "zodiac1" : "♎︎", 
@@ -664,6 +727,7 @@
                 {
                     "number" : 62, 
                     "name": "Predominance of the Small",
+                    "meaning" : "Small surpassing.",
                     "trigram1" : "☳", 
                     "trigram2" : "☶", 
                     "zodiac1" : "♓︎", 
@@ -672,6 +736,7 @@
                 {
                     "number" : 63, 
                     "name": "Already Accomplished",
+                    "meaning" : "Completion.",
                     "trigram1" : "☵", 
                     "trigram2" : "☲", 
                     "zodiac1" : "♊︎", 
@@ -680,6 +745,7 @@
                 {
                     "number" : 64, 
                     "name": "Unfinished",
+                    "meaning" : "Incomplete.",
                     "trigram1" : "☲", 
                     "trigram2" : "☵", 
                     "zodiac1" : "♋︎", 
@@ -709,6 +775,10 @@
                 <div id="InternalEnergy" style="font-size: 1em; padding: 0px 5px 0px 0px;">Internal</div>
                 <div id="InternalTrigram" style="font-size: 1em; padding: 0px 10px 0px 0px;"></div>
                 <div id="InternalZodiac" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <div id="SymbolMeaning" style="font-size: 1em; padding: 0px 5px 0px 0px;">Meaning</div>
+                <div id="Meaning" style="font-size: 1em; padding: 0px 10px 0px 0px;"></div>
             </div>
         </div>
     </div>
