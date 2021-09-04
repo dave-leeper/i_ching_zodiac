@@ -7,6 +7,12 @@
         rows {display: flex; flex-direction: row;}
     </style>
     <script>
+        function show_symbol(symbolNumber) {
+            let symbol = data.symbols[symbolNumber]
+            let symbolNumber = symbol.number
+            let symbolName = symbol.name
+            alert(symbolName)
+        }
         function build_symbol_index() {
             let data = iChingData;
             let parentNode = document.getElementById('SymbolIndexes')
@@ -20,7 +26,7 @@
                 let textnode = document.createTextNode(symbolNumber + '. ' + symbolName);
                 parentNode.appendChild(divnode)
                 divnode.appendChild(textnode)
-                divnode.onclick = function() { alert(symbolName); };
+                divnode.onclick = function() { show_symbol(symbolNumber); };
             }
         }
         
