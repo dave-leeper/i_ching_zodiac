@@ -14,8 +14,10 @@
             if (!parentNode) { return }
             for (let loop = 0; loop < data.symbols.length; loop++) {
                 let symbolName = data.symbols[loop].name
+                var divnode = document.createElement("DIV");
                 let textnode = document.createTextNode(symbolName);
-                parentNode.appendChild(textnode)
+                parentNode.appendChild(divnode)
+                divnode.appendChild(textnode)
             }
         }
         
