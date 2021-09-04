@@ -20,6 +20,7 @@
                 let textnode = document.createTextNode(symbolNumber + '. ' + symbolName);
                 parentNode.appendChild(divnode)
                 divnode.appendChild(textnode)
+                divnode.onclick = function() { alert(symbolName); };
             }
         }
         
