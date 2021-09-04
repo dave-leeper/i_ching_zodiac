@@ -9,7 +9,6 @@
     <script>
         function show_symbol(symbolNumber) {
             let symbol = data.symbols[symbolNumber]
-            let symbolNumber = symbol.number
             let symbolName = symbol.name
             alert(symbolName)
         }
@@ -24,9 +23,9 @@
                 let symbolName = symbol.name
                 let divnode = document.createElement("DIV");
                 let textnode = document.createTextNode(symbolNumber + '. ' + symbolName);
+                divnode.onclick = function() { show_symbol(symbolNumber); };
                 parentNode.appendChild(divnode)
                 divnode.appendChild(textnode)
-                divnode.onclick = function() { show_symbol(symbolNumber); };
             }
         }
         
