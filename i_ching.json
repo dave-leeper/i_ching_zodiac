@@ -1,0 +1,612 @@
+{
+    "trigrams" : [
+        {
+            "symbol" : "☰",
+            "name" : "Heaven"    
+        },
+        {
+            "symbol" : "☱",
+            "name" : "Lake"    
+        },
+        {
+            "symbol" : "☲",
+            "name" : "Fire"    
+        },
+        {
+            "symbol" : "☳",
+            "name" : "Thunder"    
+        },
+        {
+            "symbol" : "☴",
+            "name" : "Wind"    
+        },
+        {
+            "symbol" : "☵",
+            "name" : "Water"    
+        },
+        {
+            "symbol" : "☶",
+            "name" : "Mountain"    
+        },
+        {
+            "symbol" : "☷",
+            "name" : "Earth"    
+        }
+    ],
+    "zodiac" : [
+        {
+            "symbol" : "♈︎",
+            "name" : "Aries",
+            "energy" : "Future Action"
+        },
+        {
+            "symbol" : "♉︎",
+            "name" : "Taurus",
+            "energy" : "Present World"
+        },
+        {
+            "symbol" : "♊︎",
+            "name" : "Gemini",
+            "energy" : "Past Thought"
+        },
+        {
+            "symbol" : "♋︎",
+            "name" : "Cancer",
+            "energy" : "Future Emotion"
+        },
+        {
+            "symbol" : "♌︎",
+            "name" : "Leo",
+            "energy" : "Present Action"
+        },
+        {
+            "symbol" : "♍︎",
+            "name" : "Virgo",   
+            "energy" : "Past World"
+        },
+        {
+            "symbol" : "♎︎",
+            "name" : "Libra",
+            "energy" : "Future Thought"
+        },
+        {
+            "symbol" : "♏︎",
+            "name" : "Scorpio",
+            "energy" : "Present Emotion"
+        },
+        {
+            "symbol" : "♐︎",
+            "name" : "Sagittarius",
+            "energy" : "Past Action"
+        },
+        {
+            "symbol" : "♑︎",
+            "name" : "Capricorn",
+            "energy" : "Future World"
+        },
+        {
+            "symbol" : "♒︎",
+            "name" : "Aquarius",
+            "energy" : "Present Thought"
+        },
+        {
+            "symbol" : "♓︎",
+            "name" : "Pisces",
+            "energy" : "Past Emotion"
+        }
+    ],    
+    "symbols" : [
+        {
+            "number" : 1, 
+            "name": "Heaven",
+            "trigram1" : "☰", 
+            "trigram2" : "☰", 
+            "zodiac1" : "♈︎", 
+            "zodiac2" : "♈︎"
+        },
+        {
+            "number" : 2, 
+            "name": "Earth",
+            "trigram1" : "☷", 
+            "trigram2" : "☷", 
+            "zodiac1" : "♍︎", 
+            "zodiac2" : "♍︎"
+        },
+        {
+            "number" : 3, 
+            "name": "Difficulty",
+            "trigram1" : "☵", 
+            "trigram2" : "☳", 
+            "zodiac1" : "♊︎", 
+            "zodiac2" : "♓︎"
+        },
+        {
+            "number" : 4, 
+            "name": "Innocence",
+            "trigram1" : "☶", 
+            "trigram2" : "☵", 
+            "zodiac1" : "♑︎", 
+            "zodiac2" : "♊︎"
+        },
+        {
+            "number" : 5, 
+            "name": "Waiting",
+            "trigram1" : "☵", 
+            "trigram2" : "☰", 
+            "zodiac1" : "♊︎", 
+            "zodiac2" : "♈︎"
+        },
+        {
+            "number" : 6, 
+            "name": "Contention",
+            "trigram1" : "☰", 
+            "trigram2" : "☵", 
+            "zodiac1" : "♈︎", 
+            "zodiac2" : "♊︎"
+        },
+        {
+            "number" : 7, 
+            "name": "An Army",
+            "trigram1" : "☷", 
+            "trigram2" : "☵", 
+            "zodiac1" : "♍︎", 
+            "zodiac2" : "♊︎"
+        },
+        {
+            "number" : 8, 
+            "name": "Accord",
+            "trigram1" : "☵", 
+            "trigram2" : "☷", 
+            "zodiac1" : "♊︎", 
+            "zodiac2" : "♍︎"
+        },
+        {
+            "number" : 9, 
+            "name": "Nurture of the Small",
+            "trigram1" : "☴", 
+            "trigram2" : "☰", 
+            "zodiac1" : "♎︎", 
+            "zodiac2" : "♈︎"
+        },
+        {
+            "number" : 10, 
+            "name": "Treading",
+            "trigram1" : "☰", 
+            "trigram2" : "☱", 
+            "zodiac1" : "♈︎", 
+            "zodiac2" : "♐︎"
+        },
+        {
+            "number" : 11, 
+            "name": "Tranquillity",
+            "trigram1" : "☷", 
+            "trigram2" : "☰", 
+            "zodiac1" : "♍︎", 
+            "zodiac2" : "♈︎"
+        },
+        {
+            "number" : 12, 
+            "name": "Obstruction",
+            "trigram1" : "☰", 
+            "trigram2" : "☷", 
+            "zodiac1" : "♈︎", 
+            "zodiac2" : "♍︎"
+        },
+        {
+            "number" : 13, 
+            "name": "Sameness With People",
+            "trigram1" : "☰", 
+            "trigram2" : "☲", 
+            "zodiac1" : "♈︎", 
+            "zodiac2" : "♋︎"
+        },
+        {
+            "number" : 14, 
+            "name": "Great Possession",
+            "trigram1" : "☲", 
+            "trigram2" : "☰", 
+            "zodiac1" : "♋︎", 
+            "zodiac2" : "♈︎"
+        },
+        {
+            "number" : 15, 
+            "name": "Humility",
+            "trigram1" : "☷", 
+            "trigram2" : "☶", 
+            "zodiac1" : "♍︎", 
+            "zodiac2" : "♑︎"
+        },
+        {
+            "number" : 16, 
+            "name": "Happiness",
+            "trigram1" : "☳", 
+            "trigram2" : "☷", 
+            "zodiac1" : "♓︎", 
+            "zodiac2" : "♍︎"
+        },
+        {
+            "number" : 17, 
+            "name": "Following",
+            "trigram1" : "☱", 
+            "trigram2" : "☳", 
+            "zodiac1" : "♐︎", 
+            "zodiac2" : "♓︎"
+        },
+        {
+            "number" : 18, 
+            "name": "Disruption",
+            "trigram1" : "☶", 
+            "trigram2" : "☴", 
+            "zodiac1" : "♑︎", 
+            "zodiac2" : "♎︎"
+        },
+        {
+            "number" : 19, 
+            "name": "Overseeing",
+            "trigram1" : "☷", 
+            "trigram2" : "☱", 
+            "zodiac1" : "♍︎", 
+            "zodiac2" : "♐︎"
+        },
+        {
+            "number" : 20, 
+            "name": "Observing",
+            "trigram1" : "☴", 
+            "trigram2" : "☰", 
+            "zodiac1" : "♎︎", 
+            "zodiac2" : "♈︎"
+        },
+        {
+            "number" : 21, 
+            "name": "Biting Through",
+            "trigram1" : "☲", 
+            "trigram2" : "☳", 
+            "zodiac1" : "♋︎", 
+            "zodiac2" : "♓︎"
+        },
+        {
+            "number" : 22, 
+            "name": "Adornment",
+            "trigram1" : "☶", 
+            "trigram2" : "☲", 
+            "zodiac1" : "♑︎", 
+            "zodiac2" : "♋︎"
+        },
+        {
+            "number" : 23, 
+            "name": "Stripping Away",
+            "trigram1" : "☶", 
+            "trigram2" : "☷", 
+            "zodiac1" : "♑︎", 
+            "zodiac2" : "♍︎"
+        },
+        {
+            "number" : 24, 
+            "name": "Return",
+            "trigram1" : "☷", 
+            "trigram2" : "☳", 
+            "zodiac1" : "♍︎", 
+            "zodiac2" : "♓︎"
+        },
+        {
+            "number" : 25, 
+            "name": "Fidelity",
+            "trigram1" : "☰", 
+            "trigram2" : "☳", 
+            "zodiac1" : "♈︎", 
+            "zodiac2" : "♓︎"
+        },
+        {
+            "number" : 26, 
+            "name": "Great Buildup",
+            "trigram1" : "☶", 
+            "trigram2" : "☰", 
+            "zodiac1" : "♑︎", 
+            "zodiac2" : "♈︎"
+        },
+        {
+            "number" : 27, 
+            "name": "Nourishment",
+            "trigram1" : "☶", 
+            "trigram2" : "☳", 
+            "zodiac1" : "♑︎", 
+            "zodiac2" : "♓︎"
+        },
+        {
+            "number" : 28, 
+            "name": "Predominance of the Great",
+            "trigram1" : "☱", 
+            "trigram2" : "☴", 
+            "zodiac1" : "♐︎", 
+            "zodiac2" : "♎︎"
+        },
+        {
+            "number" : 29, 
+            "name": "Constant Pitfalls",
+            "trigram1" : "☵", 
+            "trigram2" : "☵", 
+            "zodiac1" : "♊︎", 
+            "zodiac2" : "♊︎"
+        },
+        {
+            "number" : 30, 
+            "name": "Fire",
+            "trigram1" : "☲", 
+            "trigram2" : "☲", 
+            "zodiac1" : "♋︎", 
+            "zodiac2" : "♋︎"
+        },
+        {
+            "number" : 31, 
+            "name": "Sensitivity",
+            "trigram1" : "☱", 
+            "trigram2" : "☶", 
+            "zodiac1" : "♐︎", 
+            "zodiac2" : "♑︎"
+        },
+        {
+            "number" : 32, 
+            "name": "Persistance",
+            "trigram1" : "☳", 
+            "trigram2" : "☴", 
+            "zodiac1" : "♓︎", 
+            "zodiac2" : "♎︎"
+        },
+        {
+            "number" : 33, 
+            "name": "Withdrawal",
+            "trigram1" : "☰", 
+            "trigram2" : "☶", 
+            "zodiac1" : "♈︎", 
+            "zodiac2" : "♑︎"
+        },
+        {
+            "number" : 34, 
+            "name": "The Power of Greatness",
+            "trigram1" : "☳", 
+            "trigram2" : "☰", 
+            "zodiac1" : "♓︎", 
+            "zodiac2" : "♈︎"
+        },
+        {
+            "number" : 35, 
+            "name": "Advance",
+            "trigram1" : "☲", 
+            "trigram2" : "☰", 
+            "zodiac1" : "♋︎", 
+            "zodiac2" : "♈︎"
+        },
+        {
+            "number" : 36, 
+            "name": "Injury to the Enlightened",
+            "trigram1" : "☷", 
+            "trigram2" : "☲", 
+            "zodiac1" : "♍︎", 
+            "zodiac2" : "♋︎"
+        },
+        {
+            "number" : 37, 
+            "name": "People in the Home",
+            "trigram1" : "☴", 
+            "trigram2" : "☲", 
+            "zodiac1" : "♎︎", 
+            "zodiac2" : "♋︎"
+        },
+        {
+            "number" : 38, 
+            "name": "Opposition",
+            "trigram1" : "☲", 
+            "trigram2" : "☱", 
+            "zodiac1" : "♋︎", 
+            "zodiac2" : "♐︎"
+        },
+        {
+            "number" : 39, 
+            "name": "Halting",
+            "trigram1" : "☵", 
+            "trigram2" : "☶", 
+            "zodiac1" : "♊︎", 
+            "zodiac2" : "♑︎"
+        },
+        {
+            "number" : 40, 
+            "name": "Solution",
+            "trigram1" : "☳", 
+            "trigram2" : "☵", 
+            "zodiac1" : "♓︎", 
+            "zodiac2" : "♊︎"
+        },
+        {
+            "number" : 41, 
+            "name": "Reduction",
+            "trigram1" : "☶", 
+            "trigram2" : "☱", 
+            "zodiac1" : "♑︎", 
+            "zodiac2" : "♐︎"
+        },
+        {
+            "number" : 42, 
+            "name": "Increase",
+            "trigram1" : "☴", 
+            "trigram2" : "☳", 
+            "zodiac1" : "♎︎", 
+            "zodiac2" : "♓︎"
+        },
+        {
+            "number" : 43, 
+            "name": "Decisiveness",
+            "trigram1" : "☱", 
+            "trigram2" : "☰", 
+            "zodiac1" : "♐︎", 
+            "zodiac2" : "♈︎"
+        },
+        {
+            "number" : 44, 
+            "name": "Meeting",
+            "trigram1" : "☰", 
+            "trigram2" : "☴", 
+            "zodiac1" : "♈︎", 
+            "zodiac2" : "♎︎"
+        },
+        {
+            "number" : 45, 
+            "name": "Gathering",
+            "trigram1" : "☱", 
+            "trigram2" : "☷", 
+            "zodiac1" : "♐︎", 
+            "zodiac2" : "♍︎"
+        },
+        {
+            "number" : 46, 
+            "name": "Rising",
+            "trigram1" : "☷", 
+            "trigram2" : "☴", 
+            "zodiac1" : "♍︎", 
+            "zodiac2" : "♎︎"
+        },
+        {
+            "number" : 47, 
+            "name": "Exhaustion",
+            "trigram1" : "☱", 
+            "trigram2" : "☵", 
+            "zodiac1" : "♐︎", 
+            "zodiac2" : "♊︎"
+        },
+        {
+            "number" : 48, 
+            "name": "The Well",
+            "trigram1" : "☵", 
+            "trigram2" : "☴", 
+            "zodiac1" : "♊︎", 
+            "zodiac2" : "♎︎"
+        },
+        {
+            "number" : 49, 
+            "name": "Change",
+            "trigram1" : "☱", 
+            "trigram2" : "☲", 
+            "zodiac1" : "♐︎", 
+            "zodiac2" : "♋︎"
+        },
+        {
+            "number" : 50, 
+            "name": "The Cauldron",
+            "trigram1" : "☲", 
+            "trigram2" : "☴", 
+            "zodiac1" : "♋︎", 
+            "zodiac2" : "♎︎"
+        },
+        {
+            "number" : 51, 
+            "name": "Thunder",
+            "trigram1" : "☳", 
+            "trigram2" : "☳", 
+            "zodiac1" : "♓︎", 
+            "zodiac2" : "♓︎"
+        },
+        {
+            "number" : 52, 
+            "name": "Mountains",
+            "trigram1" : "☶", 
+            "trigram2" : "☶", 
+            "zodiac1" : "♑︎", 
+            "zodiac2" : "♑︎"
+        },
+        {
+            "number" : 53, 
+            "name": "Gradual Progress",
+            "trigram1" : "☴", 
+            "trigram2" : "☶", 
+            "zodiac1" : "♎︎", 
+            "zodiac2" : "♑︎"
+        },
+        {
+            "number" : 54, 
+            "name": "A Young Woman Going to Marry",
+            "trigram1" : "☳", 
+            "trigram2" : "☱", 
+            "zodiac1" : "♓︎", 
+            "zodiac2" : "♐︎"
+        },
+        {
+            "number" : 55, 
+            "name": "Abundance",
+            "trigram1" : "☳", 
+            "trigram2" : "☲", 
+            "zodiac1" : "♓︎", 
+            "zodiac2" : "♋︎"
+        },
+        {
+            "number" : 56, 
+            "name": "Travel",
+            "trigram1" : "☲", 
+            "trigram2" : "☶", 
+            "zodiac1" : "♋︎", 
+            "zodiac2" : "♑︎"
+        },
+        {
+            "number" : 57, 
+            "name": "Conformity",
+            "trigram1" : "☴", 
+            "trigram2" : "☴", 
+            "zodiac1" : "♎︎", 
+            "zodiac2" : "♎︎"
+        },
+        {
+            "number" : 58, 
+            "name": "Pleasing",
+            "trigram1" : "☱", 
+            "trigram2" : "☱", 
+            "zodiac1" : "♐︎", 
+            "zodiac2" : "♐︎"
+        },
+        {
+            "number" : 59, 
+            "name": "Dispersal",
+            "trigram1" : "☴", 
+            "trigram2" : "☵", 
+            "zodiac1" : "♎︎", 
+            "zodiac2" : "♊︎"
+        },
+        {
+            "number" : 60, 
+            "name": "Regulation",
+            "trigram1" : "☵", 
+            "trigram2" : "☱", 
+            "zodiac1" : "♊︎", 
+            "zodiac2" : "♐︎"
+        },
+        {
+            "number" : 61, 
+            "name": "Truthfulness in the Center",
+            "trigram1" : "☴", 
+            "trigram2" : "☱", 
+            "zodiac1" : "♎︎", 
+            "zodiac2" : "♐︎"
+        },
+        {
+            "number" : 62, 
+            "name": "Predominance of the Small",
+            "trigram1" : "☳", 
+            "trigram2" : "☶", 
+            "zodiac1" : "♓︎", 
+            "zodiac2" : "♑︎"
+        },
+        {
+            "number" : 63, 
+            "name": "Already Accomplished",
+            "trigram1" : "☵", 
+            "trigram2" : "☲", 
+            "zodiac1" : "♊︎", 
+            "zodiac2" : "♋︎"
+        },
+        {
+            "number" : 64, 
+            "name": "Unfinished",
+            "trigram1" : "☲", 
+            "trigram2" : "☵", 
+            "zodiac1" : "♋︎", 
+            "zodiac2" : "♊︎"
+        }
+    ]
+}
