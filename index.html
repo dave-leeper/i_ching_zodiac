@@ -10,16 +10,26 @@
         function show_symbol(symbolNumber) {
             let data = iChingData;
             let symbol = data.symbols[symbolNumber]
+            let trigrams = data.trigrams
+            let zodiac = data.zodiac
             let symbolTitle = document.getElementById("SymbolTitle");
             let symbolTrigram1 = document.getElementById("SymbolTrigram1");
             let symbolTrigram2 = document.getElementById("SymbolTrigram2");
             let symbolZodiac1 = document.getElementById("SymbolZodiac1");
             let symbolZodiac2 = document.getElementById("SymbolZodiac2");
+            let externalTrigram = document.getElementById("ExternalTrigram");
+            let externalZodiac = document.getElementById("ExternalZodiac");
+            let internalTrigram = document.getElementById("InternalTrigram");
+            let internalZodiac = document.getElementById("InternalZodiac");
             symbolTitle.innerText = symbol.name
             SymbolTrigram1.innerText = symbol.trigram1
             SymbolTrigram2.innerText = symbol.trigram2
             symbolZodiac1.innerText = symbol.zodiac1
             symbolZodiac2.innerText = symbol.zodiac2
+            externalTrigram.innerText = symbol.trigram1 + ' ' + trigrams[symbol.trigram1]
+            externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac[symbol.zodiac1]
+            internalTrigram.innerText = symbol.trigram2 + ' ' + trigrams[symbol.trigram2]
+            internalZodiac.innerText = symbol.zodiac2 + ' ' + zodiac[symbol.zodiac2]
         }
         function build_symbol_index() {
             let data = iChingData;
@@ -656,13 +666,23 @@
   <body onload="build_symbol_index()">
     <div  style="display: flex; flex-direction: row; width: 100%; height: 100%;">
         <div id="SymbolIndexes" style="display: flex; flex-direction: column; width: 230px; height: 100%; position: fixed; bottom: 0; overflow-y: auto;"></div>
-        <div id="SymbolData" style="width: 100%; position: fixed; left: 250px;">
+        <div id="SymbolData" style="display: flex; flex-direction: column; width: 100%; position: fixed; left: 250px;">
             <div id="SymbolTitle"></div>
             <div style="display: flex; flex-direction: row;">
-                <div id="SymbolTrigram1" style="padding: 0px 2px 0px 0px;"></div>
+                <div id="SymbolTrigram1" style="padding: 0px 0px 0px 0px;"></div>
                 <div id="SymbolTrigram2" style="padding: 0px 10px 0px 0px;"></div>
                 <div id="SymbolZodiac1" style="padding: 0px 2px 0px 0px;"></div>
                 <div id="SymbolZodiac2" style="padding: 0px 2px 0px 0px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <div id="ExternalEnergy" style="padding: 0px 0px 0px 0px;">External</div>
+                <div id="ExternalTrigram" style="padding: 0px 10px 0px 0px;"></div>
+                <div id="ExternalZodiac" style="padding: 0px 2px 0px 0px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <div id="InternalEnergy" style="padding: 0px 0px 0px 0px;">Internal</div>
+                <div id="InternalTrigram" style="padding: 0px 10px 0px 0px;"></div>
+                <div id="InternalZodiac" style="padding: 0px 2px 0px 0px;"></div>
             </div>
         </div>
     </div>
