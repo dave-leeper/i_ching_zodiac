@@ -58,9 +58,10 @@
                 let symbol = data.symbols[loop]
                 let symbolNumber = symbol.number
                 let symbolName = symbol.name
-                let divnode = document.createElement("DIV");
-                let textnode = document.createTextNode(symbolNumber + '. ' + symbolName);
-                divnode.onclick = function() { show_symbol(symbolNumber - 1); };
+                let divnode = document.createElement("DIV")
+                let textnode = document.createTextNode(symbolNumber + '. ' + symbolName)
+                divnode.style = "cursor: pointer;"
+                divnode.onclick = function() { show_symbol(symbolNumber - 1); }
                 parentNode.appendChild(divnode)
                 divnode.appendChild(textnode)
             }
@@ -681,7 +682,7 @@
         }
         </script>  
     </head>
-  <body onload="build_symbol_index()">
+  <body onload="build_symbol_index()" style="font-family: 'Arial Narrow', Arial, sans-serif;">
     <div  style="display: flex; flex-direction: row; width: 100%; height: 100%;">
         <div id="SymbolIndexes" style="display: flex; flex-direction: column; width: 230px; height: 100%; position: fixed; bottom: 0; overflow-y: auto;"></div>
         <div id="SymbolData" style="display: flex; flex-direction: column; width: 100%; position: fixed; left: 250px;">
