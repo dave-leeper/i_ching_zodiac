@@ -93,9 +93,15 @@
             externalTrigram.innerText = symbol.trigram1 + ' ' + trigram1.name
             externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac1.name + ' (' + zodiac1.energy + ')'
             externalDomicile.innerText = get_domicile_string(symbol.zodiac1)
+            externalDetriment.innerText = get_detriment_string(symbol.zodiac1)
+            externalExalted.innerText = get_exalted_string(symbol.zodiac1)
+            externalFall.innerText = get_fall_string(symbol.zodiac1)
             internalTrigram.innerText = symbol.trigram2 + ' ' + trigram2.name
             internalZodiac.innerText = symbol.zodiac2 + ' ' + zodiac2.name + ' (' + zodiac2.energy + ')'
             internalDomicile.innerText = get_domicile_string(symbol.zodiac2)
+            internalDetriment.innerText = get_detriment_string(symbol.zodiac2)
+            internalExalted.innerText = get_exalted_string(symbol.zodiac2)
+            internalFall.innerText = get_fall_string(symbol.zodiac2)
             meaning.innerText = symbol.meaning
             commentary.innerText = symbol.commentary
             currentSelected.style.background = 'white'
@@ -971,8 +977,14 @@
                 <div id="ExternalZodiac" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
             </div>
             <div style="display: flex; flex-direction: row;">
-                <div id="ExternalDomicileTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">Domicile</div>
+                <div id="ExternalDomicileTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">External Domicile</div>
                 <div id="ExternalDomicile" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="ExternalDetrimentTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;"> Detriment</div>
+                <div id="ExternalDetriment" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="ExternalExaltedTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;"> Exalted</div>
+                <div id="ExternalExalted" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="ExternalFallTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;"> Fall</div>
+                <div id="ExternalFall" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
             </div>
             <div style="display: flex; flex-direction: row;">
                 <div id="InternalEnergy" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">Internal</div>
@@ -980,8 +992,14 @@
                 <div id="InternalZodiac" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
             </div>
             <div style="display: flex; flex-direction: row;">
-                <div id="InternalDomicileTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">Domicile</div>
+                <div id="InternalDomicileTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">Internal Domicile</div>
                 <div id="InternalDomicile" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="InternalDetrimentTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;"> Detriment</div>
+                <div id="InternalDetriment" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="InternalExaltedTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;"> Exalted</div>
+                <div id="InternalExalted" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="InternalFallTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;"> Fall</div>
+                <div id="InternalFall" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
             </div>
             <div style="display: flex; flex-direction: row;">
                 <div id="SymbolMeaning" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">Meaning</div>
