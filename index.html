@@ -89,13 +89,13 @@
             let newSelected = document.getElementById("symbol" + symbolNumber) 
             let trigram1 = get_trigram(symbol.trigram1)
             let trigram2 = get_trigram(symbol.trigram2)
-            let zodiac1 = get_zodiac(symbol.zodiac1)
-            let zodiac2 = get_zodiac(symbol.zodiac2)
+            let zodiac1 = get_zodiac(trigram1.zodiac)
+            let zodiac2 = get_zodiac(trigram2.zodiac)
             symbolTitle.innerText = symbol.number + '. ' + symbol.name
             SymbolTrigram1.innerText = symbol.trigram1
             SymbolTrigram2.innerText = symbol.trigram2
-            symbolZodiac1.innerText = symbol.zodiac1
-            symbolZodiac2.innerText = symbol.zodiac2
+            symbolZodiac1.innerText = zodiac1.symbol
+            symbolZodiac2.innerText = v.symbol
             externalTrigram.innerText = symbol.trigram1 + ' ' + trigram1.name
             externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac1.name + ' (' + zodiac1.energy + ')'
             externalDomicile.innerText = get_domicile_string(symbol.zodiac1)
@@ -138,35 +138,63 @@
             "trigrams" : [
                 {
                     "symbol" : "☰",
-                    "name" : "Heaven"    
+                    "name" : "Heaven",
+                    "zodiac" : "♊︎"
                 },
                 {
                     "symbol" : "☱",
-                    "name" : "Lake"    
+                    "name" : "Lake",
+                    "zodiac" : "♎︎"
                 },
                 {
                     "symbol" : "☲",
-                    "name" : "Fire"    
+                    "name" : "Fire",
+                    "zodiac" : "♐︎"
                 },
                 {
                     "symbol" : "☳",
-                    "name" : "Thunder"    
+                    "name" : "Thunder",
+                    "zodiac" : "♈︎"
                 },
                 {
                     "symbol" : "☴",
-                    "name" : "Wind"    
+                    "name" : "Wind",
+                    "zodiac" : "♋︎"
                 },
                 {
                     "symbol" : "☵",
-                    "name" : "Water"    
+                    "name" : "Water",
+                    "zodiac" : "♓︎"
                 },
                 {
                     "symbol" : "☶",
-                    "name" : "Mountain"    
+                    "name" : "Mountain",
+                    "zodiac" : "♑︎"
                 },
                 {
                     "symbol" : "☷",
-                    "name" : "Earth"    
+                    "name" : "Earth",
+                    "zodiac" : "♍︎"
+                },
+                {
+                    "symbol" : "⚌",
+                    "name" : "Greater Yang",
+                    "zodiac" : "♌︎"
+                },
+                {
+                    "symbol" : "⚎",
+                    "name" : "Lesser Yang",
+                    "zodiac" : "♒︎"
+                },
+                {
+                    "symbol" : "⚏",
+                    "name" : "Greater Yin",
+                    "zodiac" : "♏︎"
+                },
+                {
+                    "symbol" : "⚍",
+                    "name" : "Lesser Yin",
+                    "zodiac" : "♉︎"
                 }
             ],
             "planets" : [
@@ -328,9 +356,7 @@
                     "meaning" : "Possessing creative power and skill.",
                     "commentary" : "The creative energies of the individual find themselves in an envirionment which fosters creation.",
                     "trigram1" : "☰", 
-                    "trigram2" : "☰", 
-                    "zodiac1" : "♈︎", 
-                    "zodiac2" : "♈︎"
+                    "trigram2" : "☰"
                 },
                 {
                     "number" : 2, 
@@ -338,9 +364,7 @@
                     "meaning" : "Needing knowledge and skill. Do not force matters and go with the flow.",
                     "commentary" : "Nothing is forced by the individual. Nothing is forced by the environment.",
                     "trigram1" : "☷", 
-                    "trigram2" : "☷", 
-                    "zodiac1" : "♍︎", 
-                    "zodiac2" : "♍︎"
+                    "trigram2" : "☷"
                 },
                 {
                     "number" : 3, 
@@ -348,9 +372,7 @@
                     "meaning" : "Sprouting.",
                     "commentary" : "In an environment based on tradition, the individual carries on the emotions of the past. Difficulty comes due to small gains.",
                     "trigram1" : "☵", 
-                    "trigram2" : "☳", 
-                    "zodiac1" : "♊︎", 
-                    "zodiac2" : "♓︎"
+                    "trigram2" : "☳"
                 },
                 {
                     "number" : 4, 
@@ -358,9 +380,7 @@
                     "meaning" : "Detained, enveloped, and inexperienced.",
                     "commentary" : "The world moves on to new developments as the individual bases their actions on past beliefs.",
                     "trigram1" : "☶", 
-                    "trigram2" : "☵", 
-                    "zodiac1" : "♑︎", 
-                    "zodiac2" : "♊︎"
+                    "trigram2" : "☵"
                 },
                 {
                     "number" : 5, 
@@ -368,9 +388,7 @@
                     "meaning" : "Uninvolved (waiting for now), nourishment.",
                     "commentary" : "When the world clings to its old ways, the individual waits for the proper time to take new actions.",
                     "trigram1" : "☵", 
-                    "trigram2" : "☰", 
-                    "zodiac1" : "♊︎", 
-                    "zodiac2" : "♈︎"
+                    "trigram2" : "☰"
                 },
                 {
                     "number" : 6, 
@@ -378,9 +396,7 @@
                     "meaning" : "Engagement in conflict.",
                     "commentary" : "When the world looks for new ways of doing thigs and the individual clings to past knowledge, there is contention.",
                     "trigram1" : "☰", 
-                    "trigram2" : "☵", 
-                    "zodiac1" : "♈︎", 
-                    "zodiac2" : "♊︎"
+                    "trigram2" : "☵"
                 },
                 {
                     "number" : 7, 
@@ -388,9 +404,7 @@
                     "meaning" : "Bringing together. Teamwork.",
                     "commentary" : "The purpose of an Army is to bring peace to the land, and to operate in ways that are well understood.",
                     "trigram1" : "☷", 
-                    "trigram2" : "☵", 
-                    "zodiac1" : "♍︎", 
-                    "zodiac2" : "♊︎"
+                    "trigram2" : "☵"
                 },
                 {
                     "number" : 8, 
@@ -398,9 +412,7 @@
                     "meaning" : "Union.",
                     "commentary" : "In an environment of tradtional thought, the individual begins making something traditional.",
                     "trigram1" : "☵", 
-                    "trigram2" : "☷", 
-                    "zodiac1" : "♊︎", 
-                    "zodiac2" : "♍︎"
+                    "trigram2" : "☷"
                 },
                 {
                     "number" : 9, 
@@ -408,9 +420,7 @@
                     "meaning" : "Accumulating resources.",
                     "commentary" : "New ideas are being searched for as the individual presents a new way to doing this. The new way begins small, and is nurtured.",
                     "trigram1" : "☴", 
-                    "trigram2" : "☰", 
-                    "zodiac1" : "♎︎", 
-                    "zodiac2" : "♈︎"
+                    "trigram2" : "☰"
                 },
                 {
                     "number" : 10, 
@@ -418,9 +428,7 @@
                     "meaning" : "Continuing with alertness.",
                     "commentary" : "The people want to do things in a new way, but the individual continues doing things the old way. Confidence is needed.",
                     "trigram1" : "☰", 
-                    "trigram2" : "☱", 
-                    "zodiac1" : "♈︎", 
-                    "zodiac2" : "♐︎"
+                    "trigram2" : "☱"
                 },
                 {
                     "number" : 11, 
@@ -428,9 +436,7 @@
                     "meaning" : "Prevading.",
                     "commentary" : "In an environment that is yielding and nurturing, the individual begins new work.",
                     "trigram1" : "☷", 
-                    "trigram2" : "☰", 
-                    "zodiac1" : "♍︎", 
-                    "zodiac2" : "♈︎"
+                    "trigram2" : "☰"
                 },
                 {
                     "number" : 12, 
@@ -438,9 +444,7 @@
                     "commentary" : "New actions interfere with the individual's established world.",
                     "meaning" : "Stagnation.",
                     "trigram1" : "☰", 
-                    "trigram2" : "☷", 
-                    "zodiac1" : "♈︎", 
-                    "zodiac2" : "♍︎"
+                    "trigram2" : "☷"
                 },
                 {
                     "number" : 13, 
@@ -448,9 +452,7 @@
                     "meaning" : "Fellowship. Partnership.",
                     "commentary" : "The people work towards the future. The individual gives them his support.",
                     "trigram1" : "☰", 
-                    "trigram2" : "☲", 
-                    "zodiac1" : "♈︎", 
-                    "zodiac2" : "♋︎"
+                    "trigram2" : "☲"
                 },
                 {
                     "number" : 14, 
@@ -458,9 +460,7 @@
                     "meaning" : "Independance. Freedom.",
                     "commentary" : "The individual work towards the future. The people gives him their support.",
                     "trigram1" : "☲", 
-                    "trigram2" : "☰", 
-                    "zodiac1" : "♋︎", 
-                    "zodiac2" : "♈︎"
+                    "trigram2" : "☰"
                 },
                 {
                     "number" : 15, 
@@ -468,9 +468,7 @@
                     "meaning" : "Being reserved, refraining.",
                     "commentary" : "In an environment that values the structure of the past, the individual works to build something new. Humility is needed.",
                     "trigram1" : "☷", 
-                    "trigram2" : "☶", 
-                    "zodiac1" : "♍︎", 
-                    "zodiac2" : "♑︎"
+                    "trigram2" : "☶"
                 },
                 {
                     "number" : 16, 
@@ -478,9 +476,7 @@
                     "meaning" : "Inducement, new stimulus.",
                     "commentary" : "In an atmosphere of nostalgia, the individual values past accomplishments.",
                     "trigram1" : "☳", 
-                    "trigram2" : "☷", 
-                    "zodiac1" : "♓︎", 
-                    "zodiac2" : "♍︎"
+                    "trigram2" : "☷"
                 },
                 {
                     "number" : 17, 
@@ -488,9 +484,7 @@
                     "meaning" : "Following",
                     "commentary" : "Finding joy in ritual.",
                     "trigram1" : "☱", 
-                    "trigram2" : "☳", 
-                    "zodiac1" : "♐︎", 
-                    "zodiac2" : "♓︎"
+                    "trigram2" : "☳"
                 },
                 {
                     "number" : 18, 
@@ -498,9 +492,7 @@
                     "meaning" : "Repairing.",
                     "commentary" : "As a new world takes shape, the individual has a new point of view.",
                     "trigram1" : "☶", 
-                    "trigram2" : "☴", 
-                    "zodiac1" : "♑︎", 
-                    "zodiac2" : "♎︎"
+                    "trigram2" : "☴"
                 },
                 {
                     "number" : 19, 
@@ -508,9 +500,7 @@
                     "meaning" : "Approching goal, arriving.",
                     "commentary" : "Traditional accomplishments crafted in a nurturing environment.",
                     "trigram1" : "☷", 
-                    "trigram2" : "☱", 
-                    "zodiac1" : "♍︎", 
-                    "zodiac2" : "♐︎"
+                    "trigram2" : "☱"
                 },
                 {
                     "number" : 20, 
@@ -518,9 +508,7 @@
                     "meaning" : "The Withholding.",
                     "commentary" : "The environment brought to the proper understanding, the individual begins something new.",
                     "trigram1" : "☴", 
-                    "trigram2" : "☰", 
-                    "zodiac1" : "♎︎", 
-                    "zodiac2" : "♈︎"
+                    "trigram2" : "☰"
                 },
                 {
                     "number" : 21, 
@@ -528,9 +516,7 @@
                     "meaning" : "Deciding.",
                     "commentary" : "As the people become caught up in something new, the individual holds to something old.",
                     "trigram1" : "☲", 
-                    "trigram2" : "☳", 
-                    "zodiac1" : "♋︎", 
-                    "zodiac2" : "♓︎"
+                    "trigram2" : "☳"
                 },
                 {
                     "number" : 22, 
@@ -538,9 +524,7 @@
                     "meaning" : "Embellishing.",
                     "commentary" : "Bringing emotion to a new creation. Taken too far, this is mere propaganda.",
                     "trigram1" : "☶", 
-                    "trigram2" : "☲", 
-                    "zodiac1" : "♑︎", 
-                    "zodiac2" : "♋︎"
+                    "trigram2" : "☲"
                 },
                 {
                     "number" : 23, 
@@ -548,9 +532,7 @@
                     "meaning" : "Stripping, flaying.",
                     "commentary" : "New creation threatens to make the individual's older creations obsolete.",
                     "trigram1" : "☶", 
-                    "trigram2" : "☷", 
-                    "zodiac1" : "♑︎", 
-                    "zodiac2" : "♍︎"
+                    "trigram2" : "☷"
                 },
                 {
                     "number" : 24, 
@@ -558,9 +540,7 @@
                     "meaning" : "Returning.",
                     "commentary" : "An emotional returning home.",
                     "trigram1" : "☷", 
-                    "trigram2" : "☳", 
-                    "zodiac1" : "♍︎", 
-                    "zodiac2" : "♓︎"
+                    "trigram2" : "☳"
                 },
                 {
                     "number" : 25, 
@@ -568,9 +548,7 @@
                     "meaning" : "Without rashness.",
                     "commentary" : "Emotions of the past must deal with new actions. Do not get carried away, remain true.",
                     "trigram1" : "☰", 
-                    "trigram2" : "☳", 
-                    "zodiac1" : "♈︎", 
-                    "zodiac2" : "♓︎"
+                    "trigram2" : "☳"
                 },
                 {
                     "number" : 26, 
@@ -578,9 +556,7 @@
                     "meaning" : "Accumulating wisdom.",
                     "commentary" : "A new world is at hand, enabling the individual to perform new actions.",
                     "trigram1" : "☶", 
-                    "trigram2" : "☰", 
-                    "zodiac1" : "♑︎", 
-                    "zodiac2" : "♈︎"
+                    "trigram2" : "☰"
                 },
                 {
                     "number" : 27, 
@@ -588,9 +564,7 @@
                     "meaning" : "Seeking nourishment.",
                     "commentary" : "Emotions of the past dealing with a new world. Seek to find what sustains you.",
                     "trigram1" : "☶", 
-                    "trigram2" : "☳", 
-                    "zodiac1" : "♑︎", 
-                    "zodiac2" : "♓︎"
+                    "trigram2" : "☳"
                 },
                 {
                     "number" : 28, 
@@ -598,9 +572,7 @@
                     "meaning" : "Great surpassing.",
                     "commentary" : "In an environment dominated by actions of the past, the indivdual presents a new way of thinking.",
                     "trigram1" : "☱", 
-                    "trigram2" : "☴", 
-                    "zodiac1" : "♐︎", 
-                    "zodiac2" : "♎︎"
+                    "trigram2" : "☴"
                 },
                 {
                     "number" : 29, 
@@ -608,9 +580,7 @@
                     "meaning" : "Darkness. Gorge.",
                     "commentary" : "Past thinking has difficulty solving new problems.",
                     "trigram1" : "☵", 
-                    "trigram2" : "☵", 
-                    "zodiac1" : "♊︎", 
-                    "zodiac2" : "♊︎"
+                    "trigram2" : "☵"
                 },
                 {
                     "number" : 30, 
@@ -618,9 +588,7 @@
                     "meaning" : "Clinging. Attachment.",
                     "commentary" : "New emotions in the environment and the individual reinforce one another. Is this the start of something wonderful or is it codependency?",
                     "trigram1" : "☲", 
-                    "trigram2" : "☲", 
-                    "zodiac1" : "♋︎", 
-                    "zodiac2" : "♋︎"
+                    "trigram2" : "☲"
                 },
                 {
                     "number" : 31, 
@@ -628,9 +596,7 @@
                     "meaning" : "Attraction.",
                     "commentary" : "Observing the actions of the past, the individual seeks to use this to build a new world.",
                     "trigram1" : "☱", 
-                    "trigram2" : "☶", 
-                    "zodiac1" : "♐︎", 
-                    "zodiac2" : "♑︎"
+                    "trigram2" : "☶"
                 },
                 {
                     "number" : 32, 
@@ -638,9 +604,7 @@
                     "meaning" : "Constancy.",
                     "commentary" : "When the people are wrapped up in the emotions of the past, presenting a new idea requires persistance.",
                     "trigram1" : "☳", 
-                    "trigram2" : "☴", 
-                    "zodiac1" : "♓︎", 
-                    "zodiac2" : "♎︎"
+                    "trigram2" : "☴"
                 },
                 {
                     "number" : 33, 
@@ -648,9 +612,7 @@
                     "meaning" : "Withdrawing.",
                     "commentary" : "In an environment of new action, the individual makes something new. Many new actions come and go, but making something is more permanent. Withdrawl refers to withdrawing from the temporary to focus on that which lasts. This hexagram could also be called Distillation.",
                     "trigram1" : "☰", 
-                    "trigram2" : "☶", 
-                    "zodiac1" : "♈︎", 
-                    "zodiac2" : "♑︎"
+                    "trigram2" : "☶"
                 },
                 {
                     "number" : 34, 
@@ -658,9 +620,7 @@
                     "meaning" : "Great boldness.",
                     "commentary" : "In an environment of emotions about the past, the individual presents a bold new action.",
                     "trigram1" : "☳", 
-                    "trigram2" : "☰", 
-                    "zodiac1" : "♓︎", 
-                    "zodiac2" : "♈︎"
+                    "trigram2" : "☰"
                 },
                 {
                     "number" : 35, 
@@ -668,9 +628,7 @@
                     "meaning" : "Expansion, promotion.",
                     "commentary" : "In an environment of emotions about the future, the individual presents a harmonious new action.",
                     "trigram1" : "☲", 
-                    "trigram2" : "☰", 
-                    "zodiac1" : "♋︎", 
-                    "zodiac2" : "♈︎"
+                    "trigram2" : "☰"
                 },
                 {
                     "number" : 36, 
@@ -678,9 +636,7 @@
                     "meaning" : "Brilliance injured.",
                     "commentary" : "The people are concerned about the past world, the individual is concerned about emotions regarding the future. Lacking the force of hexagram 11, Tranquility, the emotional element make suffer difficulties in expressing itself.",
                     "trigram1" : "☷", 
-                    "trigram2" : "☲", 
-                    "zodiac1" : "♍︎", 
-                    "zodiac2" : "♋︎"
+                    "trigram2" : "☲"
                 },
                 {
                     "number" : 37, 
@@ -688,9 +644,7 @@
                     "meaning" : "Family.",
                     "commentary" : "An important function of the family is thinking about the future. Here, the individual provides emotional support to this process.",
                     "trigram1" : "☴", 
-                    "trigram2" : "☲", 
-                    "zodiac1" : "♎︎", 
-                    "zodiac2" : "♋︎"
+                    "trigram2" : "☲"
                 },
                 {
                     "number" : 38, 
@@ -698,19 +652,15 @@
                     "meaning" : "Division, divergence.",
                     "commentary" : "In an environment concerned with emotions about the future, the individual performs past actions.",
                     "trigram1" : "☲", 
-                    "trigram2" : "☱", 
-                    "zodiac1" : "♋︎", 
-                    "zodiac2" : "♐︎"
+                    "trigram2" : "☱"
                 },
                 {
                     "number" : 39, 
                     "name": "Halting",
                     "meaning" : "Trouble, hardship.",
-                    "trigram1" : "☵", 
                     "commentary" : "The people concern themselves with thoughts of the past, the individual focuses on making something new. The people may produce roadblocks.",
-                    "trigram2" : "☶", 
-                    "zodiac1" : "♊︎", 
-                    "zodiac2" : "♑︎"
+                    "trigram1" : "☵", 
+                    "trigram2" : "☶"
                 },
                 {
                     "number" : 40, 
@@ -718,9 +668,7 @@
                     "meaning" : "Liberation, solution.",
                     "commentary" : "The environment consists of emotions regarding the past. The individual works with a traditional idea.",
                     "trigram1" : "☳", 
-                    "trigram2" : "☵", 
-                    "zodiac1" : "♓︎", 
-                    "zodiac2" : "♊︎"
+                    "trigram2" : "☵"
                 },
                 {
                     "number" : 41, 
@@ -728,9 +676,7 @@
                     "meaning" : "Decrease.",
                     "commentary" : "The environment is a new world. The individual performs past actions. They may not be as effective as they once were.",
                     "trigram1" : "☶", 
-                    "trigram2" : "☱", 
-                    "zodiac1" : "♑︎", 
-                    "zodiac2" : "♐︎"
+                    "trigram2" : "☱"
                 },
                 {
                     "number" : 42, 
@@ -738,9 +684,7 @@
                     "meaning" : "Increase.",
                     "commentary" : "The people think of the future. The individual experiences emotions of the past. Increase comes from integrating the two.",
                     "trigram1" : "☴", 
-                    "trigram2" : "☳", 
-                    "zodiac1" : "♎︎", 
-                    "zodiac2" : "♓︎"
+                    "trigram2" : "☳"
                 },
                 {
                     "number" : 43, 
@@ -748,9 +692,7 @@
                     "meaning" : "Seperation.",
                     "commentary" : "Past actions are no longer sufficent. The individual must find new ways of doing things.",
                     "trigram1" : "☱", 
-                    "trigram2" : "☰", 
-                    "zodiac1" : "♐︎", 
-                    "zodiac2" : "♈︎"
+                    "trigram2" : "☰"
                 },
                 {
                     "number" : 44, 
@@ -758,9 +700,7 @@
                     "meaning" : "Encountering.",
                     "commentary" : "The people want a new course of action, the individual thinks of the future.",
                     "trigram1" : "☰", 
-                    "trigram2" : "☴", 
-                    "zodiac1" : "♈︎", 
-                    "zodiac2" : "♎︎"
+                    "trigram2" : "☴"
                 },
                 {
                     "number" : 45, 
@@ -768,9 +708,7 @@
                     "meaning" : "Association, companionship.",
                     "commentary" : "The people perform actions of the past. The individual works with objects of the past. The people and the individual can come together harmoniously.",
                     "trigram1" : "☱", 
-                    "trigram2" : "☷", 
-                    "zodiac1" : "♐︎", 
-                    "zodiac2" : "♍︎"
+                    "trigram2" : "☷"
                 },
                 {
                     "number" : 46, 
@@ -778,9 +716,7 @@
                     "meaning" : "Growing upward.",
                     "commentary" : "The people works with objects of the past. The individual entertains a new idea. With care, this new idea can grow.",
                     "trigram1" : "☷", 
-                    "trigram2" : "☴", 
-                    "zodiac1" : "♍︎", 
-                    "zodiac2" : "♎︎"
+                    "trigram2" : "☴"
                 },
                 {
                     "number" : 47, 
@@ -788,9 +724,7 @@
                     "meaning" : "Exhaustion.",
                     "commentary" : "The people perform actions of the past. The individual thinks of past ideas. There is exhaustion in the sense that nothing new will come of this, but this is not failure.",
                     "trigram1" : "☱", 
-                    "trigram2" : "☵", 
-                    "zodiac1" : "♐︎", 
-                    "zodiac2" : "♊︎"
+                    "trigram2" : "☵"
                 },
                 {
                     "number" : 48, 
@@ -798,9 +732,7 @@
                     "meaning" : "Replenishment, renewal.",
                     "commentary" : "The people think of old ideas, while the individual presents a new idea. This is needed, but at some point action will need to be taken.",
                     "trigram1" : "☵", 
-                    "trigram2" : "☴", 
-                    "zodiac1" : "♊︎", 
-                    "zodiac2" : "♎︎"
+                    "trigram2" : "☴"
                 },
                 {
                     "number" : 49, 
@@ -808,9 +740,7 @@
                     "meaning" : "Abolishing the old.",
                     "commentary" : "The people practice past actions. The individual introduces a new emotion. This brings change.",
                     "trigram1" : "☱", 
-                    "trigram2" : "☲", 
-                    "zodiac1" : "♐︎", 
-                    "zodiac2" : "♋︎"
+                    "trigram2" : "☲"
                 },
                 {
                     "number" : 50, 
@@ -818,9 +748,7 @@
                     "meaning" : "Establishing the new.",
                     "commentary" : "The people experience new emotions as the individual presents a new idea.",
                     "trigram1" : "☲", 
-                    "trigram2" : "☴", 
-                    "zodiac1" : "♋︎",
-                    "zodiac2" : "♎︎"
+                    "trigram2" : "☴"
                 },
                 {
                     "number" : 51, 
@@ -828,9 +756,7 @@
                     "meaning" : "Mobilizing.",
                     "commentary" : "The people experience emotions of the past, as does the individual. This large, uniform emotion is called Thunder.",
                     "trigram1" : "☳", 
-                    "trigram2" : "☳", 
-                    "zodiac1" : "♓︎", 
-                    "zodiac2" : "♓︎"
+                    "trigram2" : "☳"
                 },
                 {
                     "number" : 52, 
@@ -838,9 +764,7 @@
                     "meaning" : "Immobility.",
                     "commentary" : "The people work with new things, as does the individual. Immobility refers to the fact that is time to stop planning new actions, time to stop thinking new thoughts, time to stop experienceing new emotions, and get to work.",
                     "trigram1" : "☶", 
-                    "trigram2" : "☶", 
-                    "zodiac1" : "♑︎", 
-                    "zodiac2" : "♑︎"
+                    "trigram2" : "☶"
                 },
                 {
                     "number" : 53, 
@@ -848,9 +772,7 @@
                     "meaning" : "Auspicious outlook, infiltration.",
                     "commentary" : "New thoughts in the environment, working on new things by the individual. Plans may change, progress may be gradual.",
                     "trigram1" : "☴", 
-                    "trigram2" : "☶", 
-                    "zodiac1" : "♎︎", 
-                    "zodiac2" : "♑︎"
+                    "trigram2" : "☶"
                 },
                 {
                     "number" : 54, 
@@ -858,9 +780,7 @@
                     "meaning" : "Marrying.",
                     "commentary" : "Emotions of the past fill the environment, the individual performs a tradional action.",
                     "trigram1" : "☳", 
-                    "trigram2" : "☱", 
-                    "zodiac1" : "♓︎", 
-                    "zodiac2" : "♐︎"
+                    "trigram2" : "☱"
                 },
                 {
                     "number" : 55, 
@@ -868,9 +788,7 @@
                     "meaning" : "Goalreach. Ambition achieved.",
                     "commentary" : "In an environment of emotions of the past, the individual feels something new. The joy of reaching a goal is an example.",
                     "trigram1" : "☳", 
-                    "trigram2" : "☲", 
-                    "zodiac1" : "♓︎", 
-                    "zodiac2" : "♋︎"
+                    "trigram2" : "☲"
                 },
                 {
                     "number" : 56, 
@@ -878,9 +796,7 @@
                     "meaning" : "Travel.",
                     "commentary" : "New emotions fill the people as the individual works on something new. If actual travelling takes place, the reason for it should align with the individual's work.",
                     "trigram1" : "☲", 
-                    "trigram2" : "☶", 
-                    "zodiac1" : "♋︎", 
-                    "zodiac2" : "♑︎"
+                    "trigram2" : "☶"
                 },
                 {
                     "number" : 57, 
@@ -888,9 +804,7 @@
                     "meaning" : "Subtle influence.",
                     "commentary" : "Thoughts of the future by the people and by the individual. Such futurism often demands conformity in order to succeed.",
                     "trigram1" : "☴", 
-                    "trigram2" : "☴", 
-                    "zodiac1" : "♎︎", 
-                    "zodiac2" : "♎︎"
+                    "trigram2" : "☴"
                 },
                 {
                     "number" : 58, 
@@ -898,9 +812,7 @@
                     "meaning" : "Overt influence.",
                     "commentary" : "Actions of the past carried out by the people and the individual. It is pleasing in the sense that all understand what is being done and why.",
                     "trigram1" : "☱", 
-                    "trigram2" : "☱", 
-                    "zodiac1" : "♐︎", 
-                    "zodiac2" : "♐︎"
+                    "trigram2" : "☱"
                 },
                 {
                     "number" : 59, 
@@ -908,9 +820,7 @@
                     "meaning" : "Dispersal.",
                     "commentary" : "Thoughts of the future by the people, thoughts of the past by the individual. By absorbing these new thoughts, the individual can be successful. Ignoring these new thoughts means likely failure.",
                     "trigram1" : "☴", 
-                    "trigram2" : "☵", 
-                    "zodiac1" : "♎︎", 
-                    "zodiac2" : "♊︎"
+                    "trigram2" : "☵"
                 },
                 {
                     "number" : 60, 
@@ -918,9 +828,7 @@
                     "meaning" : "Discipline.",
                     "commentary" : "The people support the thoughts of the past, the individual performs actions of the past. This is Regulation.",
                     "trigram1" : "☵", 
-                    "trigram2" : "☱", 
-                    "zodiac1" : "♊︎", 
-                    "zodiac2" : "♐︎"
+                    "trigram2" : "☱"
                 },
                 {
                     "number" : 61, 
@@ -928,9 +836,7 @@
                     "meaning" : "Staying focused, avoiding misrepresentation.",
                     "commentary" : "The people look towards new thoughts, the individual carries out past actions. Truthfullness in the center means following the heart, not miscellaneous new thoughts.",
                     "trigram1" : "☴", 
-                    "trigram2" : "☱", 
-                    "zodiac1" : "♎︎", 
-                    "zodiac2" : "♐︎"
+                    "trigram2" : "☱"
                 },
                 {
                     "number" : 62, 
@@ -938,9 +844,7 @@
                     "meaning" : "Small surpassing.",
                     "commentary" : "The people feel emotions of the past, the individual builds something new. WIthout emotional support from the environment, it is useful to limit what is created.",
                     "trigram1" : "☳", 
-                    "trigram2" : "☶", 
-                    "zodiac1" : "♓︎", 
-                    "zodiac2" : "♑︎"
+                    "trigram2" : "☶"
                 },
                 {
                     "number" : 63, 
@@ -948,9 +852,7 @@
                     "meaning" : "Completion.",
                     "commentary" : "The people think thoughts of the past, the individual feels new emotions. Similar to the reasons given in hexagram 62, it is best to have small goals.",
                     "trigram1" : "☵", 
-                    "trigram2" : "☲", 
-                    "zodiac1" : "♊︎", 
-                    "zodiac2" : "♋︎"
+                    "trigram2" : "☲"
                 },
                 {
                     "number" : 64, 
@@ -958,9 +860,7 @@
                     "meaning" : "Incomplete.",
                     "commentary" : "The people feel new emotions, the individual thinks thoughts of the past. These old thoughts do not fully encompass the new emotions and are thus unfinished.",
                     "trigram1" : "☲", 
-                    "trigram2" : "☵", 
-                    "zodiac1" : "♋︎", 
-                    "zodiac2" : "♊︎"
+                    "trigram2" : "☵"
                 }
             ]
         }
