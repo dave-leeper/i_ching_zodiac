@@ -96,13 +96,13 @@
             SymbolTrigram2.innerText = symbol.trigram2
             symbolZodiac1.innerText = zodiac1.symbol
             symbolZodiac2.innerText = zodiac2.symbol
-            externalTrigram.innerText = symbol.trigram1 + ' ' + trigram1.name
+            externalTrigram.innerText = symbol.trigram1 + ' ' + trigram1.name + ' (Earlier Heaven: ' + trigram1.earlier + ' Later Heaven: '  + trigram1.later + ')'
             externalZodiac.innerText = zodiac1.symbol + ' ' + zodiac1.name + ' (' + zodiac1.energy + ')'
             externalDomicile.innerText = get_domicile_string(zodiac1.symbol)
             externalDetriment.innerText = get_detriment_string(zodiac1.symbol)
             externalExalted.innerText = get_exalted_string(zodiac1.symbol)
             externalFall.innerText = get_fall_string(zodiac1.symbol)
-            internalTrigram.innerText = symbol.trigram2 + ' ' + trigram2.name
+            internalTrigram.innerText = symbol.trigram2 + ' ' + trigram2.name + ' (Earlier Heaven: ' + trigram2.earlier + ' Later Heaven: '  + trigram2.later + ')'
             internalZodiac.innerText = zodiac2.symbol + ' ' + zodiac2.name + ' (' + zodiac2.energy + ')'
             internalDomicile.innerText = get_domicile_string(zodiac2.symbol)
             internalDetriment.innerText = get_detriment_string(zodiac2.symbol)
@@ -139,61 +139,85 @@
                 {
                     "symbol" : "☰",
                     "name" : "Heaven",
+                    "earlier": "South",
+                    "later": "Northwest",
                     "zodiac" : "♊︎"
                 },
                 {
                     "symbol" : "☱",
                     "name" : "Lake",
+                    "earlier": "Southeast",
+                    "later": "West",
                     "zodiac" : "♎︎"
                 },
                 {
                     "symbol" : "☲",
                     "name" : "Fire",
+                    "earlier": "East",
+                    "later": "South",
                     "zodiac" : "♐︎"
                 },
                 {
                     "symbol" : "☳",
                     "name" : "Thunder",
+                    "earlier": "Northeast",
+                    "later": "East",
                     "zodiac" : "♈︎"
                 },
                 {
                     "symbol" : "☴",
                     "name" : "Wind",
+                    "earlier": "Southwest",
+                    "later": "Southeast",
                     "zodiac" : "♋︎"
                 },
                 {
                     "symbol" : "☵",
                     "name" : "Water",
+                    "earlier": "West",
+                    "later": "South",
                     "zodiac" : "♓︎"
                 },
                 {
                     "symbol" : "☶",
                     "name" : "Mountain",
+                    "earlier": "Northwest",
+                    "later": "Northeast",
                     "zodiac" : "♑︎"
                 },
                 {
                     "symbol" : "☷",
                     "name" : "Earth",
+                    "earlier": "South",
+                    "later": "Southwest",
                     "zodiac" : "♍︎"
                 },
                 {
                     "symbol" : "⚌",
                     "name" : "Greater Yang",
+                    "earlier": "None",
+                    "later": "None",
                     "zodiac" : "♌︎"
                 },
                 {
                     "symbol" : "⚎",
                     "name" : "Lesser Yang",
+                    "earlier": "None",
+                    "later": "None",
                     "zodiac" : "♒︎"
                 },
                 {
                     "symbol" : "⚏",
                     "name" : "Greater Yin",
+                    "earlier": "None",
+                    "later": "None",
                     "zodiac" : "♏︎"
                 },
                 {
                     "symbol" : "⚍",
                     "name" : "Lesser Yin",
+                    "earlier": "None",
+                    "later": "None",
                     "zodiac" : "♉︎"
                 }
             ],
