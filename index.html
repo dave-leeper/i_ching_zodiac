@@ -22,6 +22,45 @@
                 if (sign === zodiac[loop].symbol) { return zodiac[loop] }
             }
         }
+        function get_planets_string(planetSymbols) {
+            let data = iChingData;
+            let planets = data.planets
+            let planetString = ""
+
+            for (let planetSymbolLoop = 0; planetSymbolLoop < planetSymbols.length; planetSymbolLoop++) {
+                let planetSymbol = planetSymbols[planetSymbolLoop]
+                for (let planetsLoop = 0; planetsLoop < planets.length; planetsLoop++) {
+                    if (planetSymbol !== planets[planetsLoop].symbol) { continue }
+                    if (planetString.length > 0) {planetString += ", "}
+                    planetString += planets[planetsLoop].symbol
+                    planetString += " ("
+                    planetString += planets[planetsLoop].name
+                    planetString += ")"
+                }
+            }
+            if (!planetString) { planetString = "None." }
+            return planetString
+        }
+        function get_domicile_string(sign) {
+            let zodiac = get_zodiac(sign)
+            if (!zodiac) { return "" }
+            return get_planets_string(zodiac.domicile)
+        }
+        function get_detriment_string(sign) {
+            let zodiac = get_zodiac(sign)
+            if (!zodiac) { return "" }
+            return get_planets_string(zodiac.detriment)
+        }
+        function get_exalted_string(sign) {
+            let zodiac = get_zodiac(sign)
+            if (!zodiac) { return "" }
+            return get_planets_string(zodiac.exalted)
+        }
+        function get_fall_string(sign) {
+            let zodiac = get_zodiac(sign)
+            if (!zodiac) { return "" }
+            return get_planets_string(zodiac.fall)
+        }
         function show_symbol(symbolNumber) {
             let data = iChingData;
             let symbol = data.symbols[symbolNumber]
@@ -34,8 +73,10 @@
             let symbolZodiac2 = document.getElementById("SymbolZodiac2")
             let externalTrigram = document.getElementById("ExternalTrigram")
             let externalZodiac = document.getElementById("ExternalZodiac")
+            let externalDomicile = document.getElementById("ExternalDomicile")
             let internalTrigram = document.getElementById("InternalTrigram")
             let internalZodiac = document.getElementById("InternalZodiac")
+            let internalDomicile = document.getElementById("InternalDomicile")
             let commentary = document.getElementById("Commentary")
             let meaning = document.getElementById("Meaning")
             let currentSelected = document.getElementById("symbol" + currentSymbol) 
@@ -51,8 +92,10 @@
             symbolZodiac2.innerText = symbol.zodiac2
             externalTrigram.innerText = symbol.trigram1 + ' ' + trigram1.name
             externalZodiac.innerText = symbol.zodiac1 + ' ' + zodiac1.name + ' (' + zodiac1.energy + ')'
+            externalDomicile.innerText = get_domicile_string(symbol.zodiac1)
             internalTrigram.innerText = symbol.trigram2 + ' ' + trigram2.name
             internalZodiac.innerText = symbol.zodiac2 + ' ' + zodiac2.name + ' (' + zodiac2.energy + ')'
+            internalDomicile.innerText = get_domicile_string(symbol.zodiac2)
             meaning.innerText = symbol.meaning
             commentary.innerText = symbol.commentary
             currentSelected.style.background = 'white'
@@ -114,65 +157,155 @@
                     "name" : "Earth"    
                 }
             ],
+            "planets" : [
+            {
+                    "symbol" : "☉",
+                    "name" : "Sun"
+                },
+                {
+                    "symbol" : "☽︎",
+                    "name" : "Moon"
+                },
+                {
+                    "symbol" : "☿",
+                    "name" : "Mercury"
+                },
+                {
+                    "symbol" : "♀",
+                    "name" : "Venus"
+                },
+                {
+                    "symbol" : "♂",
+                    "name" : "Mars"
+                },
+                {
+                    "symbol" : "♃",
+                    "name" : "Jupiter"
+                },
+                {
+                    "symbol" : "♄",
+                    "name" : "Saturn"
+                },
+                {
+                    "symbol" : "♆",
+                    "name" : "Nepturn"
+                },
+                {
+                    "symbol" : "♅",
+                    "name" : "Uranus"
+                },
+                {
+                    "symbol" : "♇",
+                    "name" : "Pluto"
+                }
+            ],
             "zodiac" : [
                 {
                     "symbol" : "♈︎",
                     "name" : "Aries",
+                    "domicile" : ["♂"],
+                    "detriment" : ["♀"],
+                    "exalted" : ["☉"],
+                    "fall" : ["♄"],
                     "energy" : "Future Action"
                 },
                 {
                     "symbol" : "♉︎",
                     "name" : "Taurus",
+                    "domicile" : ["♀"],
+                    "detriment" : ["♂"],
+                    "exalted" : ["☽︎"],
+                    "fall" : ["♅"],
                     "energy" : "Present World"
                 },
                 {
                     "symbol" : "♊︎",
                     "name" : "Gemini",
+                    "domicile" : ["☿"],
+                    "detriment" : ["♃"],
+                    "exalted" : [],
+                    "fall" : [],
                     "energy" : "Past Thought"
                 },
                 {
                     "symbol" : "♋︎",
                     "name" : "Cancer",
+                    "domicile" : ["☽︎"],
+                    "detriment" : ["♄"],
+                    "exalted" : ["♃"],
+                    "fall" : ["♂"],
                     "energy" : "Future Emotion"
                 },
                 {
                     "symbol" : "♌︎",
                     "name" : "Leo",
+                    "domicile" : ["☉"],
+                    "detriment" : ["♄"],
+                    "exalted" : [],
+                    "fall" : ["♇"],
                     "energy" : "Present Action"
                 },
                 {
                     "symbol" : "♍︎",
                     "name" : "Virgo",   
+                    "domicile" : ["☿"],
+                    "detriment" : ["♃"],
+                    "exalted" : ["☿"],
+                    "fall" : ["♀"],
                     "energy" : "Past World"
                 },
                 {
                     "symbol" : "♎︎",
                     "name" : "Libra",
+                    "domicile" : ["♀"],
+                    "detriment" : ["♂"],
+                    "exalted" : ["♄"],
+                    "fall" : ["☉"],
                     "energy" : "Future Thought"
                 },
                 {
                     "symbol" : "♏︎",
                     "name" : "Scorpio",
+                    "domicile" : ["♂", "♇"],
+                    "detriment" : [],
+                    "exalted" : [],
+                    "fall" : ["☽︎"],
                     "energy" : "Present Emotion"
                 },
                 {
                     "symbol" : "♐︎",
                     "name" : "Sagittarius",
+                    "domicile" : ["♃"],
+                    "detriment" : ["☿"],
+                    "exalted" : [],
+                    "fall" : [],
                     "energy" : "Past Action"
                 },
                 {
                     "symbol" : "♑︎",
                     "name" : "Capricorn",
+                    "domicile" : ["♄"],
+                    "detriment" : ["☽︎"],
+                    "exalted" : ["♂"],
+                    "fall" : ["♃"],
                     "energy" : "Future World"
                 },
                 {
                     "symbol" : "♒︎",
                     "name" : "Aquarius",
+                    "domicile" : ["♄", "♅"],
+                    "detriment" : ["☉"],
+                    "exalted" : [],
+                    "fall" : [],
                     "energy" : "Present Thought"
                 },
                 {
                     "symbol" : "♓︎",
                     "name" : "Pisces",
+                    "domicile" : ["♃", "♆"],
+                    "detriment" : ["☿"],
+                    "exalted" : ["♀"],
+                    "fall" : ["☿"],
                     "energy" : "Past Emotion"
                 }
             ],    
@@ -836,11 +969,13 @@
                 <div id="ExternalEnergy" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">External</div>
                 <div id="ExternalTrigram" style="font-size: 1em; padding: 0px 10px 0px 0px;"></div>
                 <div id="ExternalZodiac" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="ExternalDomicile" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
             </div>
             <div style="display: flex; flex-direction: row;">
                 <div id="InternalEnergy" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">Internal</div>
                 <div id="InternalTrigram" style="font-size: 1em; padding: 0px 10px 0px 0px;"></div>
                 <div id="InternalZodiac" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="InternalDomicile" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
             </div>
             <div style="display: flex; flex-direction: row;">
                 <div id="SymbolMeaning" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">Meaning</div>
