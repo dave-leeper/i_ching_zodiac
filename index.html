@@ -8,6 +8,7 @@
     </style>
     <script>
         let currentSymbol = 0
+        let currentMenuItem = 0
         function get_trigram(trigram) {
             let data = iChingData;
             let trigrams = data.trigrams
@@ -145,7 +146,10 @@
             divnode.appendChild(textnode)
             show_symbol(0)
         }
-        
+        function draw_menu() {
+            build_symbol_index()
+        }
+
         var iChingData = {
             "trigrams" : [
                 {
@@ -1595,7 +1599,7 @@
         }
         </script>  
     </head>
-  <body onload="build_symbol_index()" style="font-family: 'Arial Narrow', Arial, sans-serif;">
+  <body onload="draw_menu()" style="font-family: 'Arial Narrow', Arial, sans-serif;">
     <div id="MenuBar" style="display: flex; flex-direction: row; gap: 20px; width: 100%; height: 25px; border-bottom: 6px solid black;">
         <div id="MenuBarList" style="height: 25px; cursor: pointer;">List</div>
         <div id="MenuBarLoShu" style="height: 25px; cursor: pointer;">Lo Shu</div>
