@@ -64,6 +64,15 @@
             if (!zodiac) { return "" }
             return get_planets_string(zodiac.fall)
         }
+        function get_hexagram_from_trigrams(external, internal) {
+            let data = iChingData;
+            let hexagrams = data.symbols
+
+            for (let hexagramLoop = 0; hexagramLoop < hexagrams.length; hexagramLoop++) {
+                let hexagram = hexagrams[hexagramLoop]
+                if (hexagram.trigram1 === external && hexagram.trigram2 === internal) { return hexagram }
+            }
+        }
         function show_symbol(symbolNumber) {
             let data = iChingData;
             let symbol = data.symbols[symbolNumber]
@@ -117,6 +126,81 @@
             newSelected.style.background = 'lightgrey'
             currentSymbol = symbolNumber
         }
+        function build_lo_shu_table(number) {
+            let pastExternalHeader = document.getElementById("PastExternalHeader")
+            let presentExternalHeader = document.getElementById("PresentExternalHeader")
+            let futureExternalHeader = document.getElementById("FutureExternalHeader")
+
+            let firePastInternalHeader = document.getElementById("FirePastInternalHeader")
+            let firePastPastData = document.getElementById("FirePastPastData")
+            let firePresentPastData = document.getElementById("FirePresentPastData")
+            let fireFuturePastData = document.getElementById("FireFuturePastData")
+            let firePresentInternalHeader = document.getElementById("FirePresentInternalHeader")
+            let firePastPresentData = document.getElementById("FirePastPresentData")
+            let firePresentPresentData = document.getElementById("FirePresentPresentData")
+            let fireFuturePresentData = document.getElementById("FireFuturePresentData")
+            let fireFutureInternalHeader = document.getElementById("FireFutureInternalHeader")
+            let firePastFutureData = document.getElementById("FirePastFutureData")
+            let firePresentFutureData = document.getElementById("FirePresentFutureData")
+            let fireFutureFutureData = document.getElementById("FireFutureFutureData")
+
+            let waterPastInternalHeader = document.getElementById("WaterPastInternalHeader")
+            let waterPastPastData = document.getElementById("WaterPastPastData")
+            let waterPresentPastData = document.getElementById("WaterPresentPastData")
+            let waterFuturePastData = document.getElementById("WaterFuturePastData")
+            let waterPresentInternalHeader = document.getElementById("WaterPresentInternalHeader")
+            let waterPastPresentData = document.getElementById("WaterPastPresentData")
+            let waterPresentPresentData = document.getElementById("WaterPresentPresentData")
+            let waterFuturePresentData = document.getElementById("WaterFuturePresentData")
+            let waterFutureInternalHeader = document.getElementById("WaterFutureInternalHeader")
+            let waterPastFutureData = document.getElementById("WaterPastFutureData")
+            let waterPresentFutureData = document.getElementById("WaterPresentFutureData")
+            let waterFutureFutureData = document.getElementById("WaterFutureFutureData")
+
+            let airPastInternalHeader = document.getElementById("AirPastInternalHeader")
+            let airPastPastData = document.getElementById("AirPastPastData")
+            let airPresentPastData = document.getElementById("AirPresentPastData")
+            let airFuturePastData = document.getElementById("AirFuturePastData")
+            let airPresentInternalHeader = document.getElementById("AirPresentInternalHeader")
+            let airPastPresentData = document.getElementById("AirPastPresentData")
+            let airPresentPresentData = document.getElementById("AirPresentPresentData")
+            let airFuturePresentData = document.getElementById("AirFuturePresentData")
+            let airFutureInternalHeader = document.getElementById("AirFutureInternalHeader")
+            let airPastFutureData = document.getElementById("AirPastFutureData")
+            let airPresentFutureData = document.getElementById("AirPresentFutureData")
+            let airFutureFutureData = document.getElementById("AirFutureFutureData")
+
+            let earthPastInternalHeader = document.getElementById("EarthPastInternalHeader")
+            let earthPastPastData = document.getElementById("EarthPastPastData")
+            let earthPresentPastData = document.getElementById("EarthPresentPastData")
+            let earthFuturePastData = document.getElementById("EarthFuturePastData")
+            let earthPresentInternalHeader = document.getElementById("EarthPresentInternalHeader")
+            let earthPastPresentData = document.getElementById("EarthPastPresentData")
+            let earthPresentPresentData = document.getElementById("EarthPresentPresentData")
+            let earthFuturePresentData = document.getElementById("EarthFuturePresentData")
+            let earthFutureInternalHeader = document.getElementById("EarthFutureInternalHeader")
+            let earthPastFutureData = document.getElementById("EarthPastFutureData")
+            let earthPresentFutureData = document.getElementById("EarthPresentFutureData")
+            let earthFutureFutureData = document.getElementById("EarthFutureFutureData")
+
+            let data = iChingData;
+            let externalHexagrams = data.loShuGrouping[number]
+            let pastTrigram = get_trigram(externalHexagrams[0])
+            let presentTrigram = get_trigram(externalHexagrams[1])
+            let futureTrigram = get_trigram(externalHexagrams[2])
+
+            pastExternalHeader.innerText = pastTrigram.symbol
+            presentExternalHeader.innerText = presentTrigram.symbol
+            futureExternalHeader.innerText = document.futureTrigram.symbol
+            /*
+            "loShuGrouping" : [
+                ["☲", "⚌", "☳"],
+                ["☵", "⚏", "☴"],
+                ["☰", "⚎", "☱"],
+                ["☷", "⚍", "☶"]
+            ],
+            */
+        }
         function set_lo_shu_element(number) {
             let loShuElementFire = document.getElementById("LoShuElementFire")
             let loShuElementWater = document.getElementById("LoShuElementWater")
@@ -132,6 +216,7 @@
             else { loShuElementAir.style.background = 'white' }
             if (3 === currentLoShuElement) { loShuElementEarth.style.background = 'lightgrey' }
             else { loShuElementEarth.style.background = 'white' }
+            build_lo_shu_table(number)
         }
         function build_symbol_index() {
             let data = iChingData;
