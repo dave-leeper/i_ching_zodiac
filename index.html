@@ -110,7 +110,9 @@
             let internalDetriment = document.getElementById("LoShuInternalDetriment")
             let internalExalted = document.getElementById("LoShuInternalExalted")
             let internalFall = document.getElementById("LoShuInternalFall")
-             let trigram1 = get_trigram(hexagram.trigram1)
+            let commentary = document.getElementById("LoShuCommentary")
+            let meaning = document.getElementById("LoShuMeaning")
+            let trigram1 = get_trigram(hexagram.trigram1)
             let trigram2 = get_trigram(hexagram.trigram2)
             let zodiac1 = get_zodiac(trigram1.zodiac)
             let zodiac2 = get_zodiac(trigram2.zodiac)
@@ -132,6 +134,8 @@
             internalDetriment.innerText = get_detriment_string(zodiac2.symbol)
             internalExalted.innerText = get_exalted_string(zodiac2.symbol)
             internalFall.innerText = get_fall_string(zodiac2.symbol)
+            meaning.innerText = hexagram.meaning
+            commentary.innerText = hexagram.commentary
         }
         function get_lo_shu_row_column(id) {
             if ("FirePastPastData" === id) { return { row: 0, column: 0 } }
@@ -2147,7 +2151,7 @@
                     <td id="EarthFutureFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthFutureFutureData')"></td>
                 </tr>
             </table>
-            <div id="LoShuSymbolData" style="display: flex; flex-direction: column; width: 100%;">
+            <div id="LoShuSymbolData" style="display: flex; flex-direction: column; width: 100%; font-family: 'Arial Narrow', Arial, sans-serif;">
                 <div id="LoShuSymbolTitle" style="font-size: 2em; font-weight: bold;">TITLE</div>
                 <div style="display: flex; flex-direction: row;">
                     <div id="LoShuSymbolTrigram1" style="font-size: 1em; font-weight: bold; padding: 0px 0px 0px 0px;">☰</div>
