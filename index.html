@@ -189,9 +189,9 @@
             let presentTrigram = get_trigram(externalHexagrams[1])
             let futureTrigram = get_trigram(externalHexagrams[2])
 
-            pastExternalHeader.innerText = pastTrigram.symbol + "  " + pastTrigram.zodiac
-            presentExternalHeader.innerText = presentTrigram.symbol + "  " + presentTrigram.zodiac
-            futureExternalHeader.innerText = futureTrigram.symbol + "  " + futureTrigram.zodiac
+            pastExternalHeader.innerText = "External " + pastTrigram.symbol + "  " + pastTrigram.zodiac
+            presentExternalHeader.innerText = "External " + presentTrigram.symbol + "  " + presentTrigram.zodiac
+            futureExternalHeader.innerText = "External " + futureTrigram.symbol + "  " + futureTrigram.zodiac
 
             let pastFireTrigram = get_trigram(data.loShuGrouping[0][0])
             let presentFireTrigram = get_trigram(data.loShuGrouping[0][1])
@@ -1910,7 +1910,7 @@
         <div id="LoShu" style="font-size: 1em; font-family: 'Times New Roman', Times, serif; padding: 10px 0px 0px 0px; position: fixed; left: 5.5em; width: 100%; height: 100%; border: 1px solid black;">
             <table>
                 <tr>
-                    <th style="width: 5em; height: 1.5em; border: 1px solid black; background-color: lightgrey;"></th>
+                    <th style="width: 5em; height: 1.5em; border: 1px solid black; background-color: lightgrey;">Internal</th>
                     <th id="PastExternalHeader" style="width: 10em; height: 1.5em; border: 1px solid black; background-color: lightgrey;">Past</th>
                     <th id="PresentExternalHeader" style="width: 10em; height: 1.5em; border: 1px solid black; background-color: lightgrey;">Present</th>
                     <th id="FutureExternalHeader" style="width: 10em; height: 1.5em; border: 1px solid black; background-color: lightgrey;">Future</th>
