@@ -285,14 +285,25 @@
             earthPresentInternalHeader.innerText = presentEarthTrigram.symbol + "  " + presentEarthTrigram.zodiac
             earthFutureInternalHeader.innerText = futureEarthTrigram.symbol + "  " + futureEarthTrigram.zodiac
 
-            /*
-            "loShuGrouping" : [
-                ["☲", "⚌", "☳"],
-                ["☵", "⚏", "☴"],
-                ["☰", "⚎", "☱"],
-                ["☷", "⚍", "☶"]
-            ],
-            */
+            let earthPastPastHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, pastEarthTrigram.symbol)
+            let earthPastPresentHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, presentEarthTrigram.symbol)
+            let earthPastFutureHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, futureEarthTrigram.symbol)
+            let earthPresentPastHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, pastEarthTrigram.symbol)
+            let earthPresentPresentHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, presentEarthTrigram.symbol)
+            let earthPresentFutureHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, futureEarthTrigram.symbol)
+            let earthFuturePastHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, pastEarthTrigram.symbol)
+            let earthFuturePresentHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, presentEarthTrigram.symbol)
+            let earthFutureFutureHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, futureEarthTrigram.symbol)
+
+            earthPastPastData.innerText = earthPastPastHexagram.number + ". " + earthPastPastHexagram.name
+            earthPastPresentData.innerText = earthPastPresentHexagram.number + ". " + earthPastPresentHexagram.name
+            earthPastFutureData.innerText = earthPastFutureHexagram.number + ". " + earthPastFutureHexagram.name
+            earthPresentPastData.innerText = earthPresentPastHexagram.number + ". " + earthPresentPastHexagram.name
+            earthPresentPresentData.innerText = earthPresentPresentHexagram.number + ". " + earthPresentPresentHexagram.name
+            earthPresentFutureData.innerText = earthPresentFutureHexagram.number + ". " + earthPresentFutureHexagram.name
+            earthFuturePastData.innerText = earthFuturePastHexagram.number + ". " + earthFuturePastHexagram.name
+            earthFuturePresentData.innerText = earthFuturePresentHexagram.number + ". " + earthFuturePresentHexagram.name
+            earthFutureFutureData.innerText = earthFutureFutureHexagram.number + ". " + earthFutureFutureHexagram.name
         }
         function set_lo_shu_element(number) {
             let loShuElementFire = document.getElementById("LoShuElementFire")
