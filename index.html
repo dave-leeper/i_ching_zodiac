@@ -185,6 +185,10 @@
             let externalTrigram = data.loShuGrouping[currentLoShuElement][row_column.column]
             let flattenedGrouping = [].concat(...data.loShuGrouping);
             let internalTrigram = flattenedGrouping[(row_column.column * 3) + row_column.column]
+            console.log("currentLoShuElement: " + currentLoShuElement + ", row_column: " + JSON.stringify(row_column))
+            console.log("flattenedGrouping: " + JSON.stringify(flattenedGrouping))
+            console.log("externalTrigram: " + externalTrigram)
+            console.log("internalTrigram: " + internalTrigram)
             let hexagram = get_hexagram_from_trigrams(externalTrigram, internalTrigram)
             return hexagram
         }
