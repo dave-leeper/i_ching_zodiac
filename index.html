@@ -201,6 +201,25 @@
             firePresentInternalHeader.innerText = presentFireTrigram.symbol + "  " + presentFireTrigram.zodiac
             fireFutureInternalHeader.innerText = futureFireTrigram.symbol + "  " + futureFireTrigram.zodiac
 
+            let firePastPastHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, pastFireTrigram)
+            let firePastPresentHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, presentFireTrigram)
+            let firePastFutureHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, futureFireTrigram)
+            let firePresentPastHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, pastFireTrigram)
+            let firePresentPresentHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, presentFireTrigram)
+            let firePresentFutureHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, futureFireTrigram)
+            let fireFuturePastHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, pastFireTrigram)
+            let fireFuturePresentHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, presentFireTrigram)
+            let fireFutureFutureHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, futureFireTrigram)
+            firePastPastData.innerText = firePastPastHexagram.number + ". " + firePastPastHexagram.name
+            firePastPresentData.innerText = firePastPresentHexagram.number + ". " + firePastPresentHexagram.name
+            firePastFutureData.innerText = firePastFutureHexagram.number + ". " + firePastFutureHexagram.name
+            firePresentPastData.innerText = firePresentPastHexagram.number + ". " + firePresentPastHexagram.name
+            firePresentPresentData.innerText = firePresentPresentHexagram.number + ". " + firePresentPresentHexagram.name
+            firePresentFutureData.innerText = firePresentFutureHexagram.number + ". " + firePresentFutureHexagram.name
+            fireFuturePastData.innerText = fireFuturePastHexagram.number + ". " + fireFuturePastHexagram.name
+            fireFuturePresentData.innerText = fireFuturePresentHexagram.number + ". " + fireFuturePresentHexagram.name
+            fireFutureFutureData.innerText = fireFutureFutureHexagram.number + ". " + fireFutureFutureHexagram.name
+
             let pastWaterTrigram = get_trigram(data.loShuGrouping[1][0])
             let presentWaterTrigram = get_trigram(data.loShuGrouping[1][1])
             let futureWaterTrigram = get_trigram(data.loShuGrouping[1][2])
