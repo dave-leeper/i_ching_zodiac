@@ -94,8 +94,32 @@
 
             let hexagram = get_lo_shu_hexagram(currentLoShuHexagram)
             let symbolTitle = document.getElementById("LoShuSymbolTitle")
+            let symbolTrigram1 = document.getElementById("LoShuSymbolTrigram1")
+            let symbolTrigram2 = document.getElementById("LoShuSymbolTrigram2")
+            let symbolZodiac1 = document.getElementById("LoShuSymbolZodiac1")
+            let symbolZodiac2 = document.getElementById("LoShuSymbolZodiac2")
+            let externalTrigram = document.getElementById("ExternalTrigram")
+            let externalZodiac = document.getElementById("ExternalZodiac")
+            let externalDomicile = document.getElementById("ExternalDomicile")
+            let externalDetriment = document.getElementById("ExternalDetriment")
+            let externalExalted = document.getElementById("ExternalExalted")
+            let externalFall = document.getElementById("ExternalFall")
+            let trigram1 = get_trigram(symbol.trigram1)
+            let trigram2 = get_trigram(symbol.trigram2)
+            let zodiac1 = get_zodiac(trigram1.zodiac)
+            let zodiac2 = get_zodiac(trigram2.zodiac)
 
             symbolTitle.innerText = hexagram.number + '. ' + hexagram.name
+            SymbolTrigram1.innerText = hexagram.trigram1
+            SymbolTrigram2.innerText = hexagram.trigram2
+            symbolZodiac1.innerText = hexagram.symbol
+            symbolZodiac2.innerText = hexagram.symbol
+            externalTrigram.innerText = hexagram.trigram1 + ' ' + trigram1.name + ' (Earlier Heaven: ' + trigram1.earlier + ', Later Heaven: '  + trigram1.later + ')'
+            externalZodiac.innerText = zodiac1.symbol + ' ' + zodiac1.name + ' (' + zodiac1.energy + ')'
+            externalDomicile.innerText = get_domicile_string(zodiac1.symbol)
+            externalDetriment.innerText = get_detriment_string(zodiac1.symbol)
+            externalExalted.innerText = get_exalted_string(zodiac1.symbol)
+            externalFall.innerText = get_fall_string(zodiac1.symbol)
         }
         function get_lo_shu_row_column(id) {
             if ("FirePastPastData" === id) { return { row: 0, column: 0 } }
@@ -185,10 +209,6 @@
             let externalTrigram = data.loShuGrouping[currentLoShuElement][row_column.column]
             let flattenedGrouping = [].concat(...data.loShuGrouping);
             let internalTrigram = flattenedGrouping[row_column.column, row_column.row]
-            console.log("currentLoShuElement: " + currentLoShuElement + ", row_column: " + JSON.stringify(row_column))
-            console.log("flattenedGrouping: " + JSON.stringify(flattenedGrouping))
-            console.log("externalTrigram: " + externalTrigram)
-            console.log("internalTrigram: " + internalTrigram)
             let hexagram = get_hexagram_from_trigrams(externalTrigram, internalTrigram)
             return hexagram
         }
