@@ -80,6 +80,7 @@
             let newLoShuHexagram = document.getElementById(id)
             let newRelated = get_lo_shu_related_elements(id)
 
+            loShuHexagram.style.backgroundColor = "White"
             for (let loop = 0; loop < currentRelated.length; loop++) {
                 let related = document.getElementById(currentRelated[loop])
                 related.style.backgroundColor = "White"
@@ -89,7 +90,6 @@
                 related.style.backgroundColor = "WhiteSmoke"
             }
             currentLoShuHexagram = id
-            loShuHexagram.style.backgroundColor = "White"
             newLoShuHexagram.style.backgroundColor = "LightGrey"
         }
         function get_lo_shu_row_column(id) {
