@@ -192,6 +192,39 @@
             pastExternalHeader.innerText = pastTrigram.symbol + "  " + pastTrigram.zodiac
             presentExternalHeader.innerText = presentTrigram.symbol + "  " + presentTrigram.zodiac
             futureExternalHeader.innerText = futureTrigram.symbol + "  " + futureTrigram.zodiac
+
+            let pastFireTrigram = get_trigram(data.loShuGrouping[0][0])
+            let presentFireTrigram = get_trigram(data.loShuGrouping[0][1])
+            let futureFireTrigram = get_trigram(data.loShuGrouping[0][2])
+
+            firePastInternalHeader.innerText = pastFireTrigram.symbol + "  " + pastFireTrigram.zodiac
+            firePresentInternalHeader.innerText = presentFireTrigram.symbol + "  " + presentFireTrigram.zodiac
+            fireFutureInternalHeader.innerText = futureFireTrigram.symbol + "  " + futureFireTrigram.zodiac
+
+            let pastWaterTrigram = get_trigram(data.loShuGrouping[1][0])
+            let presentWaterTrigram = get_trigram(data.loShuGrouping[1][1])
+            let futureWaterTrigram = get_trigram(data.loShuGrouping[1][2])
+
+            waterPastInternalHeader.innerText = pastWaterTrigram.symbol + "  " + pastWaterTrigram.zodiac
+            waterPresentInternalHeader.innerText = presentWaterTrigram.symbol + "  " + presentWaterTrigram.zodiac
+            waterFutureInternalHeader.innerText = futureWaterTrigram.symbol + "  " + futureWaterTrigram.zodiac
+
+            let pastAirTrigram = get_trigram(data.loShuGrouping[2][0])
+            let presentAirTrigram = get_trigram(data.loShuGrouping[2][1])
+            let futureAirTrigram = get_trigram(data.loShuGrouping[2][2])
+
+            airPastInternalHeader.innerText = pastAirTrigram.symbol + "  " + pastAirTrigram.zodiac
+            airPresentInternalHeader.innerText = presentAirTrigram.symbol + "  " + presentAirTrigram.zodiac
+            airFutureInternalHeader.innerText = futureAirTrigram.symbol + "  " + futureAirTrigram.zodiac
+
+            let pastEarthTrigram = get_trigram(data.loShuGrouping[3][0])
+            let presentEarthTrigram = get_trigram(data.loShuGrouping[3][1])
+            let futureEarthTrigram = get_trigram(data.loShuGrouping[3][2])
+
+            earthPastInternalHeader.innerText = pastEarthTrigram.symbol + "  " + pastEarthTrigram.zodiac
+            earthPresentInternalHeader.innerText = presentEarthTrigram.symbol + "  " + presentEarthTrigram.zodiac
+            earthFutureInternalHeader.innerText = futureEarthTrigram.symbol + "  " + futureEarthTrigram.zodiac
+
             /*
             "loShuGrouping" : [
                 ["☲", "⚌", "☳"],
@@ -1796,7 +1829,7 @@
             </div>
         </div>
     </div>
-    <div id="LoShuContent" style="display: none; flex-direction: row; width: 100%; height: 100%;">
+    <div id="LoShuContent" style="display: none; flex-direction: row; width: 100%; height: 100%; background-color: lightgrey">
         <div style="display: flex; flex-direction: column; width: 5em; height: 100%; position: fixed; top: 39px; bottom: 0; overflow-y: auto;">
             <div id="LoShuElementFire" style="width: 1.5em; height: 1.5em; margin: 2px; font-size: 3em; text-align: center; vertical-align: middle;" onclick="set_lo_shu_element(0);">🜂</div> 
             <div id="LoShuElementWater" style="width: 1.5em; height: 1.5em; margin: 2px; font-size: 3em; text-align: center; vertical-align: middle;" onclick="set_lo_shu_element(1);">🜄</div> 
