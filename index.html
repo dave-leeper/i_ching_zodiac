@@ -257,6 +257,26 @@
             airPresentInternalHeader.innerText = presentAirTrigram.symbol + "  " + presentAirTrigram.zodiac
             airFutureInternalHeader.innerText = futureAirTrigram.symbol + "  " + futureAirTrigram.zodiac
 
+            let airPastPastHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, pastAirTrigram.symbol)
+            let airPastPresentHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, presentAirTrigram.symbol)
+            let airPastFutureHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, futureAirTrigram.symbol)
+            let airPresentPastHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, pastAirTrigram.symbol)
+            let airPresentPresentHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, presentAirTrigram.symbol)
+            let airPresentFutureHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, futureAirTrigram.symbol)
+            let airFuturePastHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, pastAirTrigram.symbol)
+            let airFuturePresentHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, presentAirTrigram.symbol)
+            let airFutureFutureHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, futureAirTrigram.symbol)
+
+            airPastPastData.innerText = airPastPastHexagram.number + ". " + airPastPastHexagram.name
+            airPastPresentData.innerText = airPastPresentHexagram.number + ". " + airPastPresentHexagram.name
+            airPastFutureData.innerText = airPastFutureHexagram.number + ". " + airPastFutureHexagram.name
+            airPresentPastData.innerText = airPresentPastHexagram.number + ". " + airPresentPastHexagram.name
+            airPresentPresentData.innerText = airPresentPresentHexagram.number + ". " + airPresentPresentHexagram.name
+            airPresentFutureData.innerText = airPresentFutureHexagram.number + ". " + airPresentFutureHexagram.name
+            airFuturePastData.innerText = airFuturePastHexagram.number + ". " + airFuturePastHexagram.name
+            airFuturePresentData.innerText = airFuturePresentHexagram.number + ". " + airFuturePresentHexagram.name
+            airFutureFutureData.innerText = airFutureFutureHexagram.number + ". " + airFutureFutureHexagram.name
+
             let pastEarthTrigram = get_trigram(data.loShuGrouping[3][0])
             let presentEarthTrigram = get_trigram(data.loShuGrouping[3][1])
             let futureEarthTrigram = get_trigram(data.loShuGrouping[3][2])
