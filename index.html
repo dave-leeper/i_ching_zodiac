@@ -189,9 +189,9 @@
             let presentTrigram = get_trigram(externalHexagrams[1])
             let futureTrigram = get_trigram(externalHexagrams[2])
 
-            pastExternalHeader.innerText = pastTrigram.symbol
-            presentExternalHeader.innerText = presentTrigram.symbol
-            futureExternalHeader.innerText = futureTrigram.symbol
+            pastExternalHeader.innerText = pastTrigram.symbol + ", " + pastTrigram.zodiac
+            presentExternalHeader.innerText = presentTrigram.symbol + ", " + presentTrigram.zodiac
+            futureExternalHeader.innerText = futureTrigram.symbol + ", " + futureTrigram.zodiac
             /*
             "loShuGrouping" : [
                 ["☲", "⚌", "☳"],
