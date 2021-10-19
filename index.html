@@ -91,6 +91,11 @@
             }
             currentLoShuHexagram = id
             newLoShuHexagram.style.backgroundColor = "LightGrey"
+
+            let hexagram = get_lo_shu_hexagram(currentLoShuHexagram)
+            let symbolTitle = document.getElementById("LoShuSymbolTitle")
+
+            symbolTitle.innerText = hexagram.number + '. ' + hexagram.name
         }
         function get_lo_shu_row_column(id) {
             if ("FirePastPastData" === id) { return { row: 0, column: 0 } }
@@ -173,6 +178,15 @@
             if ("EarthPastFutureData" === id) { return ["EarthPastPastData", "EarthPastPresentData", "EarthPresentFutureData", "EarthFutureFutureData", "EarthPresentPresentData", "EarthFuturePastData"] }
             if ("EarthPresentFutureData" === id) { return ["EarthPastFutureData", "EarthFutureFutureData", "EarthPresentPresentData", "EarthPresentPastData"] }
             if ("EarthFutureFutureData" === id) { return ["EarthFuturePastData", "EarthFuturePresentData", "EarthPastFutureData", "EarthPresentFutureData", "EarthPresentPresentData", "EarthPastPastData"] }
+        }
+        function get_lo_shu_hexagram(id) {
+            let data = iChingData;
+            let row_column = get_lo_shu_row_column(currentLoShuHexagram)
+            let externalTrigram = data.loShuGrouping[currentLoShuElement][row_column.column]
+            let flattenedGrouping = [].concat(...data.loShuGrouping);
+            let internalTrigram = flattenedGrouping[(row_column.column * 3) + row_column.column]
+            let hexagram = get_hexagram_from_trigrams(external, internal)
+            return hexagram
         }
         function show_symbol(symbolNumber) {
             let data = iChingData;
@@ -285,10 +299,10 @@
             let earthFutureFutureData = document.getElementById("EarthFutureFutureData")
 
             let data = iChingData;
-            let externalHexagrams = data.loShuGrouping[number]
-            let pastTrigram = get_trigram(externalHexagrams[0])
-            let presentTrigram = get_trigram(externalHexagrams[1])
-            let futureTrigram = get_trigram(externalHexagrams[2])
+            let externalTrigrams = data.loShuGrouping[number]
+            let pastTrigram = get_trigram(externalTrigrams[0])
+            let presentTrigram = get_trigram(externalTrigrams[1])
+            let futureTrigram = get_trigram(externalTrigrams[2])
 
             pastExternalHeader.innerText = "External " + pastTrigram.symbol + "  " + pastTrigram.zodiac
             presentExternalHeader.innerText = "External " + presentTrigram.symbol + "  " + presentTrigram.zodiac
