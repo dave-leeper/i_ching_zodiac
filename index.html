@@ -11,6 +11,7 @@
         let currentSymbol = 0
         let currentMenuItem = 0
         let currentLoShuElement = 0
+        let currentLoShuHexagram = "FirePastPastData"
         function get_trigram(trigram) {
             let data = iChingData;
             let trigrams = data.trigrams
@@ -72,6 +73,14 @@
                 let hexagram = hexagrams[hexagramLoop]
                 if (hexagram.trigram1 === external && hexagram.trigram2 === internal) { return hexagram }
             }
+        }
+        function select_lo_shu_hexagram(id) {
+            let currentLoShuHexagram = document.getElementById(currentLoShuHexagram)
+            let newLoShuHexagram = document.getElementById(id)
+
+            currentLoShuHexagram = id
+            currentLoShuHexagram.style.borderWidth = 1
+            newLoShuHexagram.style.borderWidth = 3
         }
         function show_symbol(symbolNumber) {
             let data = iChingData;
@@ -304,6 +313,8 @@
             earthFuturePastData.innerText = earthFuturePastHexagram.number + ". " + earthFuturePastHexagram.name
             earthFuturePresentData.innerText = earthFuturePresentHexagram.number + ". " + earthFuturePresentHexagram.name
             earthFutureFutureData.innerText = earthFutureFutureHexagram.number + ". " + earthFutureFutureHexagram.name
+
+            select_lo_shu_hexagram(currentLoShuHexagram)
         }
         function set_lo_shu_element(number) {
             let loShuElementFire = document.getElementById("LoShuElementFire")
@@ -1917,9 +1928,9 @@
                 </tr>
                 <tr>
                     <th id="FirePastInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: lightgrey;">Past Fire</th>
-                    <td id="FirePastPastData" style="width: 10em; height: 1.5em; border: 1px solid black;"></td>
-                    <td id="FirePresentPastData" style="width: 10em; height: 1.5em; border: 1px solid black;"></td>
-                    <td id="FireFuturePastData" style="width: 10em; height: 1.5em; border: 1px solid black;"></td>
+                    <td id="FirePastPastData" style="width: 10em; height: 1.5em; border: 1px solid black;" onclick="select_lo_shu_hexagram('FirePastPastData')"></td>
+                    <td id="FirePresentPastData" style="width: 10em; height: 1.5em; border: 1px solid black;" onclick="select_lo_shu_hexagram('FirePresentPastData')"></td>
+                    <td id="FireFuturePastData" style="width: 10em; height: 1.5em; border: 1px solid black;" onclick="select_lo_shu_hexagram('FireFuturePastData')"></td>
                 </tr>
                 <tr>
                     <th id="FirePresentInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: lightgrey;">Present Fire</th>
