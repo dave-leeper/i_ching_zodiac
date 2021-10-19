@@ -104,7 +104,13 @@
             let externalDetriment = document.getElementById("LoShuExternalDetriment")
             let externalExalted = document.getElementById("LoShuExternalExalted")
             let externalFall = document.getElementById("LoShuExternalFall")
-            let trigram1 = get_trigram(hexagram.trigram1)
+            let internalTrigram = document.getElementById("LoShuInternalTrigram")
+            let internalZodiac = document.getElementById("LoShuInternalZodiac")
+            let internalDomicile = document.getElementById("LoShuInternalDomicile")
+            let internalDetriment = document.getElementById("LoShuInternalDetriment")
+            let internalExalted = document.getElementById("LoShuInternalExalted")
+            let internalFall = document.getElementById("LoShuInternalFall")
+             let trigram1 = get_trigram(hexagram.trigram1)
             let trigram2 = get_trigram(hexagram.trigram2)
             let zodiac1 = get_zodiac(trigram1.zodiac)
             let zodiac2 = get_zodiac(trigram2.zodiac)
@@ -120,6 +126,12 @@
             externalDetriment.innerText = get_detriment_string(zodiac1.symbol)
             externalExalted.innerText = get_exalted_string(zodiac1.symbol)
             externalFall.innerText = get_fall_string(zodiac1.symbol)
+            internalTrigram.innerText = hexagram.trigram2 + ' ' + trigram2.name + ' (Earlier Heaven: ' + trigram2.earlier + ', Later Heaven: '  + trigram2.later + ')'
+            internalZodiac.innerText = zodiac2.symbol + ' ' + zodiac2.name + ' (' + zodiac2.energy + ')'
+            internalDomicile.innerText = get_domicile_string(zodiac2.symbol)
+            internalDetriment.innerText = get_detriment_string(zodiac2.symbol)
+            internalExalted.innerText = get_exalted_string(zodiac2.symbol)
+            internalFall.innerText = get_fall_string(zodiac2.symbol)
         }
         function get_lo_shu_row_column(id) {
             if ("FirePastPastData" === id) { return { row: 0, column: 0 } }
