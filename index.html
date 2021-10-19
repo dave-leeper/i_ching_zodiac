@@ -229,6 +229,26 @@
             waterPresentInternalHeader.innerText = presentWaterTrigram.symbol + "  " + presentWaterTrigram.zodiac
             waterFutureInternalHeader.innerText = futureWaterTrigram.symbol + "  " + futureWaterTrigram.zodiac
 
+            let waterPastPastHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, pastWaterTrigram.symbol)
+            let waterPastPresentHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, presentWaterTrigram.symbol)
+            let waterPastFutureHexagram = get_hexagram_from_trigrams(pastTrigram.symbol, futureWaterTrigram.symbol)
+            let waterPresentPastHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, pastWaterTrigram.symbol)
+            let waterPresentPresentHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, presentWaterTrigram.symbol)
+            let waterPresentFutureHexagram = get_hexagram_from_trigrams(presentTrigram.symbol, futureWaterTrigram.symbol)
+            let waterFuturePastHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, pastWaterTrigram.symbol)
+            let waterFuturePresentHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, presentWaterTrigram.symbol)
+            let waterFutureFutureHexagram = get_hexagram_from_trigrams(futureTrigram.symbol, futureWaterTrigram.symbol)
+
+            waterPastPastData.innerText = waterPastPastHexagram.number + ". " + waterPastPastHexagram.name
+            waterPastPresentData.innerText = waterPastPresentHexagram.number + ". " + waterPastPresentHexagram.name
+            waterPastFutureData.innerText = waterPastFutureHexagram.number + ". " + waterPastFutureHexagram.name
+            waterPresentPastData.innerText = waterPresentPastHexagram.number + ". " + waterPresentPastHexagram.name
+            waterPresentPresentData.innerText = waterPresentPresentHexagram.number + ". " + waterPresentPresentHexagram.name
+            waterPresentFutureData.innerText = waterPresentFutureHexagram.number + ". " + waterPresentFutureHexagram.name
+            waterFuturePastData.innerText = waterFuturePastHexagram.number + ". " + waterFuturePastHexagram.name
+            waterFuturePresentData.innerText = waterFuturePresentHexagram.number + ". " + waterFuturePresentHexagram.name
+            waterFutureFutureData.innerText = waterFutureFutureHexagram.number + ". " + waterFutureFutureHexagram.name
+
             let pastAirTrigram = get_trigram(data.loShuGrouping[2][0])
             let presentAirTrigram = get_trigram(data.loShuGrouping[2][1])
             let futureAirTrigram = get_trigram(data.loShuGrouping[2][2])
