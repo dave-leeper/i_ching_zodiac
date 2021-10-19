@@ -76,11 +76,73 @@
         }
         function select_lo_shu_hexagram(id) {
             let loShuHexagram = document.getElementById(currentLoShuHexagram)
+            let currentRelated = get_lo_shu_related_elements(currentLoShuHexagram)
             let newLoShuHexagram = document.getElementById(id)
+            let newRelated = get_lo_shu_related_elements(id)
 
+            for (let loop = 0; loop < currentRelated.length; loop++) {
+                let related = document.getElementById(currentRelated[loop])
+                related.style.backgroundColor = "White"
+            }
+            for (let loop = 0; loop < newRelated.length; loop++) {
+                let related = document.getElementById(newRelated[loop])
+                related.style.backgroundColor = "WhiteSmoke"
+            }
             currentLoShuHexagram = id
             loShuHexagram.style.backgroundColor = "White"
             newLoShuHexagram.style.backgroundColor = "LightGrey"
+        }
+        function get_lo_shu_row_column(id) {
+            if ("FirePastPastData" === id) { return { row: 0, column: 0 } }
+            if ("FirePresentPastData" === id) { return { row: 0, column: 1 } }
+            if ("FireFuturePastData" === id) { return { row: 0, column: 2 } }
+            if ("FirePastPresentData" === id) { return { row: 1, column: 0 } }
+            if ("FirePresentPresentData" === id) { return { row: 1, column: 1 } }
+            if ("FireFuturePresentData" === id) { return { row: 1, column: 2 } }
+            if ("FirePastFutureData" === id) { return { row: 2, column: 0 } }
+            if ("FirePresentFutureData" === id) { return { row: 2, column: 1 } }
+            if ("FireFutureFutureData" === id) { return { row: 2, column: 2 } }
+            
+            if ("WaterPastPastData" === id) { return { row: 3, column: 0 } }
+            if ("WaterPresentPastData" === id) { return { row: 3, column: 1 } }
+            if ("WaterFuturePastData" === id) { return { row: 3, column: 2 } }
+            if ("WaterPastPresentData" === id) { return { row: 4, column: 0 } }
+            if ("WaterPresentPresentData" === id) { return { row: 4, column: 1 } }
+            if ("WaterFuturePresentData" === id) { return { row: 4, column: 2 } }
+            if ("WaterPastFutureData" === id) { return { row: 5, column: 0 } }
+            if ("WaterPresentFutureData" === id) { return { row: 5, column: 1 } }
+            if ("WaterFutureFutureData" === id) { return { row: 5, column: 2 } }
+            
+            if ("AirPastPastData" === id) { return { row: 6, column: 0 } }
+            if ("AirPresentPastData" === id) { return { row: 6, column: 1 } }
+            if ("AirFuturePastData" === id) { return { row: 6, column: 2 } }
+            if ("AirPastPresentData" === id) { return { row: 7, column: 0 } }
+            if ("AirPresentPresentData" === id) { return { row: 7, column: 1 } }
+            if ("AirFuturePresentData" === id) { return { row: 7, column: 2 } }
+            if ("AirPastFutureData" === id) { return { row: 8, column: 0 } }
+            if ("AirPresentFutureData" === id) { return { row: 8, column: 1 } }
+            if ("AirFutureFutureData" === id) { return { row: 8, column: 2 } }
+            
+            if ("EarthPastPastData" === id) { return { row: 9, column: 0 } }
+            if ("EarthPresentPastData" === id) { return { row: 9, column: 1 } }
+            if ("EarthFuturePastData" === id) { return { row: 9, column: 2 } }
+            if ("EarthPastPresentData" === id) { return { row: 10, column: 0 } }
+            if ("EarthPresentPresentData" === id) { return { row: 10, column: 1 } }
+            if ("EarthFuturePresentData" === id) { return { row: 10, column: 2 } }
+            if ("EarthPastFutureData" === id) { return { row: 11, column: 0 } }
+            if ("EarthPresentFutureData" === id) { return { row: 11, column: 1 } }
+            if ("EarthFutureFutureData" === id) { return { row: 11, column: 2 } }            
+        }
+        function get_lo_shu_related_elements(id) {
+            if ("FirePastPastData" === id) { return ["FirePresentPastData", "FireFuturePastData", "FirePastPresentData", "FirePastFutureData", "FirePresentPresentData", "FireFutureFutureData"] }
+            if ("FirePresentPastData" === id) { return ["FirePastPastData", "FireFuturePastData", "FirePresentPresentData", "FirePresentFutureData"] }
+            if ("FireFuturePastData" === id) { return ["FirePastPastData", "FirePresentPastData", "FireFuturePresentData", "FireFutureFutureData", "FirePresentPresentData", "FirePastFutureData"] }
+            if ("FirePastPresentData" === id) { return ["FirePastPastData", "FirePastFutureData", "FirePresentPresentData", "FireFuturePresentData"] }
+            if ("FirePresentPresentData" === id) { return ["FirePastPastData", "FirePresentPastData", "FireFuturePastData", "FirePastPresentData", "FireFuturePresentData", "FirePastFutureData", "FirePresentFutureData", "FireFutureFutureData"] }
+            if ("FireFuturePresentData" === id) { return ["FireFuturePastData", "FireFutureFutureData", "FirePastPresentData", "FirePresentPresentData"] }
+            if ("FirePastFutureData" === id) { return ["FirePastPastData", "FirePastPresentData", "FirePresentFutureData", "FireFutureFutureData", "FirePresentPresentData", "FireFuturePastData"] }
+            if ("FirePresentFutureData" === id) { return ["FirePastFutureData", "FireFutureFutureData", "FirePresentPresentData", "FirePresentPastData"] }
+            if ("FireFutureFutureData" === id) { return ["FireFuturePastData", "FireFuturePresentData", "FirePastFutureData", "FirePresentFutureData", "FirePresentPresentData", "FirePastPastData"] }
         }
         function show_symbol(symbolNumber) {
             let data = iChingData;
