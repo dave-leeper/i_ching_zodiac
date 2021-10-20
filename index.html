@@ -538,10 +538,10 @@
             let loShuContent = document.getElementById("LoShuContent")
             let docsContent = document.getElementById("DocsContent")
 
-            if (0 === currentMenuItem) { listContent.style.display = 'flex' }
-            else { listContent.style.display = 'none' }
             if (1 === currentMenuItem) { loShuContent.style.display = 'flex';  set_lo_shu_element(currentLoShuElement); }
             else { loShuContent.style.display = 'none' }
+            if (4 === currentMenuItem) { listContent.style.display = 'flex' }
+            else { listContent.style.display = 'none' }
             if (5 === currentMenuItem) { docsContent.style.display = 'flex'; }
             else { docsContent.style.display = 'none' }
         }
