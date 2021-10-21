@@ -2069,95 +2069,93 @@
             <div id="LoShuElementAir" style="width: 1.5em; height: 1.5em; margin: 2px; font-size: 3em; text-align: center; vertical-align: middle; cursor: pointer;" onclick="set_lo_shu_element(2);">🜁</div> 
             <div id="LoShuElementEarth" style="width: 1.5em; height: 1.5em; margin: 2px; font-size: 3em; text-align: center; vertical-align: middle; cursor: pointer;" onclick="set_lo_shu_element(3);">🜃</div> 
         </div>
-        <div id="LoShu" style="display: flex; flex-direction: row; font-size: 1em; font-family: 'Times New Roman', Times, serif; padding: 10px 0px 0px 5px; position: fixed; left: 5.5em; width: 100%; height: 100%; border: 1px solid black; overflow-y: scroll;">
-            <div style="display: flex; flex-direction: column;">
-                <table style="font-family: 'Arial Narrow', Arial, sans-serif;">
-                    <tr>
-                        <th style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">↓Internal↓</th>
-                        <th id="PastExternalHeader" style="width: 10em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Past</th>
-                        <th id="PresentExternalHeader" style="width: 10em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Present</th>
-                        <th id="FutureExternalHeader" style="width: 10em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Future</th>
-                    </tr>
-                    <tr>
-                        <th id="FirePastInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Past Fire</th>
-                        <td id="FirePastPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePastPastData')"></td>
-                        <td id="FirePresentPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePresentPastData')"></td>
-                        <td id="FireFuturePastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FireFuturePastData')"></td>
-                    </tr>
-                    <tr>
-                        <th id="FirePresentInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Present Fire</th>
-                        <td id="FirePastPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePastPresentData')"></td>
-                        <td id="FirePresentPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePresentPresentData')"></td>
-                        <td id="FireFuturePresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FireFuturePresentData')"></td>
-                    </tr>
-                    <tr>
-                        <th id="FireFutureInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Future Fire</th>
-                        <td id="FirePastFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePastFutureData')"></td>
-                        <td id="FirePresentFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePresentFutureData')"></td>
-                        <td id="FireFutureFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FireFutureFutureData')"></td>
-                    </tr>
-                </table>
-                <table style="font-family: 'Arial Narrow', Arial, sans-serif; margin: 5px 0px 0px 0px;">
-                    <tr>
-                        <th id="WaterPastInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Past Water</th>
-                        <td id="WaterPastPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPastPastData')"></td>
-                        <td id="WaterPresentPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPresentPastData')"></td>
-                        <td id="WaterFuturePastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterFuturePastData')"></td>
-                    </tr>
-                    <tr>
-                        <th id="WaterPresentInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Present Water</th>
-                        <td id="WaterPastPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPastPresentData')"></td>
-                        <td id="WaterPresentPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPresentPresentData')"></td>
-                        <td id="WaterFuturePresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterFuturePresentData')"></td>
-                    </tr>
-                    <tr>
-                        <th id="WaterFutureInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Future Water</th>
-                        <td id="WaterPastFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPastFutureData')"></td>
-                        <td id="WaterPresentFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPresentFutureData')"></td>
-                        <td id="WaterFutureFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterFutureFutureData')"></td>
-                    </tr>
-                </table>
-                <table style="font-family: 'Arial Narrow', Arial, sans-serif; margin: 5px 0px 0px 0px;">
-                    <tr>
-                        <th id="AirPastInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Past Air</th>
-                        <td id="AirPastPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPastPastData')"></td>
-                        <td id="AirPresentPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPresentPastData')"></td>
-                        <td id="AirFuturePastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirFuturePastData')"></td>
-                    </tr>
-                    <tr>
-                        <th id="AirPresentInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Present Air</th>
-                        <td id="AirPastPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPastPresentData')"></td>
-                        <td id="AirPresentPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPresentPresentData')"></td>
-                        <td id="AirFuturePresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirFuturePresentData')"></td>
-                    </tr>
-                    <tr>
-                        <th id="AirFutureInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Future Air</th>
-                        <td id="AirPastFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPastFutureData')"></td>
-                        <td id="AirPresentFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPresentFutureData')"></td>
-                        <td id="AirFutureFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirFutureFutureData')"></td>
-                    </tr>
-                </table>
-                <table style="font-family: 'Arial Narrow', Arial, sans-serif; margin: 5px 0px 0px 0px;">
-                    <tr>
-                        <th id="EarthPastInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Past Earth</th>
-                        <td id="EarthPastPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPastPastData')"></td>
-                        <td id="EarthPresentPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPresentPastData')"></td>
-                        <td id="EarthFuturePastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthFuturePastData')"></td>
-                    </tr>
-                    <tr>
-                        <th id="EarthPresentInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Present Earth</th>
-                        <td id="EarthPastPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPastPresentData')"></td>
-                        <td id="EarthPresentPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPresentPresentData')"></td>
-                        <td id="EarthFuturePresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthFuturePresentData')"></td>
-                    </tr>
-                    <tr>
-                        <th id="EarthFutureInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Future Earth</th>
-                        <td id="EarthPastFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPastFutureData')"></td>
-                        <td id="EarthPresentFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPresentFutureData')"></td>
-                        <td id="EarthFutureFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthFutureFutureData')"></td>
-                    </tr>
-                </table>
-            </div>
+        <div id="LoShu" style="font-size: 1em; font-family: 'Times New Roman', Times, serif; padding: 10px 0px 0px 5px; position: fixed; left: 5.5em; width: 100%; height: 100%; border: 1px solid black; overflow-y: scroll;">
+            <table style="font-family: 'Arial Narrow', Arial, sans-serif;">
+                <tr>
+                    <th style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">↓Internal↓</th>
+                    <th id="PastExternalHeader" style="width: 10em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Past</th>
+                    <th id="PresentExternalHeader" style="width: 10em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Present</th>
+                    <th id="FutureExternalHeader" style="width: 10em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Future</th>
+                </tr>
+                <tr>
+                    <th id="FirePastInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Past Fire</th>
+                    <td id="FirePastPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePastPastData')"></td>
+                    <td id="FirePresentPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePresentPastData')"></td>
+                    <td id="FireFuturePastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FireFuturePastData')"></td>
+                </tr>
+                <tr>
+                    <th id="FirePresentInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Present Fire</th>
+                    <td id="FirePastPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePastPresentData')"></td>
+                    <td id="FirePresentPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePresentPresentData')"></td>
+                    <td id="FireFuturePresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FireFuturePresentData')"></td>
+                </tr>
+                <tr>
+                    <th id="FireFutureInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Future Fire</th>
+                    <td id="FirePastFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePastFutureData')"></td>
+                    <td id="FirePresentFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FirePresentFutureData')"></td>
+                    <td id="FireFutureFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('FireFutureFutureData')"></td>
+                </tr>
+            </table>
+            <table style="font-family: 'Arial Narrow', Arial, sans-serif; margin: 5px 0px 0px 0px;">
+                <tr>
+                    <th id="WaterPastInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Past Water</th>
+                    <td id="WaterPastPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPastPastData')"></td>
+                    <td id="WaterPresentPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPresentPastData')"></td>
+                    <td id="WaterFuturePastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterFuturePastData')"></td>
+                </tr>
+                <tr>
+                    <th id="WaterPresentInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Present Water</th>
+                    <td id="WaterPastPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPastPresentData')"></td>
+                    <td id="WaterPresentPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPresentPresentData')"></td>
+                    <td id="WaterFuturePresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterFuturePresentData')"></td>
+                </tr>
+                <tr>
+                    <th id="WaterFutureInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Future Water</th>
+                    <td id="WaterPastFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPastFutureData')"></td>
+                    <td id="WaterPresentFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterPresentFutureData')"></td>
+                    <td id="WaterFutureFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('WaterFutureFutureData')"></td>
+                </tr>
+            </table>
+            <table style="font-family: 'Arial Narrow', Arial, sans-serif; margin: 5px 0px 0px 0px;">
+                <tr>
+                    <th id="AirPastInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Past Air</th>
+                    <td id="AirPastPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPastPastData')"></td>
+                    <td id="AirPresentPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPresentPastData')"></td>
+                    <td id="AirFuturePastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirFuturePastData')"></td>
+                </tr>
+                <tr>
+                    <th id="AirPresentInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Present Air</th>
+                    <td id="AirPastPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPastPresentData')"></td>
+                    <td id="AirPresentPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPresentPresentData')"></td>
+                    <td id="AirFuturePresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirFuturePresentData')"></td>
+                </tr>
+                <tr>
+                    <th id="AirFutureInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Future Air</th>
+                    <td id="AirPastFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPastFutureData')"></td>
+                    <td id="AirPresentFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirPresentFutureData')"></td>
+                    <td id="AirFutureFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('AirFutureFutureData')"></td>
+                </tr>
+            </table>
+            <table style="font-family: 'Arial Narrow', Arial, sans-serif; margin: 5px 0px 0px 0px;">
+                <tr>
+                    <th id="EarthPastInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Past Earth</th>
+                    <td id="EarthPastPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPastPastData')"></td>
+                    <td id="EarthPresentPastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPresentPastData')"></td>
+                    <td id="EarthFuturePastData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthFuturePastData')"></td>
+                </tr>
+                <tr>
+                    <th id="EarthPresentInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Present Earth</th>
+                    <td id="EarthPastPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPastPresentData')"></td>
+                    <td id="EarthPresentPresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPresentPresentData')"></td>
+                    <td id="EarthFuturePresentData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthFuturePresentData')"></td>
+                </tr>
+                <tr>
+                    <th id="EarthFutureInternalHeader" style="width: 5em; height: 1.5em; border: 1px solid black; background-color: GhostWhite; cursor: default;">Future Earth</th>
+                    <td id="EarthPastFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPastFutureData')"></td>
+                    <td id="EarthPresentFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthPresentFutureData')"></td>
+                    <td id="EarthFutureFutureData" style="width: 10em; height: 1.5em; border: 1px solid black; cursor: pointer;" onclick="select_lo_shu_hexagram('EarthFutureFutureData')"></td>
+                </tr>
+            </table>
             <div id="LoShuSymbolData" style="display: flex; flex-direction: column; width: 100%; height: 100%; font-family: 'Arial Narrow', Arial, sans-serif; overflow-y: scroll;">
                 <div id="LoShuSymbolTitle" style="font-size: 2em; font-weight: bold;">TITLE</div>
                 <div style="display: flex; flex-direction: row;">
