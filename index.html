@@ -12,6 +12,7 @@
         let currentMenuItem = 1
         let currentLoShuElement = 0
         let currentLoShuHexagram = "FirePastPastData"
+        let randomId = null
         
             /*
             * 0 Julian day
@@ -1475,51 +1476,54 @@
             return hexagrams[randomNumber]
         }
         function update_random_hexagram() {
-            let randomHexagram = document.getElementById("RandomHexagram")
-            let randomSymbolTitle = document.getElementById("RandomSymbolTitle")
-            let randomSymbolTrigram1 = document.getElementById("RandomSymbolTrigram1")
-            let randomSymbolTrigram2 = document.getElementById("RandomSymbolTrigram2")
-            let randomSymbolZodiac1 = document.getElementById("RandomSymbolZodiac1")
-            let randomSymbolZodiac2 = document.getElementById("RandomSymbolZodiac2")
-            let randomExternalTrigram = document.getElementById("RandomExternalTrigram")
-            let randomExternalZodiac = document.getElementById("RandomExternalZodiac")
-            let randomExternalDomicile = document.getElementById("RandomExternalDomicile")
-            let randomExternalDetriment = document.getElementById("RandomExternalDetriment")
-            let randomExternalExalted = document.getElementById("RandomExternalExalted")
-            let randomExternalFall = document.getElementById("RandomExternalFall")
-            let randomInternalTrigram = document.getElementById("RandomInternalTrigram")
-            let randomInternalZodiac = document.getElementById("RandomInternalZodiac")
-            let randomInternalDomicile = document.getElementById("RandomInternalDomicile")
-            let randomInternalDetriment = document.getElementById("RandomInternalDetriment")
-            let randomInternalExalted = document.getElementById("RandomInternalExalted")
-            let randomInternalFall = document.getElementById("RandomInternalFall")
-            let randomCommentary = document.getElementById("RandomCommentary")
-            let randomMeaning = document.getElementById("RandomMeaning")
-            let hexagram = get_random_hexagram()
-            let trigram1 = get_trigram(hexagram.trigram1)
-            let trigram2 = get_trigram(hexagram.trigram2)
-            let zodiac1 = get_zodiac(trigram1.zodiac)
-            let zodiac2 = get_zodiac(trigram2.zodiac)
+            randomId  = setInterval(random_hexagram, 1000);
+            function random_hexagram() {
+                let randomHexagram = document.getElementById("RandomHexagram")
+                let randomSymbolTitle = document.getElementById("RandomSymbolTitle")
+                let randomSymbolTrigram1 = document.getElementById("RandomSymbolTrigram1")
+                let randomSymbolTrigram2 = document.getElementById("RandomSymbolTrigram2")
+                let randomSymbolZodiac1 = document.getElementById("RandomSymbolZodiac1")
+                let randomSymbolZodiac2 = document.getElementById("RandomSymbolZodiac2")
+                let randomExternalTrigram = document.getElementById("RandomExternalTrigram")
+                let randomExternalZodiac = document.getElementById("RandomExternalZodiac")
+                let randomExternalDomicile = document.getElementById("RandomExternalDomicile")
+                let randomExternalDetriment = document.getElementById("RandomExternalDetriment")
+                let randomExternalExalted = document.getElementById("RandomExternalExalted")
+                let randomExternalFall = document.getElementById("RandomExternalFall")
+                let randomInternalTrigram = document.getElementById("RandomInternalTrigram")
+                let randomInternalZodiac = document.getElementById("RandomInternalZodiac")
+                let randomInternalDomicile = document.getElementById("RandomInternalDomicile")
+                let randomInternalDetriment = document.getElementById("RandomInternalDetriment")
+                let randomInternalExalted = document.getElementById("RandomInternalExalted")
+                let randomInternalFall = document.getElementById("RandomInternalFall")
+                let randomCommentary = document.getElementById("RandomCommentary")
+                let randomMeaning = document.getElementById("RandomMeaning")
+                let hexagram = get_random_hexagram()
+                let trigram1 = get_trigram(hexagram.trigram1)
+                let trigram2 = get_trigram(hexagram.trigram2)
+                let zodiac1 = get_zodiac(trigram1.zodiac)
+                let zodiac2 = get_zodiac(trigram2.zodiac)
 
-            randomSymbolTitle.innerText = hexagram.number + ". " + hexagram.name
-            randomSymbolTrigram1.innerText = hexagram.trigram1
-            randomSymbolTrigram2.innerText = hexagram.trigram2
-            randomSymbolZodiac1.innerText = zodiac1.symbol
-            randomSymbolZodiac2.innerText = zodiac2.symbol
-            randomExternalTrigram.innerText = hexagram.trigram1 + ' ' + trigram1.name + ' (Earlier Heaven: ' + trigram1.earlier + ', Later Heaven: '  + trigram1.later + ')'
-            randomExternalZodiac.innerText = zodiac1.symbol + ' ' + zodiac1.name + ' (' + zodiac1.energy + ')'
-            randomExternalDomicile.innerText = get_domicile_string(zodiac1.symbol)
-            randomExternalDetriment.innerText = get_detriment_string(zodiac1.symbol)
-            randomExternalExalted.innerText = get_exalted_string(zodiac1.symbol)
-            randomExternalFall.innerText = get_fall_string(zodiac1.symbol)
-            randomInternalTrigram.innerText = hexagram.trigram2 + ' ' + trigram2.name + ' (Earlier Heaven: ' + trigram2.earlier + ', Later Heaven: '  + trigram2.later + ')'
-            randomInternalZodiac.innerText = zodiac2.symbol + ' ' + zodiac2.name + ' (' + zodiac2.energy + ')'
-            randomInternalDomicile.innerText = get_domicile_string(zodiac2.symbol)
-            randomInternalDetriment.innerText = get_detriment_string(zodiac2.symbol)
-            randomInternalExalted.innerText = get_exalted_string(zodiac2.symbol)
-            randomInternalFall.innerText = get_fall_string(zodiac2.symbol)
-            randomMeaning.innerText = hexagram.meaning
-            randomCommentary.innerText = hexagram.commentary
+                randomSymbolTitle.innerText = hexagram.number + ". " + hexagram.name
+                randomSymbolTrigram1.innerText = hexagram.trigram1
+                randomSymbolTrigram2.innerText = hexagram.trigram2
+                randomSymbolZodiac1.innerText = zodiac1.symbol
+                randomSymbolZodiac2.innerText = zodiac2.symbol
+                randomExternalTrigram.innerText = hexagram.trigram1 + ' ' + trigram1.name + ' (Earlier Heaven: ' + trigram1.earlier + ', Later Heaven: '  + trigram1.later + ')'
+                randomExternalZodiac.innerText = zodiac1.symbol + ' ' + zodiac1.name + ' (' + zodiac1.energy + ')'
+                randomExternalDomicile.innerText = get_domicile_string(zodiac1.symbol)
+                randomExternalDetriment.innerText = get_detriment_string(zodiac1.symbol)
+                randomExternalExalted.innerText = get_exalted_string(zodiac1.symbol)
+                randomExternalFall.innerText = get_fall_string(zodiac1.symbol)
+                randomInternalTrigram.innerText = hexagram.trigram2 + ' ' + trigram2.name + ' (Earlier Heaven: ' + trigram2.earlier + ', Later Heaven: '  + trigram2.later + ')'
+                randomInternalZodiac.innerText = zodiac2.symbol + ' ' + zodiac2.name + ' (' + zodiac2.energy + ')'
+                randomInternalDomicile.innerText = get_domicile_string(zodiac2.symbol)
+                randomInternalDetriment.innerText = get_detriment_string(zodiac2.symbol)
+                randomInternalExalted.innerText = get_exalted_string(zodiac2.symbol)
+                randomInternalFall.innerText = get_fall_string(zodiac2.symbol)
+                randomMeaning.innerText = hexagram.meaning
+                randomCommentary.innerText = hexagram.commentary
+            }
         }
         function select_lo_shu_hexagram(id) {
             let loShuHexagram = document.getElementById(currentLoShuHexagram)
