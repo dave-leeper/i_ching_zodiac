@@ -14,10 +14,10 @@
         let currentLoShuHexagram = "FirePastPastData"
         
             /*
-            * Julian day
-            * Planetary Position(Geocentric apparent ecliptic longitude): Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
-            * Lunar Node & apogee Longitude(from approximate osculate orbital elements)
-            * Longitude of Ascendant, MC(Mid heaven)
+            * 0 Julian day
+            * 1-10 Planetary Position(Geocentric apparent ecliptic longitude): Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
+            * 11, 12 Lunar Node & apogee Longitude(from approximate osculate orbital elements)
+            * 13, 14 Longitude of Ascendant, MC(Mid heaven)
             * All value is expressed in degree, without Julian day.
             */
             function calPlanetPosition2( ye, mo, da, ho, mi, lon, lat ){
@@ -62,13 +62,10 @@
 
             return plapos;
         }
-
-        // �e�V�̂̉��o�v�Z�^JD�͒n���͊w���
         function calPlaPos( JD, pid ){
             var T  = ( JD - 2451545.0 ) /  36525.0;
             var T2 = ( JD - 2451545.0 ) / 365250.0;
 
-        // ���s���萔
             var C = [0.00347, 0.00484, 0.00700, 0.01298, 0.01756, 0.02490, 0.03121, 0.03461];
             var dl;
             var epos = new Array(3);
@@ -76,9 +73,9 @@
             var ppos = new Array(3);
 
             epos = calPositSO( T2 );
-            if( pid == 1 ){ // �v�Z�ڕW�����z�̏ꍇ
+            if( pid == 1 ){
                 gpos[ 0 ] = epos[ 0 ] - 0.005693 / epos[ 2 ];
-            } else if( pid == 2 ){ // �v�Z�ڕW�����̏ꍇ
+            } else if( pid == 2 ){
                 gpos = calPositMO(T);
             } else {
                 switch( pid ){
@@ -120,7 +117,6 @@
 
             return gpos[ 0 ];
         }
-
         function calPositMO( T ){
             var mf = new Array();
             var dl, db;
@@ -201,7 +197,6 @@
             var res = new Array( W1, db );
             return res;
         }
-
         function calPositME( T ){
             var lo = 0.0;
             var bo = 0.0;
@@ -253,7 +248,6 @@
             var res = new Array( lo, bo, ro );
             return res;
         }
-
         function calPositVE( T ){
             var lo = 0.0;
             var bo = 0.0;
@@ -288,7 +282,6 @@
             var res = new Array( lo, bo, ro );
             return res;
         }
-
         function calPositMA( T ){
             var lo = 0.0;
             var bo = 0.0;
@@ -339,7 +332,6 @@
             var res = new Array( lo, bo, ro );
             return res;
         }
-
         function calPositJU( T ){
             var lo = 0.0;
             var bo = 0.0;
@@ -406,7 +398,6 @@
             var res = new Array( lo, bo, ro );
             return res;
         }
-
         function calPositSA( T ){
             var lo = 0.0;
             var bo = 0.0;
@@ -660,7 +651,6 @@
             var res = new Array( lo, bo, ro );
             return res;
         }
-
         function calPositPL_mee( T ){
             var lo = 238.9581 + 144.96 * T;
             var bo =  -3.9082;
@@ -792,15 +782,12 @@
             var orbitalElements = convertOrbitalElement( a, l, h, k, p, q );
             return orbitWork( ...orbitalElements );
         }
-
-        // ���z�ƌ��̑��x
         function calSolarVelocity( JD ){
             var T = ( JD - 2451545.0 ) / 365250.0;
             var vel  = 3548.330;
                 vel +=  118.568 * sin4deg( 87.5287 + 359993.7286 * T );
             return vel / 3600.0;
         }
-
         function calLunarVelocity( JD ){
             var T = ( JD - 2451545.0 ) / 36525.0;
             var mf = new Array();
@@ -857,7 +844,6 @@
             return vel;
         }
 
-        // �m�[�h�A�����X
         // This function from "Numerical expressions for precession formulae
         // and mean elements for the Moon and the planets" J. L. Simon, et al.,
         // Astron. Astrophys., 282, 663-683(1994).
@@ -874,7 +860,6 @@
             l   = mod360(134.9634114 + 13.06499295 * d + 0.0089970278 * T * T);
             l1  = mod360(357.5291092 +  0.98560028 * d - 0.0001536667 * T * T);
 
-        // �m�[�h�␳
             DH  = omg;
             DH -= 1.4978 * sin4deg(2.0 * (D - F));
             DH -= 0.1500 * sin4deg(l1);
@@ -883,7 +868,6 @@
             DH -= 0.0800 * sin4deg(2.0 * (l - F));
             DH  = mod360(DH);
 
-        // �����X�␳
             LT  = opi + 180.0;
             LT -= 15.4469 * sin4deg(2.0 * D - l);
             LT -=  9.6419 * sin4deg(2.0 * (D - l));
@@ -904,10 +888,7 @@
             var luna = new Array( DH, LT );
             return luna;
         }
-
-        // ASC�EMC�v�Z
         function calGeoPoint( lst, la, obl ){
-            // MC�v�Z
             var MCx = sin4deg(lst);
             var MCy = cos4deg(lst) * cos4deg(obl);
             var MC  = mod360( Math.atan2( MCx, MCy ) / deg2rad );
@@ -915,7 +896,6 @@
                 MC += 360.0;
             }
 
-            // ASC�v�Z
             var ASCx  = cos4deg(lst);
             var ASCy  = -(sin4deg(obl) * tan4deg(la));
                 ASCy -= cos4deg(obl) * sin4deg(lst);
@@ -927,7 +907,6 @@
             var res = new Array( ASC, MC );
             return res;
         }
-        // �e�v�f�̌v�Z
         function calVsopTerm( T, term ){
             var res = 0.0;
 
@@ -937,7 +916,6 @@
 
             return res;
         }
-
         function calPositSO( T ){
             var lo = 0.0;
             var bo = 0.0;
@@ -968,17 +946,6 @@
             var res = new Array( lo, bo, ro );
             return res;
         }
-        /*
-        * �V���v�Z�֌W�X�N���v�g version 0.18j at 2021/02/27
-        * Copyright (c) 1999-2001, 2004, 2005, 2017, 2021 Yoshihiro Sakai & Sakai Institute of Astrology
-        * This software is released under the MIT License.
-        * http://opensource.org/licenses/mit-license.php
-        * 2017/06/05[0.16j] �O���v�f�U�p���łɑΉ�
-        * 2017/09/15[0.17j] ���s�̌v�Z�������������łɏo�T������
-        * 2021/02/27[0.18j] ��̖��܂�胍�W�b�N������
-        */
-
-        // �O���S���I���p�I
         function cnvCalendar( JD ){
             JD += 0.5;
             var Z = Math.floor( JD );
@@ -1008,8 +975,6 @@
             var res = new Array(ye, mo, da, ho, mi);
             return res;
         }
-
-        // ���̓��̃����E�X�����v�Z����
         function calJD(ye, mo, da, ho, mi){ // �����̏�
             var y0 = (mo > 2) ? ye : (ye -  1);
             var m0 = (mo > 2) ? mo : (mo + 12);
@@ -1019,8 +984,7 @@
 
             return JD;
         }
-
-        function cnvJDr( JD ){ // �����́�������
+        function cnvJDr( JD ){
             var date = cnvCalendar(JD);
             var ye = date[ 0 ];
             var mo = date[ 1 ];
@@ -1029,7 +993,6 @@
 
             return JDz;
         }
-
         function calJDz(year, month, day){ // ������
             var yt = year;
             var mt = month;
@@ -1046,8 +1009,6 @@
 
             return JD;
         }
-
-        // d, T��z��ŕԂ��B
         function calTimeCoefficient( JD ){
             var d = JD - 2451545.0;
             var T = d / 36525.0;
@@ -1056,7 +1017,6 @@
             return coef;
         }
 
-        // �O���v�f�U�p���Ł��ʏ�̋O���v�f
         // a : semi-major axis (au).
         // l : mean longitude (degree).
         // h : e * sin(pi).
@@ -1078,8 +1038,6 @@
             var result = [L, opi, omg, i, e, a];
             return result;
         }
-
-        // �܂Ƃ߂ċO���v�Z�B�Ԓl�́i���o�A���܁A���a�j�B
         function orbitWork(L, opi, omg, i, e, a){
             var M = mod360(L - opi);
             var E = mod360(solveKepler(M, e));
@@ -1100,8 +1058,6 @@
             var res = new Array(l, b, r);
             return res;
         }
-
-        // Kepler������(M = E - e sinE)�������B
         function solveKepler(M, e){
             var Mr = M * deg2rad;
             var Er = Mr;
@@ -1113,7 +1069,6 @@
             return Er / deg2rad;
         }
 
-        // ���S�ʒu����n�S�ʒu�փR���o�[�g���A�n�S���o��Ԃ��B
         function convertGeocentric( earthCoor, planetCoor ){
             var lp, bp, rp, ls, bs, rs;
 
@@ -1145,7 +1100,6 @@
             return res;
         }
 
-        // �������W�n����ԓ����W�n�֕ϊ�����B
         function convertEquatorial(lon, lat, obl){
             var xs = cos4deg(lon) * cos4deg(lat);
             var ys = sin4deg(lon) * cos4deg(lat);
@@ -1163,7 +1117,6 @@
             return res;
         }
 
-        // �΍��␳
         function coordinateConvertFromJ2000( arg ){
             var zeta, zz, theta;
             var x, y, z, xd, yd, zd, xs, ys, zs;
@@ -1198,19 +1151,16 @@
             return res;
         }
 
-        // �n���P�����v�Z
         function calLST(JD, ho, mi, lo){
             var JD0 = Math.floor(JD - 0.5) + 0.5;
             var T = (JD0 - 2451545.0) / 36525.0;
             var UT = (JD - JD0) * 360.0 * 1.002737909350795;
             if( UT < 0 ) UT += 360.0;
 
-            //�O���j�b�W�P�����v�Z
             var GST  = 0.279057273 + 100.0021390378 * T + 1.077591667e-06 * T * T;
                 GST  = GST - Math.floor(GST);
                 GST *= 360.0;
 
-            // �n���P�����v�Z�{�͓��␳
             var LST = mod360(GST + UT + lo);
             var dpsi = calNutation(JD);
             var eps  = calOblique(JD);
@@ -1219,8 +1169,6 @@
 
             return LST;
         }
-
-        // �����X�Ίp���v�Z����֐�
         function calOblique(JD ){
             var T = (JD - 2451545.0) / 36525.0;
             var Omg = mod360(125.00452 - T *   1934.136261);
@@ -1280,7 +1228,6 @@
         function mod360( X ){
             return X - Math.floor( X / 360.0 ) * 360.0;
         }
-        // �͓����v�Z����֐��i�ȗ��Łj
         function calNutation( JD ){
             var T = (JD - 2451545.0) / 36525.0;
 
@@ -1295,8 +1242,6 @@
 
             return dpsi;
         }
-
-        // �ώ������v�Z����֐�
         function calEqT( JD ){
             var  T = ( JD - 2451545.0 ) / 36525.0;
 
@@ -1322,10 +1267,6 @@
             E /= deg2rad;
             return ( E * 4.0 );
         }
-
-        ////////////////////////////////
-
-        // �J�����_�[�֌W�B
         function calDayOfWeek(year, month, day){
             var JD = calJDz(year, month, day);
             var you = (JD + 1) % 7;
@@ -1352,10 +1293,9 @@
             return md;
         }
 
-        // ���s���Ǘ�����֐�
         // formula A : Notes Scientifiques et Techniques du Bureau des Longitudes, nr. S055
         // from ftp://cyrano-se.obspm.fr/pub/6_documents/4_lunar_tables/newexp.pdf
-        // formula B : Polynomial Expressions for Delta T (��T)
+        // formula B : Polynomial Expressions for Delta T
         // from https://eclipse.gsfc.nasa.gov/SEhelp/deltatpoly2004.html
         // formula C : Delta T : Polynomial Approximation of Time Period 1620-2013
         // from https://www.hindawi.com/archive/2014/480964/ (license: CC-BY-3.0)
@@ -1409,15 +1349,12 @@
             dt /= 86400.0;
             return dt;
         }
-
         function advanceDate( date, step ){
             return encodeDate(cnvCalendar(calJDz(decodeDate(date)) + step));
         }
-
         function calDist(sy, sm, sd, ey, em, ed){
             return calJDz(ey, em, ed) - calJDz(sy, sm, sd);
         }
-
         function decodeDate( date ){
             var ye = Math.floor( date / 10000 );
             var mo = Math.floor((date % 10000) / 100);
@@ -1426,7 +1363,6 @@
             var res = new Array(ye, mo, da);
             return res;
         }
-
         function decodeTime( time ){
             var ho = Math.floor(time / 100);
             var mi = fmod(time, 100);
@@ -1434,11 +1370,9 @@
             var res = new Array(ho, mi);
             return res;
         }
-
         function encodeDate(ye, mo, da){
             return ye * 10000 + mo * 100 + da;
         }
-
         function encodeTime(ho, mi){
             return ho * 100 + mi;
         }
@@ -1465,12 +1399,18 @@
              }
              return result
         }
- 
         function get_trigram(trigram) {
             let data = iChingData;
             let trigrams = data.trigrams
             for (let loop = 0; loop < trigrams.length; loop++) {
                 if (trigram === trigrams[loop].symbol) { return trigrams[loop] }
+            }
+        }
+        function get_trigram_from_zodiac(sign) {
+            let data = iChingData;
+            let trigrams = data.trigrams
+            for (let loop = 0; loop < trigrams.length; loop++) {
+                if (sign === trigrams[loop].zodiac) { return trigrams[loop] }
             }
         }
         function get_zodiac(sign) {
@@ -1967,56 +1907,59 @@
             divnode.appendChild(textnode)
             show_symbol(0)
         }
-        function set_menu(number) {
-            currentMenuItem = number
-            draw_menu()
-            draw_content()
+        function calculateRightNow() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(getPos);
             }
             function getPos(position) {
-                console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+                let calculating = document.getElementById("RightNowCalculating")
+                calculating.style.display = "inline"
+
                 let currentDate = new Date()
                 let x = calPlanetPosition2( currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate(), currentDate.getHours(), currentDate.getMinutes(), position.coords.longitude, position.coords.latitude )
-                console.log(JSON.stringify(x))
                 let y = convert_degrees_to_zodiac(x)
-                console.log(JSON.stringify(y))
-                console.log(y[1] + y[13])
-                /*
-                * Julian day
-                * Planetary Position(Geocentric apparent ecliptic longitude): Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
-                * Lunar Node & apogee Longitude(from approximate osculate orbital elements)
-                * Longitude of Ascendant, MC(Mid heaven)
-                * All value is expressed in degree, without Julian day.
-                ["♓︎",
-                "♎︎","♉︎","♎︎","♐︎","♎︎","♒︎","♒︎","♉︎","♓︎","♑︎","♊︎",
-                "♊︎",
-                "♒︎","♏︎"]
-                */
-            }
+                let sunSign = y[1]
+                let risingSign = y[13]
+                let externalTrigram = get_trigram_from_zodiac(sunSign)
+                let internalTrigram = get_trigram_from_zodiac(risingSign)
+                let hexagram = get_hexagram_from_trigrams(externalTrigram, internalTrigram)
+                let rightNowHexagram = document.getElementById("RightNowHexagram")
+                calculating.style.display = "none"
+                rightNowHexagram.innerText = hexagram.number + ". " + hexagram.name
+           }
+        }
+        function set_menu(number) {
+            currentMenuItem = number
+            draw_menu()
+            draw_content()
         }
         function draw_menu() {
             let randomOverTimeMenuItem = document.getElementById("MenuBarRandomOverTime")
             let loShuMenuItem = document.getElementById("MenuBarLoShu")
             let menuBarOctacrossAndTarotMenuItem = document.getElementById("MenuBarOctacrossAndTarot")
-            let locationMenuItem = document.getElementById("MenuBarLocation")
+            let rightNowMenuItem = document.getElementById("MenuBarRightNow")
             let listMenuItem = document.getElementById("MenuBarList")
             let docsMenuItem = document.getElementById("MenuBarDocs")
 
             if (1 === currentMenuItem) { loShuMenuItem.style.background = 'lightgrey' }
             else { loShuMenuItem.style.background = 'white' }
+            if (3 === currentMenuItem) { rightNowMenuItem.style.background = 'lightgrey' }
+            else { rightNowMenuItem.style.background = 'white' }
             if (4 === currentMenuItem) { listMenuItem.style.background = 'lightgrey' }
             else { listMenuItem.style.background = 'white' }
             if (5 === currentMenuItem) { docsMenuItem.style.background = 'lightgrey' }
             else { docsMenuItem.style.background = 'white' }
         }
         function draw_content() {
-            let listContent = document.getElementById("ListContent")
             let loShuContent = document.getElementById("LoShuContent")
+            let rightNowContent = document.getElementById("RightNowContent")
+            let listContent = document.getElementById("ListContent")
             let docsContent = document.getElementById("DocsContent")
 
             if (1 === currentMenuItem) { loShuContent.style.display = 'flex';  set_lo_shu_element(currentLoShuElement); }
             else { loShuContent.style.display = 'none' }
+            if (3 === currentMenuItem) { rightNowContent.style.display = 'flex' }
+            else { rightNowContent.style.display = 'none' }
             if (4 === currentMenuItem) { listContent.style.display = 'flex' }
             else { listContent.style.display = 'none' }
             if (5 === currentMenuItem) { docsContent.style.display = 'flex'; }
@@ -3468,11 +3411,6 @@
                 {
                     "symbol" : "☷",
                     "zodiac" : "♍︎"
-
-            STRANGE:
-            71 Glamour
-            102 Tradition
-            105 Interest
             */            
            ]
         }
@@ -3483,7 +3421,7 @@
         <div id="MenuBarRandomOverTime" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer;">Random Over Time</div>
         <div id="MenuBarLoShu" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer;" onclick="set_menu(1)">Lo Shu</div>
         <div id="MenuBarOctacrossAndTarot" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer;">Octacross And Tarot</div>
-        <div id="MenuBarLocation" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer;">Location</div>
+        <div id="MenuBarRightNow" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer; onclick="set_menu(3)">Right Now</div>
         <div id="MenuBarList" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer;" onclick="set_menu(4)">List</div>
         <div id="MenuBarDocs" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer;" onclick="set_menu(5)">Documentation</div>
     </div>
@@ -3908,7 +3846,12 @@
             A second look at the details shows that Saturn is at its detriment in the external sign, but rules the internal sign.
             This might mean that the way the character undermines the enthusiasm of his minions is by being too strick with them.
         </div>
-          
+    </div>
+    <div id="RightNowContent" style="display: none; flex-direction: column; width: 100%; height: 100%; overflow-y: scroll;">
+        <div>Calculate the hexagram corresponding to your location and time.</div>
+        <button type="button" onclick-"calculateRightNow()">Calculate</button>
+        <div id="RightNowCalculating">Calculating.</div>
+        <div id="RightNowHexagram"></div>
     </div>
 </body>
 </html>
