@@ -517,6 +517,12 @@
             currentMenuItem = number
             draw_menu()
             draw_content()
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(getPos);
+            }
+            function getPos(position) {
+                console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+            }
         }
         function draw_menu() {
             let randomOverTimeMenuItem = document.getElementById("MenuBarRandomOverTime")
@@ -2284,6 +2290,7 @@
             So Aries, being Cardnal Fire, would be rendered as Future Action.
             This not an attempt to change the meanings of the signs, I simply felt such a rendering made the meaning of the signs clearer in this context.
         </div>
+        <div style="margin: 10px 0px 0px 0px;">Additionally, the external (upper) trigram can be interpreted as an individual's sun sign and the internal (lower) trigram can be interpreted as their rising sign.</div>
         <div style="font-size: 1.5em; font-weight: bold; margin: 20px 0px 0px 0px;">Lo Shu</div>
         <div>Lo Shu is a magic square where all the horizontal rows, vertical columns, and the two diagonals all add up to the number 15.
             There a several correspondences assigned to each of the nine cells or palaces of the Lo Shu, including two trigrams, colors, and compass directions.
