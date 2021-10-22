@@ -1922,7 +1922,7 @@
                 let risingSign = y[13]
                 let externalTrigram = get_trigram_from_zodiac(sunSign)
                 let internalTrigram = get_trigram_from_zodiac(risingSign)
-                let hexagram = get_hexagram_from_trigrams(externalTrigram, internalTrigram)
+                let hexagram = get_hexagram_from_trigrams(externalTrigram.symbol, internalTrigram.symbol)
                 let rightNowHexagram = document.getElementById("RightNowHexagram")
                 calculating.style.display = "none"
                 rightNowHexagram.style.display = "inline"
