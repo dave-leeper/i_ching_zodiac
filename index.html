@@ -1435,7 +1435,30 @@
         function encodeTime(ho, mi){
             return ho * 100 + mi;
         }
+        function convert_degrees_to_zodiac(degrees){
+            function convert(deg) {
+                if (deg < 29.59) { return '♈︎' }
+                if (deg < 59.59) { return '♉︎' }
+                if (deg < 89.59) { return '♊︎' }
+                if (deg < 119.59) { return '♋︎' }
+                if (deg < 149.59) { return '♌︎' }
+                if (deg < 179.59) { return '♍︎' }
+                if (deg < 209.59) { return '♎︎' }
+                if (deg < 239.59) { return '♏︎' }
+                if (deg < 269.59) { return '♐︎' }
+                if (deg < 299.59) { return '♑︎' }
+                if (deg < 329.59) { return '♒︎' }
+                return '♓︎'
+            }
+            if (!Array.isArray()) { return convert(degrees) }
 
+             let result = []
+             for (let loop = 0; loop < degrees.length; loop++) {
+                result.push(convert(degrees[loop]))
+             }
+             return result
+        }
+ 
         function get_trigram(trigram) {
             let data = iChingData;
             let trigrams = data.trigrams
@@ -1947,7 +1970,7 @@
             function getPos(position) {
                 console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
                 let x = calPlanetPosition2( 2021, 10, 22, 6, 0, position.coords.longitude, position.coords.latitude )
-                console.log(JSON.stringify(x))
+                console.log(JSON.stringify(convert_degrees_to_zodiac(x)))
             }
         }
         function draw_menu() {
