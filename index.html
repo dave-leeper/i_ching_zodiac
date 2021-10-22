@@ -9,7 +9,7 @@
     <script>
         // ⤵⤴⤶⤷⤸⤹⤺⤻⤾⤿➕➖
         let currentSymbol = 0
-        let currentMenuItem = 1
+        let currentMenuItem = 0
         let currentLoShuElement = 0
         let currentLoShuHexagram = "FirePastPastData"
         let randomId = null
@@ -2044,6 +2044,7 @@
             let listMenuItem = document.getElementById("MenuBarList")
             let docsMenuItem = document.getElementById("MenuBarDocs")
 
+            if (randomId) { clearInterval(randomId) }
             if (0 === currentMenuItem) { randomOverTimeMenuItem.style.background = 'lightgrey' }
             else { randomOverTimeMenuItem.style.background = 'white' }
             if (1 === currentMenuItem) { loShuMenuItem.style.background = 'lightgrey' }
