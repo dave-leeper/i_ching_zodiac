@@ -1986,6 +1986,8 @@
             let listMenuItem = document.getElementById("MenuBarList")
             let docsMenuItem = document.getElementById("MenuBarDocs")
 
+            if (0 === currentMenuItem) { randomOverTimeMenuItem.style.background = 'lightgrey' }
+            else { randomOverTimeMenuItem.style.background = 'white' }
             if (1 === currentMenuItem) { loShuMenuItem.style.background = 'lightgrey' }
             else { loShuMenuItem.style.background = 'white' }
             if (3 === currentMenuItem) { rightNowMenuItem.style.background = 'lightgrey' }
@@ -1996,11 +1998,14 @@
             else { docsMenuItem.style.background = 'white' }
         }
         function draw_content() {
+            let randomContent = document.getElementById("RandomContent")
             let loShuContent = document.getElementById("LoShuContent")
             let rightNowContent = document.getElementById("RightNowContent")
             let listContent = document.getElementById("ListContent")
             let docsContent = document.getElementById("DocsContent")
 
+            if (0 === currentMenuItem) { randomContent.style.display = 'flex' }
+            else { randomContent.style.display = 'none' }
             if (1 === currentMenuItem) { loShuContent.style.display = 'flex';  set_lo_shu_element(currentLoShuElement); }
             else { loShuContent.style.display = 'none' }
             if (3 === currentMenuItem) { rightNowContent.style.display = 'flex' }
@@ -3463,7 +3468,7 @@
     </head>
     <body onload="set_menu(1); build_symbol_index()" style="font-family: 'Arial Narrow', Arial, sans-serif;">
     <div id="MenuBar" style="display: flex; flex-direction: row; gap: 20px; width: 100%; height: 25px; border-bottom: 3px solid black;">
-        <div id="MenuBarRandomOverTime" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer;">Random Over Time</div>
+        <div id="MenuBarRandomOverTime" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer;" onclick="set_menu(0)">Random Over Time</div>
         <div id="MenuBarLoShu" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer;" onclick="set_menu(1)">Lo Shu</div>
         <div id="MenuBarOctacrossAndTarot" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer;">Octacross And Tarot</div>
         <div id="MenuBarRightNow" style="height: 25px; padding: 0px 5px 0px 5px; cursor: pointer;" onclick="set_menu(3)">Right Now</div>
@@ -3518,6 +3523,57 @@
                 Commentary
             </div>
             <div id="Commentary" style="font-size: 1em; font-family: 'Times New Roman', Times, serif; padding: 10px 0px 0px 0px; width: 70%;">
+                TEXT
+            </div>
+        </div>
+    </div>
+    <div id="RandomContent" style="display: flex; flex-direction: row; width: 100%; height: 100%;">
+        <div id="RandomSymbolData" style="display: flex; flex-direction: column; width: 100%; position: fixed; left: 250px;">
+            <div id="RandomSymbolTitle" style="font-size: 2em; font-weight: bold;"></div>
+            <div style="display: flex; flex-direction: row;">
+                <div id="RandomSymbolTrigram1" style="font-size: 1em; font-weight: bold; padding: 0px 0px 0px 0px;">☰</div>
+                <div id="RandomSymbolTrigram2" style="font-size: 1em;  font-weight: bold; padding: 0px 10px 0px 0px;">☰</div>
+                <div id="RandomSymbolZodiac1" style="font-size: 1em; font-weight: bold; padding: 0px 2px 0px 0px;">♊︎</div>
+                <div id="RandomSymbolZodiac2" style="font-size: 1em; font-weight: bold; padding: 0px 2px 0px 0px;">♊︎</div>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <div id="RandomExternalEnergy" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">External</div>
+                <div id="RandomExternalTrigram" style="font-size: 1em; padding: 0px 10px 0px 0px;"></div>
+                <div id="RandomExternalZodiac" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <div id="RandomExternalDomicileTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">External Domicile</div>
+                <div id="RandomExternalDomicile" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="RandomExternalExaltedTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 5px;"> Exalted</div>
+                <div id="RandomExternalExalted" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="RandomExternalDetrimentTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 5px;"> Detriment</div>
+                <div id="RandomExternalDetriment" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="RandomExternalFallTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 5px;"> Fall</div>
+                <div id="RandomExternalFall" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <div id="RandomInternalEnergy" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">Internal</div>
+                <div id="RandomInternalTrigram" style="font-size: 1em; padding: 0px 10px 0px 0px;"></div>
+                <div id="RandomInternalZodiac" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <div id="RandomInternalDomicileTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">Internal Domicile</div>
+                <div id="RandomInternalDomicile" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="RandomInternalExaltedTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 5px;"> Exalted</div>
+                <div id="RandomInternalExalted" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="RandomInternalDetrimentTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 5px;"> Detriment</div>
+                <div id="RandomInternalDetriment" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+                <div id="RandomInternalFallTitle" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 5px;"> Fall</div>
+                <div id="RandomInternalFall" style="font-size: 1em; padding: 0px 2px 0px 0px;"></div>
+            </div>
+            <div style="display: flex; flex-direction: row;">
+                <div id="RandomSymbolMeaning" style="font-size: 1em; font-weight: bold; padding: 0px 5px 0px 0px;">Meaning</div>
+                <div id="RandomMeaning" style="font-size: 1em; padding: 0px 10px 0px 0px;"></div>
+            </div>
+            <div style="font-size: 1em; font-weight: bold; padding: 10px 0px 0px 0px;">
+                Commentary
+            </div>
+            <div id="RandomCommentary" style="font-size: 1em; font-family: 'Times New Roman', Times, serif; padding: 10px 0px 0px 0px; width: 70%;">
                 TEXT
             </div>
         </div>
