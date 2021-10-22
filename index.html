@@ -13,7 +13,14 @@
         let currentLoShuElement = 0
         let currentLoShuHexagram = "FirePastPastData"
         
-        function calPlanetPosition2( ye, mo, da, ho, mi, lon, lat ){
+            /*
+            * Julian day
+            * Planetary Position(Geocentric apparent ecliptic longitude): Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
+            * Lunar Node & apogee Longitude(from approximate osculate orbital elements)
+            * Longitude of Ascendant, MC(Mid heaven)
+            * All value is expressed in degree, without Julian day.
+            */
+            function calPlanetPosition2( ye, mo, da, ho, mi, lon, lat ){
             var i;
 
             var JD   = calJD( ye, mo, da, ho, mi );
@@ -1973,7 +1980,18 @@
                 let x = calPlanetPosition2( currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate(), currentDate.getHours(), currentDate.getMinutes(), position.coords.longitude, position.coords.latitude )
                 console.log(JSON.stringify(x))
                 let y = convert_degrees_to_zodiac(x)
-                console.log(JSON.stringify(y))
+                console.log(y[1] + y[13])
+                /*
+                * Julian day
+                * Planetary Position(Geocentric apparent ecliptic longitude): Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto
+                * Lunar Node & apogee Longitude(from approximate osculate orbital elements)
+                * Longitude of Ascendant, MC(Mid heaven)
+                * All value is expressed in degree, without Julian day.
+                ["♓︎",
+                "♎︎","♉︎","♎︎","♐︎","♎︎","♒︎","♒︎","♉︎","♓︎","♑︎","♊︎",
+                "♊︎",
+                "♒︎","♏︎"]
+                */
             }
         }
         function draw_menu() {
