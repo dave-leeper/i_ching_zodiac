@@ -423,7 +423,9 @@
 
             return (e + deps) / 3600.0;
         }
-
+        function mod360( X ){
+            return X - Math.floor( X / 360.0 ) * 360.0;
+        }
         // �͓����v�Z����֐��i�ȗ��Łj
         function calNutation( JD ){
             var T = (JD - 2451545.0) / 36525.0;
