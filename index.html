@@ -1476,8 +1476,10 @@
             return hexagrams[randomNumber]
         }
         function update_random_hexagram() {
-            random_hexagram()
-            randomId  = setInterval(random_hexagram, 5000);
+            if (!randomId) { 
+                random_hexagram()
+                randomId = setInterval(random_hexagram, 5000); 
+            }
             function random_hexagram() {
                 let randomHexagram = document.getElementById("RandomHexagram")
                 let randomSymbolTitle = document.getElementById("RandomSymbolTitle")
