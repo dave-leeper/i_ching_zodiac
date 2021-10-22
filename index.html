@@ -115,6 +115,54 @@
             return gpos[ 0 ];
         }
 
+        // �m�[�h�A�����X
+        // This function from "Numerical expressions for precession formulae
+        // and mean elements for the Moon and the planets" J. L. Simon, et al.,
+        // Astron. Astrophys., 282, 663-683(1994).
+        function calPositLuna( JD ){
+            var d = JD - 2451545.0;
+            var T =  d / 36525.0;
+            var D, F, l, l1, omg, opi, DH, LT ;
+
+            omg = mod360(125.0445550 -  0.0529537628 * d + 0.0020761667 * T * T);
+            opi = mod360( 83.3532430 +  0.1114308160 * d - 0.0103237778 * T * T);
+
+            D   = mod360(297.8502042 + 12.19074912 * d - 0.0016299722 * T * T);
+            F   = mod360( 93.2720993 + 13.22935024 * d - 0.0034029167 * T * T);
+            l   = mod360(134.9634114 + 13.06499295 * d + 0.0089970278 * T * T);
+            l1  = mod360(357.5291092 +  0.98560028 * d - 0.0001536667 * T * T);
+
+        // �m�[�h�␳
+            DH  = omg;
+            DH -= 1.4978 * sin4deg(2.0 * (D - F));
+            DH -= 0.1500 * sin4deg(l1);
+            DH -= 0.1225 * sin4deg(2.0 * D);
+            DH += 0.1175 * sin4deg(2.0 * F);
+            DH -= 0.0800 * sin4deg(2.0 * (l - F));
+            DH  = mod360(DH);
+
+        // �����X�␳
+            LT  = opi + 180.0;
+            LT -= 15.4469 * sin4deg(2.0 * D - l);
+            LT -=  9.6419 * sin4deg(2.0 * (D - l));
+            LT -=  2.7200 * sin4deg(l);
+            LT +=  2.6069 * sin4deg(4.0 * D - 3.0 * l);
+            LT +=  2.0847 * sin4deg(4.0 * D - 2.0 * l);
+            LT +=  1.4772 * sin4deg(2.0 * D + l);
+            LT +=  0.9678 * sin4deg(4.0 * (D - l));
+            LT -=  0.9412 * sin4deg(2.0 * D - l1 - l);
+            LT -=  0.7028 * sin4deg(6.0 * D - 4.0 * l);
+            LT -=  0.6600 * sin4deg(2.0 * D);
+            LT -=  0.5764 * sin4deg(2.0 * D - 3.0 * l);
+            LT -=  0.5231 * sin4deg(2.0 * l);
+            LT -=  0.4822 * sin4deg(6.0 * D - 5.0 * l);
+            LT +=  0.4517 * sin4deg(l1);
+            LT -=  0.3806 * sin4deg(6.0 * D - 3.0 * l);
+
+            var luna = new Array( DH, LT );
+            return luna;
+        }
+
         // �e�v�f�̌v�Z
         function calVsopTerm( T, term ){
             var res = 0.0;
