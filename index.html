@@ -1653,8 +1653,8 @@
             let zodiac1 = get_zodiac(trigram1.zodiac)
             let zodiac2 = get_zodiac(trigram2.zodiac)
             symbolTitle.innerText = symbol.number + '. ' + symbol.name
-            SymbolTrigram1.innerText = symbol.trigram1
-            SymbolTrigram2.innerText = symbol.trigram2
+            symbolTrigram1.innerText = symbol.trigram1
+            symbolTrigram2.innerText = symbol.trigram2
             symbolZodiac1.innerText = zodiac1.symbol
             symbolZodiac2.innerText = zodiac2.symbol
             externalTrigram.innerText = symbol.trigram1 + ' ' + trigram1.name + ' (Earlier Heaven: ' + trigram1.earlier + ', Later Heaven: '  + trigram1.later + ')'
@@ -1915,6 +1915,30 @@
                 let calculating = document.getElementById("RightNowCalculating")
                 let rightNowHexagram = document.getElementById("RightNowHexagram")
                 let rightNowSymbolTitle = document.getElementById("RightNowSymbolTitle")
+                let symbolTrigram1 = document.getElementById("RightNowSymbolTrigram1")
+                let symbolTrigram2 = document.getElementById("RightNowSymbolTrigram2")
+                let symbolZodiac1 = document.getElementById("RightNowSymbolZodiac1")
+                let symbolZodiac2 = document.getElementById("RightNowSymbolZodiac2")
+                let externalTrigram = document.getElementById("RightNowExternalTrigram")
+                let externalZodiac = document.getElementById("RightNowExternalZodiac")
+                let externalDomicile = document.getElementById("RightNowExternalDomicile")
+                let externalDetriment = document.getElementById("RightNowExternalDetriment")
+                let externalExalted = document.getElementById("RightNowExternalExalted")
+                let externalFall = document.getElementById("RightNowExternalFall")
+                let internalTrigram = document.getElementById("RightNowInternalTrigram")
+                let internalZodiac = document.getElementById("RightNowInternalZodiac")
+                let internalDomicile = document.getElementById("RightNowInternalDomicile")
+                let internalDetriment = document.getElementById("RightNowInternalDetriment")
+                let internalExalted = document.getElementById("RightNowInternalExalted")
+                let internalFall = document.getElementById("RightNowInternalFall")
+                let commentary = document.getElementById("RightNowCommentary")
+                let meaning = document.getElementById("RightNowMeaning")
+                let currentSelected = document.getElementById("symbol" + currentSymbol) 
+                let newSelected = document.getElementById("symbol" + symbolNumber) 
+                let trigram1 = get_trigram(symbol.trigram1)
+                let trigram2 = get_trigram(symbol.trigram2)
+                let zodiac1 = get_zodiac(trigram1.zodiac)
+                let zodiac2 = get_zodiac(trigram2.zodiac)
                 calculating.style.display = "inline"
                 rightNowHexagram.style.display = "none"
 
@@ -1929,7 +1953,25 @@
                 calculating.style.display = "none"
                 rightNowHexagram.style.display = "inline"
                 rightNowSymbolTitle.innerText = hexagram.number + ". " + hexagram.name
-           }
+                symbolTrigram1.innerText = symbol.trigram1
+                symbolTrigram2.innerText = symbol.trigram2
+                symbolZodiac1.innerText = zodiac1.symbol
+                symbolZodiac2.innerText = zodiac2.symbol
+                externalTrigram.innerText = symbol.trigram1 + ' ' + trigram1.name + ' (Earlier Heaven: ' + trigram1.earlier + ', Later Heaven: '  + trigram1.later + ')'
+                externalZodiac.innerText = zodiac1.symbol + ' ' + zodiac1.name + ' (' + zodiac1.energy + ')'
+                externalDomicile.innerText = get_domicile_string(zodiac1.symbol)
+                externalDetriment.innerText = get_detriment_string(zodiac1.symbol)
+                externalExalted.innerText = get_exalted_string(zodiac1.symbol)
+                externalFall.innerText = get_fall_string(zodiac1.symbol)
+                internalTrigram.innerText = symbol.trigram2 + ' ' + trigram2.name + ' (Earlier Heaven: ' + trigram2.earlier + ', Later Heaven: '  + trigram2.later + ')'
+                internalZodiac.innerText = zodiac2.symbol + ' ' + zodiac2.name + ' (' + zodiac2.energy + ')'
+                internalDomicile.innerText = get_domicile_string(zodiac2.symbol)
+                internalDetriment.innerText = get_detriment_string(zodiac2.symbol)
+                internalExalted.innerText = get_exalted_string(zodiac2.symbol)
+                internalFall.innerText = get_fall_string(zodiac2.symbol)
+                meaning.innerText = symbol.meaning
+                commentary.innerText = symbol.commentary
+            }
         }
         function set_menu(number) {
             currentMenuItem = number
