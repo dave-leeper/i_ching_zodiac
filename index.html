@@ -1475,7 +1475,7 @@
             return hexagrams[randomNumber]
         }
         function update_random_hexagram() {
-            let rightNowHexagram = document.getElementById("RandomHexagram")
+            let randomHexagram = document.getElementById("RandomHexagram")
             let randomSymbolTitle = document.getElementById("RandomSymbolTitle")
             let randomSymbolTrigram1 = document.getElementById("RandomSymbolTrigram1")
             let randomSymbolTrigram2 = document.getElementById("RandomSymbolTrigram2")
@@ -1495,18 +1495,12 @@
             let randomInternalFall = document.getElementById("RandomInternalFall")
             let randomCommentary = document.getElementById("RandomCommentary")
             let randomMeaning = document.getElementById("RandomMeaning")
-
-            calculating.style.display = "inline"
-            rightNowHexagram.style.display = "none"
-
-            let currentDate = new Date()
             let hexagram = get_random_hexagram()
             let trigram1 = get_trigram(hexagram.trigram1)
             let trigram2 = get_trigram(hexagram.trigram2)
             let zodiac1 = get_zodiac(trigram1.zodiac)
             let zodiac2 = get_zodiac(trigram2.zodiac)
 
-            rightNowHexagram.style.display = "inline"
             randomSymbolTitle.innerText = hexagram.number + ". " + hexagram.name
             randomSymbolTrigram1.innerText = hexagram.trigram1
             randomSymbolTrigram2.innerText = hexagram.trigram2
