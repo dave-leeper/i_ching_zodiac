@@ -1969,7 +1969,8 @@
             }
             function getPos(position) {
                 console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
-                let x = calPlanetPosition2( 2021, 10, 22, 6, 0, position.coords.longitude, position.coords.latitude )
+                let currentDate = new Date()
+                let x = calPlanetPosition2( currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate(), currentDate.getHours(), currentDate.getMinutes(), position.coords.longitude, position.coords.latitude )
                 console.log(JSON.stringify(x))
                 let y = convert_degrees_to_zodiac(x)
                 console.log(JSON.stringify(y))
