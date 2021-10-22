@@ -1476,7 +1476,7 @@
             return hexagrams[randomNumber]
         }
         function update_random_hexagram() {
-            if (!randomId) { 
+            if (null === randomId) { 
                 random_hexagram()
                 randomId = setInterval(random_hexagram, 5000); 
             }
