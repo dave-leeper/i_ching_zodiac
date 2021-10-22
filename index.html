@@ -1910,6 +1910,8 @@
         function calculateRightNow() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(getPos);
+            } else {
+                alert("Location services are currently unavailable for this app. Please check system settings.")
             }
             function getPos(position) {
                 let calculating = document.getElementById("RightNowCalculating")
