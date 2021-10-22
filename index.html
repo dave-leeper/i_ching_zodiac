@@ -1925,6 +1925,7 @@
                 let hexagram = get_hexagram_from_trigrams(externalTrigram, internalTrigram)
                 let rightNowHexagram = document.getElementById("RightNowHexagram")
                 calculating.style.display = "none"
+                rightNowHexagram.style.display = "inline"
                 rightNowHexagram.innerText = hexagram.number + ". " + hexagram.name
            }
         }
