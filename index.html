@@ -1211,7 +1211,8 @@
             }
             function getPos(position) {
                 console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
-                calPlanetPosition2( 2021, 10, 22, 6, 0, position.coords.longitude, position.coords.latitude )
+                let x = calPlanetPosition2( 2021, 10, 22, 6, 0, position.coords.longitude, position.coords.latitude )
+                console.log(JSON.stringify(x))
             }
         }
         function draw_menu() {
