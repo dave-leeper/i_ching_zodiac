@@ -1913,9 +1913,10 @@
             }
             function getPos(position) {
                 let calculating = document.getElementById("RightNowCalculating")
+                let rightNowHexagram = document.getElementById("RightNowHexagram")
                 let rightNowSymbolTitle = document.getElementById("RightNowSymbolTitle")
                 calculating.style.display = "inline"
-                rightNowSymbolTitle.style.display = "none"
+                rightNowHexagram.style.display = "none"
 
                 let currentDate = new Date()
                 let x = calPlanetPosition2( currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate(), currentDate.getHours(), currentDate.getMinutes(), position.coords.longitude, position.coords.latitude )
@@ -1926,7 +1927,7 @@
                 let internalTrigram = get_trigram_from_zodiac(risingSign)
                 let hexagram = get_hexagram_from_trigrams(externalTrigram.symbol, internalTrigram.symbol)
                 calculating.style.display = "none"
-                rightNowSymbolTitle.style.display = "inline"
+                rightNowHexagram.style.display = "inline"
                 rightNowSymbolTitle.innerText = hexagram.number + ". " + hexagram.name
            }
         }
