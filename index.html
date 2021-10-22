@@ -163,6 +163,28 @@
             return luna;
         }
 
+        // ASC�EMC�v�Z
+        function calGeoPoint( lst, la, obl ){
+            // MC�v�Z
+            var MCx = sin4deg(lst);
+            var MCy = cos4deg(lst) * cos4deg(obl);
+            var MC  = mod360( Math.atan2( MCx, MCy ) / deg2rad );
+            if( MC < 0.0 ){
+                MC += 360.0;
+            }
+
+            // ASC�v�Z
+            var ASCx  = cos4deg(lst);
+            var ASCy  = -(sin4deg(obl) * tan4deg(la));
+                ASCy -= cos4deg(obl) * sin4deg(lst);
+            var ASC   = mod360( Math.atan2( ASCx, ASCy ) / deg2rad );
+            if( ASC < 0.0 ){
+                ASC += 360.0;
+            }
+
+            var res = new Array( ASC, MC );
+            return res;
+        }
         // �e�v�f�̌v�Z
         function calVsopTerm( T, term ){
             var res = 0.0;
