@@ -2082,7 +2082,7 @@
                 for (let loop2 = 0; loop2 < xArray.length; loop2++) {
                     if (loop1 === loop2) { continue; }
                     path = "M" + xArray[loop1] + "," + yArray[loop1]
-                    path = "L" += xArray[loop2] + "," + yArray[loop2]
+                    path += "L" = xArray[loop2] + "," + yArray[loop2]
                     paper.path(path)
                 }
             }
