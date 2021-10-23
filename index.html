@@ -2035,16 +2035,16 @@
             }
         }
         function drawOctacross() {
-            let paper = Raphael(50,50,350,350)
+            let paper = Raphael(50,50,650,650)
             let path = ""
-            let x = 150
-            let y = 150
+            let x = 350
+            let y = 350
             let N = 16
-            let side = 120
+            let side = 240
             let xArray = []
             let yArray = []
 
-            paper.rect(0, 0, 300, 300)
+            paper.rect(0, 0, 600, 600)
             for (let n = 0; n <= N; n += 1) {
                 // the angle (in radians) as an nth fraction of the whole circle
                 let angle = n / N * 2 * Math.PI
