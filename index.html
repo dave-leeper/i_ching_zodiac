@@ -2080,7 +2080,7 @@
             path += "L" + xArray[0] + "," + yArray[0]
             let g = paper.path(path)
             paperObjects.push(g)
-            paperObjects.push(g.glow())
+            paperObjects.push(g.glow({color: "orange"}))
 
             for (let loop1 = 0; loop1 < xArray.length; loop1++) {
                 for (let loop2 = 0; loop2 < xArray.length; loop2++) {
