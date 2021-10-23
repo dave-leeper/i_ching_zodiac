@@ -2077,6 +2077,15 @@
             path += "L" + xArray[0] + "," + yArray[0]
             let g = paper.path(path)
             g.glow()
+
+            for (let loop1 = 0; loop1 < xArray.length; loop1++) {
+                for (let loop2 = 0; loop2 < xArray.length; loop2++) {
+                    if (loop1 === loop2) { continue; }
+                    path = "M" + xArray[loop1] + "," + yArray[loop1]
+                    path = "L" + xArray[loop2] + "," + yArray[loop2]
+                    paper.path(path)
+                }
+            }
         }
         function set_menu(number) {
             currentMenuItem = number
@@ -3895,7 +3904,7 @@
         <input type="button" style="font-size: 1.5em; position: absolute; left: 320px; top: 70px; width: 60px; height: 1.25em; z-index: 10;"onclick="alert('🜂🜂')" value="🜂🜂"></input>
         <input type="button" style="font-size: 1.5em; position: absolute; left: 320px; top: 600px; width: 60px; height: 1.25em; z-index: 10;"onclick="alert('🜄🜄')" value="🜄🜄"></input>
         <input type="button" style="font-size: 1.5em; position: absolute; left: 600px; top: 335px; width: 60px; height: 1.25em; z-index: 10;"onclick="alert('🜁🜁')" value="🜁🜁"></input>
-        <input type="button" style="font-size: 1.5em; position: absolute; left: 35px; top: 335px; width: 60px; height: 1.25em; z-index: 10;"onclick="alert('🜃🜃')" value="🜃🜃"></input>
+        <input type="button" style="font-size: 1.5em; position: absolute; left: 40px; top: 335px; width: 60px; height: 1.25em; z-index: 10;"onclick="alert('🜃🜃')" value="🜃🜃"></input>
     </div>
     <div id="DocsContent" style="display: none; flex-direction: column; width: 100%; height: 100%; overflow-y: scroll;">
         <div>Welcome to the Zodiac I Ching. I hope you enjoy the app and these docs will help you get the most out of it.</div>
