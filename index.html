@@ -14,6 +14,7 @@
         let currentLoShuElement = 0
         let currentLoShuHexagram = "FirePastPastData"
         let randomId = null
+        let paperObjects = []
         
             /*
             * 0 Julian day
@@ -2044,6 +2045,7 @@
             let xArray = []
             let yArray = []
 
+            paperObjects = []
             paper.rect(0, 0, 600, 600)
             for (let n = 0; n <= N; n += 1) {
                 // the angle (in radians) as an nth fraction of the whole circle
@@ -2059,6 +2061,7 @@
                 yArray.push(temp_y)
             }
             let f = paper.path(path)
+            paperObjects.push(f)
             path = "M" + xArray[0] + "," + yArray[0]
             path += "L" + xArray[3] + "," + yArray[3]
             path += "L" + xArray[6] + "," + yArray[6]
@@ -2077,6 +2080,7 @@
             path += "L" + xArray[13] + "," + yArray[13]
             path += "L" + xArray[0] + "," + yArray[0]
             let g = paper.path(path)
+            paperObjects.push(g)
             g.glow()
 
             for (let loop1 = 0; loop1 < xArray.length; loop1++) {
@@ -2084,8 +2088,14 @@
                     if (loop1 === loop2) { continue; }
                     path = "M" + xArray[loop1] + "," + yArray[loop1]
                     path += "L" + xArray[loop2] + "," + yArray[loop2]
-                    paper.path(path)
+                    let line = paper.path(path)
+                    paperObjects.push(line)
                 }
+            }
+        }
+        function deleteOctacross() {
+            for (let loop = 0; loop < paperObjects.length; loop++) {
+                paperObjects[loop].remove()
             }
         }
         function set_menu(number) {
@@ -2127,7 +2137,7 @@
             if (1 === currentMenuItem) { loShuContent.style.display = 'flex';  set_lo_shu_element(currentLoShuElement); }
             else { loShuContent.style.display = 'none' }
             if (2 === currentMenuItem) { octacrossContent.style.display = 'flex'; drawOctacross() }
-            else { octacrossContent.style.display = 'none' }
+            else { octacrossContent.style.display = 'none'; deleteOctacross() }
             if (3 === currentMenuItem) { rightNowContent.style.display = 'flex' }
             else { rightNowContent.style.display = 'none' }
             if (4 === currentMenuItem) { listContent.style.display = 'flex' }
