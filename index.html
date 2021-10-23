@@ -2040,7 +2040,9 @@
             let x = 40
             let y = 40
             let N = 16
-            let side = 30            
+            let side = 30
+            let xArray = []
+            let yArray = []
 
             for (let n = 0; n <= N; n += 1) {
                 // the angle (in radians) as an nth fraction of the whole circle
@@ -2052,8 +2054,20 @@
 
                 // Start with "M" if it's the first point, otherwise L
                 path += (n === 0 ? "M" : "L") + temp_x + "," + temp_y
+                xArray.push(temp_x)
+                yArray.push(temp_y)
             }
             paper.path(path)
+
+            xArray.push(xArray[0])
+            yArray.push(yArray[0])
+            path = ""
+            for (let n = 0; n < xArray.length - 1; n += 1) {
+                // Start with "M" if it's the first point, otherwise L
+                path = "M" + xArray[n] + "," + yArray[n]
+                path += "L" + xArray[n + 1] + "," + yArray[n + 1]
+                paper.path(path)
+            }
         }
         function set_menu(number) {
             currentMenuItem = number
