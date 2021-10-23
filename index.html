@@ -2062,11 +2062,11 @@
             xArray.push(xArray[0])
             yArray.push(yArray[0])
             path = ""
-            for (let n = 0; n < xArray.length - 1; n += 1) {
+            for (let n = 0; n < xArray.length; n += 1) {
                 // Start with "M" if it's the first point, otherwise L
-                path = "M" + xArray[n] + "," + yArray[n] + " " + xArray[n + 1] + "," + yArray[n + 1]
-                paper.path(path)
+                path += (n === 0 ? "M" : "L") + temp_x + "," + temp_y
             }
+            paper.path(path)
         }
         function set_menu(number) {
             currentMenuItem = number
