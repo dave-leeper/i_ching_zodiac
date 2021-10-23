@@ -2037,7 +2037,13 @@
         function drawOctacross() {
             paper.circle(x, y, 3).attr("fill", "black");
 
-            var path = "", n, temp_x, temp_y, angle;
+            let paper = Raphael(0,0,300,300)
+            let path = ""
+            
+            let n
+            let temp_x
+            let temp_y
+            let angle
             let x = 40
             let y = 40
             let N = 6
