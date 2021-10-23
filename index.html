@@ -2058,7 +2058,8 @@
                 xArray.push(temp_x)
                 yArray.push(temp_y)
             }
-            path += "M" + xArray[0] + "," + yArray[0]
+            let f = paper.path(path)
+            path = "M" + xArray[0] + "," + yArray[0]
             path += "L" + xArray[3] + "," + yArray[3]
             path += "L" + xArray[6] + "," + yArray[6]
             path += "L" + xArray[9] + "," + yArray[9]
