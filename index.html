@@ -2064,7 +2064,7 @@
             path = ""
             for (let n = 0; n < xArray.length; n += 1) {
                 // Start with "M" if it's the first point, otherwise L
-                path += (n === 0 ? "M" : "L") + temp_x + "," + temp_y
+                path += (n === 0 ? "M" : "L") + xArray[n] + "," + yArray[n]
             }
             paper.path(path)
         }
