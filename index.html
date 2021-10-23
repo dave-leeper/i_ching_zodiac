@@ -2037,29 +2037,23 @@
         function drawOctacross() {
             let paper = Raphael(0,0,300,300)
             let path = ""
-
-            let n
-            let temp_x
-            let temp_y
-            let angle
             let x = 40
             let y = 40
             let N = 6
             let side = 30            
 
-            for (n = 0; n <= N; n += 1) {
+            for (let n = 0; n <= N; n += 1) {
                 // the angle (in radians) as an nth fraction of the whole circle
-                angle = n / N * 2 * Math.PI;
-
+                let angle = n / N * 2 * Math.PI
                 // The starting x value of the point adjusted by the angle
-                temp_x = x + Math.cos(angle) * side;
+                let temp_x = x + Math.cos(angle) * side
                 // The starting y value of the point adjusted by the angle
-                temp_y = y + Math.sin(angle) * side;
+                let temp_y = y + Math.sin(angle) * side
 
                 // Start with "M" if it's the first point, otherwise L
-                path += (n === 0 ? "M" : "L") + temp_x + "," + temp_y;
+                path += (n === 0 ? "M" : "L") + temp_x + "," + temp_y
             }
-            return path;
+            paper.path(path)
         }
         function set_menu(number) {
             currentMenuItem = number
