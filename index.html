@@ -2082,15 +2082,12 @@
             paperObjects.push(g)
             paperObjects.push(g.glow({color: "blue"}))
 
-            let colors =["Gold", "Red", "Black", "Green", "LightCoral", "Yellow", "Plum", "Teal",
-                "Teal", "Plum", "Yellow", "LightCoral", "Green", "Black", "Red", "Gold" ]
             for (let loop1 = 0; loop1 < xArray.length; loop1++) {
                 for (let loop2 = 0; loop2 < xArray.length; loop2++) {
                     if (loop1 === loop2) { continue; }
                     path = "M" + xArray[loop1] + "," + yArray[loop1]
                     path += "L" + xArray[loop2] + "," + yArray[loop2]
                     let line = paper.path(path)
-                    line.attr({ stroke: colors[ loop1 ]})
                     paperObjects.push(line)
                 }
             }
