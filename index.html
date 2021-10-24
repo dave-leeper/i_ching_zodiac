@@ -2116,6 +2116,13 @@
             octacrossCardImage.src = card.img
             octacrossCardText.innerText = card.text
         }
+        function show_card_info() {
+            let octacrossIntro = document.getElementById("OctacrossIntro")
+            let octacrossCourtCard = document.getElementById("OctacrossCourtCard")
+
+            octacrossIntro.style.display = 'inline'
+            octacrossCourtCard.style.display = 'none'
+        }
         function set_menu(number) {
             currentMenuItem = number
             draw_menu()
@@ -4004,7 +4011,10 @@
             <div>
                 <img id="OctacrossCourtCardImage" src="">
             </div>
-            <div id="OctacrossCourtCardText" style="width: 70%; padding: 17px 0px 0px 0px; margin: 0px 0px 0px 10px;"></div>
+            <div style="display: flex; flex-direction: column; width: 70%; padding: 17px 0px 0px 0px; margin: 0px 0px 0px 10px;">
+                <div id="OctacrossCourtCardText"></div>
+                <input type="button" style="font-size: 1.5em; width: 90px; height: 1.25em;" onclick="show_card_intro()" value="Clear"></input>
+            </div>
         </div>
     </div>
     <div id="DocsContent" style="display: none; flex-direction: column; width: 100%; height: 100%; overflow-y: scroll;">
