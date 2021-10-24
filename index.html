@@ -2110,11 +2110,12 @@
             let octacrossCardImage = document.getElementById("OctacrossCourtCardImage")
             let octacrossCardText = document.getElementById("OctacrossCourtCardText")
             let card = get_card(symbol)
+            let stories = ' See "Story Telling and Character Arcs Using Lo Shu" in the Documentation to learn how you can discover the stories related to this card.'
 
             octacrossIntro.style.display = 'none'
             octacrossCourtCard.style.display = 'flex'
             octacrossCardImage.src = card.img
-            octacrossCardText.innerText = card.text
+            octacrossCardText.innerText = card.text + stories
         }
         function show_card_intro() {
             let octacrossIntro = document.getElementById("OctacrossIntro")
