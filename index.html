@@ -1462,6 +1462,13 @@
             if (!zodiac) { return "" }
             return get_planets_string(zodiac.fall)
         }
+        function get_card(symbol) {
+            let data = iChingData;
+            let courtCards = data.courtCards
+            for (let loop = 0; loop < courtCards.length; loop++) {
+                if (symbol === courtCards[loop].symbol) { return courtCards[loop] }
+            }
+        }
         function get_hexagram_from_trigrams(external, internal) {
             let data = iChingData;
             let hexagrams = data.symbols
@@ -2096,6 +2103,17 @@
             for (let loop = 0; loop < paperObjects.length; loop++) {
                 paperObjects[loop].remove()
             }
+        }
+        function show_card(symbol) {
+            let octacrossIntro = document.getElementById("OctacrossIntro")
+            let octacrossCourtCard = document.getElementById("OctacrossCourtCard")
+            let octacrossCardImage = document.getElementById("OctacrossCourtCardImage")
+            let octacrossCardText = document.getElementById("OctacrossCourtCardText")
+            let card = get_card(symbol)
+
+            octacrossIntro.style.display = 'none'
+            octacrossCourtCard.style.display = 'flex'
+            octacrossCardImage.src = card.img
         }
         function set_menu(number) {
             currentMenuItem = number
@@ -3542,55 +3560,89 @@
                     "commentary" : "Future World externally, Present World internally. Current work is complete and a foundation is laid for the future.",
                     "trigram1" : "☶", 
                     "trigram2" : "⚏"
-                }
-/*
-
-                    "symbol" : "⚎",
-                    "zodiac" : "♌︎"
-                },
-                {
-                    "symbol" : "⚍",
-                    "zodiac" : "♏︎"
-                },
-                {
-                    "symbol" : "⚌",
-                    "zodiac" : "♒︎"
-                },
-                {
-                    "symbol" : "⚏",
-                    "zodiac" : "♉︎"
-                }
-                    "symbol" : "☰",
-                    "zodiac" : "♊︎"
-                },
-                {
-                    "symbol" : "☱",
-                    "zodiac" : "♎︎"
-                },
-                {
-                    "symbol" : "☲",
-                    "zodiac" : "♐︎"
-                },
-                {
-                    "symbol" : "☳",
-                    "zodiac" : "♈︎"
-                },
-                {
-                    "symbol" : "☴",
-                    "zodiac" : "♋︎"
-                },
-                {
-                    "symbol" : "☵",
-                    "zodiac" : "♓︎"
-                },
-                {
-                    "symbol" : "☶",
-                    "zodiac" : "♑︎"
-                },
-                {
-                    "symbol" : "☷",
-                    "zodiac" : "♍︎"
-            */            
+                }         
+           ],
+           "courtCards" : [
+           {
+                    "symbol" : "🜂🜂",
+                    "img" : "https://en.wikipedia.org/wiki/Rider%E2%80%93Waite_tarot_deck#/media/File:Wands14.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜂🜁",
+                    "img" : "https://en.wikipedia.org/wiki/Knight_of_Wands#/media/File:Wands12.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜂🜄",
+                    "img" : "https://en.wikipedia.org/wiki/Queen_of_Wands_(Tarot_card)#/media/File:Wands13.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜂🜃",
+                    "img" : "https://en.wikipedia.org/wiki/Page_of_Wands#/media/File:Wands11.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜄🜄",
+                    "img" : "https://en.wikipedia.org/wiki/Queen_of_Cups#/media/File:Cups13.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜄🜃",
+                    "img" : "https://en.wikipedia.org/wiki/Page_of_Cups#/media/File:Cups11.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜄🜂",
+                    "img" : "https://en.wikipedia.org/wiki/King_of_Cups#/media/File:Cups14.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜄🜁",
+                    "img" : "https://en.wikipedia.org/wiki/Knight_of_Cups#/media/File:Cups12.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜁🜁",
+                    "img" : "https://en.wikipedia.org/wiki/Knight_of_Swords#/media/File:Swords12.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜁🜄",
+                    "img" : "https://en.wikipedia.org/wiki/Queen_of_Swords#/media/File:Swords13.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜁🜃",
+                    "img" : "https://en.wikipedia.org/wiki/Page_of_Swords#/media/File:Swords11.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜁🜂",
+                    "img" : "https://en.wikipedia.org/wiki/King_of_Swords#/media/File:Swords14.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜃🜃",
+                    "img" : "https://en.wikipedia.org/wiki/Page_of_Coins#/media/File:Pents11.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜃🜂",
+                    "img" : "https://en.wikipedia.org/wiki/Queen_of_Coins#/media/File:Pents13.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜃🜁",
+                    "img" : "https://en.wikipedia.org/wiki/Knight_of_Coins#/media/File:Pents12.jpg",
+                    "text" : ""
+               },
+               {
+                    "symbol" : "🜃🜄",
+                    "img" : "https://en.wikipedia.org/wiki/Queen_of_Coins#/media/File:Pents13.jpg",
+                    "text" : ""
+               }
            ]
         }
         </script>  
@@ -3910,29 +3962,29 @@
             </div>
         </div>
     </div>
-    <div id="OctacrossContent" style="display: none; flex-direction: row; width: 100%; height: 100%; overflow-y: scroll;">
+    <div id="Content" style="display: none; flex-direction: row; width: 100%; height: 100%; overflow-y: scroll;">
         <div style="width: 700px; height:600px;"> 
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 305px; top: 70px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜂🜂')" value="🜂🜂"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 395px; top: 87px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜂🜁')" value="🜂🜁"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 530px; top: 164px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜂🜄')" value="🜂🜄"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 578px; top: 240px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜂🜃')" value="🜂🜃"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 305px; top: 600px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜄🜄')" value="🜄🜄"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 215px; top: 583px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜄🜃')" value="🜄🜃"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 76px; top: 503px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜄🜂')" value="🜄🜂"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 32px; top: 430px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜄🜁')" value="🜄🜁"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 596px; top: 335px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜁🜁')" value="🜁🜁"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 578px; top: 430px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜁🜄')" value="🜁🜄"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 534px; top: 503px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜁🜃')" value="🜁🜃"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 395px; top: 583px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜁🜂')" value="🜁🜂"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 15px; top: 335px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜃🜃')" value="🜃🜃"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 32px; top: 240px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜃🜂')" value="🜃🜂"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 76px; top: 164px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜃🜁')" value="🜃🜁"></input>
-            <input type="button" style="font-size: 1.5em; position: absolute; left: 215px; top: 87px; width: 90px; height: 1.25em; z-index: 10;"onclick="alert('🜃🜄')" value="🜃🜄"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 305px; top: 70px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜂🜂')" value="🜂🜂"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 395px; top: 87px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜂🜁')" value="🜂🜁"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 530px; top: 164px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜂🜄')" value="🜂🜄"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 578px; top: 240px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜂🜃')" value="🜂🜃"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 305px; top: 600px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜄🜄')" value="🜄🜄"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 215px; top: 583px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜄🜃')" value="🜄🜃"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 76px; top: 503px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜄🜂')" value="🜄🜂"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 32px; top: 430px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜄🜁')" value="🜄🜁"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 596px; top: 335px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜁🜁')" value="🜁🜁"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 578px; top: 430px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜁🜄')" value="🜁🜄"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 534px; top: 503px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜁🜃')" value="🜁🜃"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 395px; top: 583px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜁🜂')" value="🜁🜂"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 15px; top: 335px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜃🜃')" value="🜃🜃"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 32px; top: 240px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜃🜂')" value="🜃🜂"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 76px; top: 164px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜃🜁')" value="🜃🜁"></input>
+            <input type="button" style="font-size: 1.5em; position: absolute; left: 215px; top: 87px; width: 90px; height: 1.25em; z-index: 10;"onclick="show_card('🜃🜄')" value="🜃🜄"></input>
             <div style="font-size: 1.5em; font-weight: bold; position: absolute; left: 15px; top: 50px; ;">The Sixteen</div>
             <div style="position: absolute; left: 15px; top: 76px; width: 185px;">Lo Shu squares placed on the Octacross, their relationship to one another and the court cards of the Tarot.</div>
             <div id="OctacrossPaper" style="position: absolute; left: 10px; top: 50px; width: 680px; height:600px; border: 1px solid black;"></div>
         </div>
-        <div style="width: 480px; padding: 17px 0px 0px 0px; ">
+        <div id="OctacrossIntro" style="display: inline; width: 480px; padding: 17px 0px 0px 0px;">
             <div>
                 When considered as entities in their own right, each of the 16 Lo Shu squares of the Zodiac I Ching represents one of the four elements of Air, Earth, Fire and Water externally and one of the four elements internally.
                 This corresponds to the 16 element combinations of the court cards of the Tarot. 
@@ -3946,6 +3998,12 @@
             <div style="margin: 10px 0px 0px 0px;">
                 Click on the button representing each Lo Shu square to see how that square relates to a court card of the Tarot. 
             </div>
+        </div>
+        <div id="OctacrossCourtCard" style="display: none; flex-direction: row; width: 480px; padding: 17px 0px 0px 0px;">
+            <div>
+                <img id="OctacrossCourtCardImage" src="">
+            </div>
+            <div id="OctacrossCourtCardText"></div>
         </div>
     </div>
     <div id="DocsContent" style="display: none; flex-direction: column; width: 100%; height: 100%; overflow-y: scroll;">
