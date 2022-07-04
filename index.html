@@ -2109,14 +2109,12 @@
             let octacrossCourtCard = document.getElementById("OctacrossCourtCard")
             let octacrossCardImage = document.getElementById("OctacrossCourtCardImage")
             let octacrossCardText = document.getElementById("OctacrossCourtCardText")
-            let octacrossCardTransformText = document.getElementById("OctacrossCourtCardTransformText")
             let card = get_card(symbol)
 
             octacrossIntro.style.display = 'none'
             octacrossCourtCard.style.display = 'flex'
             octacrossCardImage.src = card.img
             octacrossCardText.innerText = card.text
-            octacrossCardText.innerText = symbol
         }
         function show_card_intro() {
             let octacrossIntro = document.getElementById("OctacrossIntro")
@@ -4059,8 +4057,45 @@
             </div>
             <div style="display: flex; flex-direction: column; width: 70%; padding: 17px 0px 0px 0px; margin: 0px 0px 0px 10px;">
                 <div id="OctacrossCourtCardText"></div>
-                <div id="OctacrossCourtCardTransformText"></div>
                 <div style="margin: 10px 0px 0px 0px;">See "Story Telling and Character Arcs Using Lo Shu" in the Documentation to learn how you can discover the stories related to this card.</div>
+                <table>
+                    <tr>
+                        <th>🜂🜂</th>
+                        <th>🜂🜁</th>
+                        <th>🜂🜄</th>
+                        <th>🜂🜃</th>
+                        <th>🜁🜁</th>
+                        <th>🜁🜂</th>
+                        <th>🜁🜄</th>
+                        <th>🜁🜃</th>
+                        <th>🜄🜄</th>
+                        <th>🜄🜃</th>
+                        <th>🜄🜂</th>
+                        <th>🜄🜁</th>
+                        <th>🜃🜃</th>
+                        <th>🜃🜂</th>
+                        <th>🜃🜁</th>
+                        <th>🜃🜄</th>
+                    </tr>
+                    <tr>
+                        <td id="TransformToFireFire">🜂🜂</th>
+                        <td id="TransformToFireAir">🜂🜁</th>
+                        <td id="TransformToFireWater">🜂🜄</th>
+                        <td id="TransformToFireEarth">🜂🜃</th>
+                        <td id="TransformToAirAir">🜁🜁</th>
+                        <td id="TransformToAirFire">🜁🜂</th>
+                        <td id="TransformToAirWater">🜁🜄</th>
+                        <td id="TransformToAirEarth">🜁🜃</th>
+                        <td id="TransformToWaterWater">🜄🜄</th>
+                        <td id="TransformToWaterEarth">🜄🜃</th>
+                        <td id="TransformToWaterFire">🜄🜂</th>
+                        <td id="TransformToWaterAir">🜄🜁</th>
+                        <td id="TransformToEarthEarth">🜃🜃</th>
+                        <td id="TransformToEarthFire">🜃🜂</th>
+                        <td id="TransformToEarthAir">🜃🜁</th>
+                        <td id="TransformToEarthWater">🜃🜄</th>
+                    </tr>
+                </table>
                 <input type="button" style="width: 90px; margin: 10px 0px 0px 0px;" onclick="show_card_intro()" value="Clear"></input>
             </div>
         </div>
