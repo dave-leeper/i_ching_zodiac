@@ -2105,26 +2105,28 @@
             }
         }
         function get_transform(symbol1, symbol2) {
-            console.log("symbol1: " + symbol1 + ", symbol2: " + symbol2)
             let data = iChingData
             let transforms = data.transforms
             let elementTransforms = data.elementTransforms
 
             for (let loop = 0; loop < elementTransforms.length; loop++) {
                 let element = elementTransforms[loop]
-                console.log("element.element: " + element.element)
                 if (element.element !== symbol1) { continue }
                 for (let loop2 = 0; loop2 < element.transforms.length; loop2++) {
-                    console.log("element.transforms[loop2].transformedSymbol: " + element.transforms[loop2].transformedSymbol)
                     if (element.transforms[loop2].transformedSymbol !== symbol2) { continue }
                     for (let loop3 = 0; loop3 < transforms.length; loop3++) {
-                        console.log("transforms[loop3].transform: " + transforms[loop3].transform)
                         if (transforms[loop3].transform !== element.transforms[loop2].transform) { continue }
                         return transforms[loop3].transform // transformName
                     }
                 }
             }
             return "?"
+        }
+        function get_double_transform(symbols1, symbols2) {
+            symbols1 = [...symbols1]
+            symbols2 = [...symbols2]
+            return get_transform(symbols1[0], symbols2[0]) + " " + get_transform(symbols1[1], symbols2[1])
+
         }
         function show_card(symbol) {
             let octacrossIntro = document.getElementById("OctacrossIntro")
@@ -2157,8 +2159,7 @@
             octacrossCardText.innerText = card.text
             transformsFrom.innerText = "Transforms from " + symbol
 
-            symbol = [...symbol]
-
+            /*
             transformToFireFire.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜂")
             transformToFireAir.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜁")
             transformToFireWater.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜄")
@@ -2175,6 +2176,24 @@
             transformToEarthFire.innerText = get_transform(symbol[0], "🜃") + " " + get_transform(symbol[1], "🜂")
             transformToEarthAir.innerText = get_transform(symbol[0], "🜃") + " " + get_transform(symbol[1], "🜁")
             transformToEarthWater.innerText = get_transform(symbol[0], "🜃") + " " + get_transform(symbol[1], "🜄")
+            */
+
+            transformToFireFire.innerText = get_double_transform(symbol, "🜂🜂")
+            transformToFireAir.innerText = get_double_transform(symbol, "🜂🜁")
+            transformToFireWater.innerText = get_double_transform(symbol, "🜂🜄")
+            transformToFireEarth.innerText = get_double_transform(symbol, "🜂🜃")
+            transformToAirAir.innerText = get_double_transform(symbol, "🜁🜁")
+            transformToAirFire.innerText = get_double_transform(symbol, "🜁🜂")
+            transformToAirWater.innerText = get_double_transform(symbol, "🜁🜄")
+            transformToAirEarth.innerText = get_double_transform(symbol, "🜁🜃")
+            transformToWaterWater.innerText = get_double_transform(symbol, "🜄🜄")
+            transformToWaterEarth.innerText = get_double_transform(symbol, "🜄🜃")
+            transformToWaterFire.innerText = get_double_transform(symbol, "🜄🜂")
+            transformToWaterAir.innerText = get_double_transform(symbol, "🜄🜁")
+            transformToEarthEarth.innerText = get_double_transform(symbol, "🜃🜃")
+            transformToEarthFire.innerText = get_double_transform(symbol, "🜃🜂")
+            transformToEarthAir.innerText = get_double_transform(symbol, "🜃🜁")
+            transformToEarthWater.innerText = get_double_transform(symbol, "🜃🜄")
         }
         function show_card_intro() {
             let octacrossIntro = document.getElementById("OctacrossIntro")
