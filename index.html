@@ -2155,28 +2155,28 @@
             octacrossCardImage.src = card.img
             octacrossCardText.innerText = card.text
 
-            let symbol1 = "?"
-            let symbol2 = "?"
+            let symbol = [...symbol]
+            let symbol1 = symbol[0]
+            let symbol2 = symbol[1]
 
+            /*
             if (symbol === "🜂🜂") { symbol1 = "🜂"; symbol2 = "🜂"}
             else if (symbol === "🜂🜁") { symbol1 = "🜂"; symbol2 = "🜁"}
             else if (symbol === "🜂🜄") { symbol1 = "🜂"; symbol2 = "🜄"}
             else if (symbol === "🜂🜃") { symbol1 = "🜂"; symbol2 = "🜃"}
-
             else if (symbol === "🜁🜂") { symbol1 = "🜁"; symbol2 = "🜂"}
             else if (symbol === "🜁🜁") { symbol1 = "🜁"; symbol2 = "🜁"}
             else if (symbol === "🜁🜄") { symbol1 = "🜁"; symbol2 = "🜄"}
             else if (symbol === "🜁🜃") { symbol1 = "🜁"; symbol2 = "🜃"}
-
             else if (symbol === "🜄🜂") { symbol1 = "🜄"; symbol2 = "🜂"}
             else if (symbol === "🜄🜁") { symbol1 = "🜄"; symbol2 = "🜁"}
             else if (symbol === "🜄🜄") { symbol1 = "🜄"; symbol2 = "🜄"}
             else if (symbol === "🜄🜃") { symbol1 = "🜄"; symbol2 = "🜃"}
-
             else if (symbol === "🜃🜂") { symbol1 = "🜃"; symbol2 = "🜂"}
             else if (symbol === "🜃🜁") { symbol1 = "🜃"; symbol2 = "🜁"}
             else if (symbol === "🜃🜄") { symbol1 = "🜃"; symbol2 = "🜄"}
             else if (symbol === "🜃🜃") { symbol1 = "🜃"; symbol2 = "🜃"}
+            */
 
             console.log("symbol: " + symbol + "symbol1: " + symbol1 + " symbol2: " + symbol2)
             transformToFireFire.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜂")
