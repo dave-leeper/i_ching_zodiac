@@ -2127,7 +2127,7 @@
             symbols2 = [...symbols2]
             let result1 = get_transform(symbols1[0], symbols2[0])
             let result2 = get_transform(symbols1[1], symbols2[1])
-            let result = result1.transform + " " + result2.transform + " (" + result1.transformName + ", " + result2.transformName + ")"
+            let result = result1.transform + " " + result2.transform + " (" + result1.transformName + ", " + result2.transformName + ") (" + result1.description + ", " + result2.description + ")"
             return result
 
         }
@@ -3733,12 +3733,12 @@
                }
             ],
             "transforms" : [
-                { "transform" : "|", "transformName" : "Identity"},
-                { "transform" : "-", "transformName" : "Opposite"},
-                { "transform" : "→", "transformName" : "Next"},
-                { "transform" : "←", "transformName" : "Previous"},
-                { "transform" : "↑", "transformName" : "Opposite + Previous"},
-                { "transform" : "↓", "transformName" : "Opposite + Next"}
+                { "transform" : "|", "transformName" : "Identity", "description" : "Unchanged"},
+                { "transform" : "-", "transformName" : "Opposite", "description" : "Reversing"},
+                { "transform" : "→", "transformName" : "Next", "description" : "Complicating"},
+                { "transform" : "←", "transformName" : "Previous", "description" : "Simplifying"},
+                { "transform" : "↑", "transformName" : "Opposite + Previous", "description" : "Reversing + Simplifying"},
+                { "transform" : "↓", "transformName" : "Opposite + Next", "description" : "Reversing + Complicating"}
             ],
             "elementTransforms" : [{ 
                 "element" : "🜂",
