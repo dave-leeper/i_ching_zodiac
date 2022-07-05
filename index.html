@@ -2131,6 +2131,7 @@
             let octacrossCourtCard = document.getElementById("OctacrossCourtCard")
             let octacrossCardImage = document.getElementById("OctacrossCourtCardImage")
             let octacrossCardText = document.getElementById("OctacrossCourtCardText")
+            let transformsFrom = document.getElementById("TransformsFrom")
             let transformToFireFire = document.getElementById("TransformToFireFire")
             let transformToFireAir = document.getElementById("TransformToFireAir")
             let transformToFireWater = document.getElementById("TransformToFireWater")
@@ -2179,6 +2180,7 @@
             */
 
             console.log("symbol: " + symbol + "symbol1: " + symbol1 + " symbol2: " + symbol2)
+            transformsFrom.innerText = "Transforms from " + symbol
             transformToFireFire.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜂")
             transformToFireAir.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜁")
             transformToFireWater.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜄")
@@ -2187,7 +2189,7 @@
             transformToAirFire.innerText = get_transform(symbol[0], "🜁") + " " + get_transform(symbol[1], "🜂")
             transformToAirWater.innerText = get_transform(symbol[0], "🜁") + " " + get_transform(symbol[1], "🜄")
             transformToAirEarth.innerText = get_transform(symbol[0], "🜁") + " " + get_transform(symbol[1], "🜃")
-            transformToWaterWater.innerText = get_transform(symbol[0], "🜄") + " " + get_transform(symbol[1], "🜂")
+            transformToWaterWater.innerText = get_transform(symbol[0], "🜄") + " " + get_transform(symbol[1], "🜄")
             transformToWaterEarth.innerText = get_transform(symbol[0], "🜄") + " " + get_transform(symbol[1], "🜃")
             transformToWaterFire.innerText = get_transform(symbol[0], "🜄") + " " + get_transform(symbol[1], "🜂")
             transformToWaterAir.innerText = get_transform(symbol[0], "🜄") + " " + get_transform(symbol[1], "🜁")
@@ -4143,7 +4145,7 @@
                     <input type="button" style="width: 90px; margin: 10px 0px 0px 0px;" onclick="show_card_intro()" value="Clear"></input>
                 </div>
             </div>
-            <strong><div style="margin-top: 10px;">Transforms</div></strong>
+            <strong><div id="TransformsFrom" style="margin-top: 10px;">Transforms from </div></strong>
             <table style="margin-top: 5px;" title="Transforms">
                 <tr>
                     <th style="text-align:center">🜂🜂</th>
