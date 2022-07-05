@@ -2105,16 +2105,20 @@
             }
         }
         function get_transform(symbol1, symbol2) {
+            console.log("symbol1: " + symbol1 + ", symbol2: " + symbol2)
             let data = iChingData
             let transforms = data.transforms
             let elementTransforms = data.elementTransforms
 
             for (let loop = 0; loop < elementTransforms.length; loop++) {
                 let element = elementTransforms[loop]
+                console.log("element.element: " + element.element)
                 if (element.element !== symbol1) { continue }
                 for (let loop2 = 0; loop2 < element.transforms.length; loop2++) {
+                    console.log("element.transforms[loop2].transformedSymbol: " + element.transforms[loop2].transformedSymbol)
                     if (element.transforms[loop2].transformedSymbol !== symbol2) { continue }
                     for (let loop3 = 0; loop3 < transforms.length; loop3++) {
+                        console.log("transforms[loop3].transform: " + transforms[loop3].transform)
                         if (transforms[loop3].transform !== element.transforms[loop2].transform) { continue }
                         return transforms[loop3].transform // transformName
                     }
