@@ -2127,9 +2127,25 @@
             symbols2 = [...symbols2]
             let result1 = get_transform(symbols1[0], symbols2[0])
             let result2 = get_transform(symbols1[1], symbols2[1])
-            // .transform // transformName
             let result = result1.transform + " " + result2.transform + " (" + result1.transformName + ", " + result2.transformName + ")"
             return result
+
+        }
+        function get_represents(symbols) {
+            symbols = [...symbols]
+            let data = iChingData
+            let elementTransforms = data.elementTransforms
+
+            for (let loop = 0; loop < elementTransforms.length; loop++) {
+                let element1 = elementTransforms[loop]
+                if (element1.element !== symbols[0]) { continue }
+                for (let loop2 = 0; loop2 < elementTransforms.length; loop2++) {
+                    let element2 = elementTransforms[loop2]
+                    if (element2.element !== symbols[1]) { continue }
+                    return element1.represents + " Externally, " + element2.represents + " Internally"
+                }
+            }
+            return "? ?"
 
         }
         function show_card(symbol) {
@@ -2161,7 +2177,7 @@
             octacrossCourtCard.style.display = 'flex'
             octacrossCardImage.src = card.img
             octacrossCardText.innerText = card.text
-            transformsFrom.innerText = "Transforms from " + symbol
+            transformsFrom.innerText = "Transforms from " + symbol + " " + get_represents(symbol)
 
             transformToFireFire.innerText = get_double_transform(symbol, "🜂🜂")
             transformToFireAir.innerText = get_double_transform(symbol, "🜂🜁")
@@ -3726,6 +3742,7 @@
             ],
             "elementTransforms" : [{ 
                 "element" : "🜂",
+                "represents" : "Action",
                 "transforms": [
                     { "transformedSymbol" : "🜂", "transform" : "|"},
                     { "transformedSymbol" : "🜄", "transform" : "-"},
@@ -3734,6 +3751,7 @@
                 ]},
                 {
                     "element" : "🜄",
+                    "represents" : "Emotions",
                     "transforms": [
                         { "transformedSymbol" : "🜂", "transform" : "-"},
                         { "transformedSymbol" : "🜄", "transform" : "|"},
@@ -3743,6 +3761,7 @@
                 },
                 {
                     "element" : "🜁",
+                    "represents" : "Thought",
                     "transforms": [
                         { "transformedSymbol" : "🜂", "transform" : "←"},
                         { "transformedSymbol" : "🜄", "transform" : "↑"},
@@ -3752,6 +3771,7 @@
                 },
                 {
                     "element" : "🜃",
+                    "represents" : "World",
                     "transforms": [
                         { "transformedSymbol" : "🜂", "transform" : "↑"},
                         { "transformedSymbol" : "🜄", "transform" : "←"},
