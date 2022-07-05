@@ -2104,17 +2104,69 @@
                 paperObjects[loop].remove()
             }
         }
+        function get_transform(symbol1, symbol2) {
+            let data = iChingData
+            let transforms = data.transforms
+            let elementTransforms = data.elementTransforms
+
+            for (let loop = 0; loop < elementTransforms.length; loop++) {
+                let element = elementTransforms[loop]
+                if (element.element !== symbol1) { continue }
+                for (let loop2 = 0; loop2 < element.transforms.length; loop2++) {
+                    if (element.transforms[loop2].transformedSymbol !== symbol2) { continue }
+                    for (let loop3 = 0; loop3 < transforms.length; loop3++) {
+                        if (transforms[loop3].transform !== element.transforms[loop2].transform) { continue }
+                        return transforms[loop3].transform // transformName
+                    }
+                }
+            }
+            return "?"
+        }
         function show_card(symbol) {
             let octacrossIntro = document.getElementById("OctacrossIntro")
             let octacrossCourtCard = document.getElementById("OctacrossCourtCard")
             let octacrossCardImage = document.getElementById("OctacrossCourtCardImage")
             let octacrossCardText = document.getElementById("OctacrossCourtCardText")
+            let transformToFireFire = document.getElementById("TransformToFireFire")
+            let transformToFireAir = document.getElementById("TransformToFireAir")
+            let transformToFireWater = document.getElementById("TransformToFireWater")
+            let transformToFireEarth = document.getElementById("TransformToFireEarth")
+            let transformToAirAir = document.getElementById("TransformToAirAir")
+            let transformToAirFire = document.getElementById("TransformToAirFire")
+            let transformToAirWater = document.getElementById("TransformToAirWater")
+            let transformToAirEarth = document.getElementById("TransformToAirEarth")
+            let transformToWaterWater = document.getElementById("TransformToWaterWater")
+            let transformToWaterEarth = document.getElementById("TransformToWaterEarth")
+            let transformToWaterFire = document.getElementById("TransformToWaterFire")
+            let transformToWaterAir = document.getElementById("TransformToWaterAir")
+            let transformToEarthEarth = document.getElementById("TransformToEarthEarth")
+            let transformToEarthFire = document.getElementById("TransformToEarthFire")
+            let transformToEarthAir = document.getElementById("TransformToEarthAir")
+            let transformToEarthWater = document.getElementById("TransformToEarthWater")
+
             let card = get_card(symbol)
 
             octacrossIntro.style.display = 'none'
             octacrossCourtCard.style.display = 'flex'
             octacrossCardImage.src = card.img
             octacrossCardText.innerText = card.text
+
+            transformToFireFire.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜂")
+            transformToFireAir.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜁")
+            transformToFireWater.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜄")
+            transformToFireEarth.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜃")
+            transformToAirAir.innerText = get_transform(symbol[0], "🜁") + " " + get_transform(symbol[1], "🜁")
+            transformToAirFire.innerText = get_transform(symbol[0], "🜁") + " " + get_transform(symbol[1], "🜂")
+            transformToAirWater.innerText = get_transform(symbol[0], "🜁") + " " + get_transform(symbol[1], "🜄")
+            transformToAirEarth.innerText = get_transform(symbol[0], "🜁") + " " + get_transform(symbol[1], "🜃")
+            transformToWaterWater.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜂")
+            transformToWaterEarth.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜃")
+            transformToWaterFire.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜂")
+            transformToWaterAir.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜁")
+            transformToEarthEarth.innerText = get_transform(symbol[0], "🜃") + " " + get_transform(symbol[1], "🜃")
+            transformToEarthFire.innerText = get_transform(symbol[0], "🜃") + " " + get_transform(symbol[1], "🜂")
+            transformToEarthAir.innerText = get_transform(symbol[0], "🜃") + " " + get_transform(symbol[1], "🜁")
+            transformToEarthWater.innerText = get_transform(symbol[0], "🜃") + " " + get_transform(symbol[1], "🜄")
         }
         function show_card_intro() {
             let octacrossIntro = document.getElementById("OctacrossIntro")
