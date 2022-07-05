@@ -2116,7 +2116,7 @@
                     if (element.transforms[loop2].transformedSymbol !== symbol2) { continue }
                     for (let loop3 = 0; loop3 < transforms.length; loop3++) {
                         if (transforms[loop3].transform !== element.transforms[loop2].transform) { continue }
-                        return transforms[loop3].transform // transformName
+                        return transforms[loop3]
                     }
                 }
             }
@@ -2125,7 +2125,11 @@
         function get_double_transform(symbols1, symbols2) {
             symbols1 = [...symbols1]
             symbols2 = [...symbols2]
-            return get_transform(symbols1[0], symbols2[0]) + " " + get_transform(symbols1[1], symbols2[1])
+            let result1 = get_transform(symbols1[0], symbols2[0])
+            let result2 = get_transform(symbols1[1], symbols2[1])
+            // .transform // transformName
+            let result = result1.transform + " " + result2.transform + "(" + result1.transformName + " " + result2.transformName + ")"
+            return result
 
         }
         function show_card(symbol) {
@@ -2158,25 +2162,6 @@
             octacrossCardImage.src = card.img
             octacrossCardText.innerText = card.text
             transformsFrom.innerText = "Transforms from " + symbol
-
-            /*
-            transformToFireFire.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜂")
-            transformToFireAir.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜁")
-            transformToFireWater.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜄")
-            transformToFireEarth.innerText = get_transform(symbol[0], "🜂") + " " + get_transform(symbol[1], "🜃")
-            transformToAirAir.innerText = get_transform(symbol[0], "🜁") + " " + get_transform(symbol[1], "🜁")
-            transformToAirFire.innerText = get_transform(symbol[0], "🜁") + " " + get_transform(symbol[1], "🜂")
-            transformToAirWater.innerText = get_transform(symbol[0], "🜁") + " " + get_transform(symbol[1], "🜄")
-            transformToAirEarth.innerText = get_transform(symbol[0], "🜁") + " " + get_transform(symbol[1], "🜃")
-            transformToWaterWater.innerText = get_transform(symbol[0], "🜄") + " " + get_transform(symbol[1], "🜄")
-            transformToWaterEarth.innerText = get_transform(symbol[0], "🜄") + " " + get_transform(symbol[1], "🜃")
-            transformToWaterFire.innerText = get_transform(symbol[0], "🜄") + " " + get_transform(symbol[1], "🜂")
-            transformToWaterAir.innerText = get_transform(symbol[0], "🜄") + " " + get_transform(symbol[1], "🜁")
-            transformToEarthEarth.innerText = get_transform(symbol[0], "🜃") + " " + get_transform(symbol[1], "🜃")
-            transformToEarthFire.innerText = get_transform(symbol[0], "🜃") + " " + get_transform(symbol[1], "🜂")
-            transformToEarthAir.innerText = get_transform(symbol[0], "🜃") + " " + get_transform(symbol[1], "🜁")
-            transformToEarthWater.innerText = get_transform(symbol[0], "🜃") + " " + get_transform(symbol[1], "🜄")
-            */
 
             transformToFireFire.innerText = get_double_transform(symbol, "🜂🜂")
             transformToFireAir.innerText = get_double_transform(symbol, "🜂🜁")
