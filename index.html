@@ -54,8 +54,10 @@
             plapos[ 12 ] = luna[ 1 ];
 
             var obl = calOblique( JD );
+            console.log("obl " + obl)
             var angle = new Array( 2 );
             angle = calGeoPoint( lst, lat, obl );
+            console.log("angle " + angle)
             plapos[13] = angle[ 0 ];
             plapos[14] = angle[ 1 ];
 
