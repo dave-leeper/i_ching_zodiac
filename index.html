@@ -55,6 +55,8 @@
                 var testCorrectedObl = calOblique( testCorrectedJD ); console.log("testCorrectedObl: " + testCorrectedObl);
                 var testAngle = calGeoPoint( testLST, 33.58238299981991, testObl ); console.log("testAngle: " + testAngle);
                 var testCorrectedAngle = calGeoPoint( testCorrectedLST, 33.58238299981991, testCorrectedObl ); console.log("testCorrectedAngle: " + testCorrectedAngle);
+                var testNutation = calNutation(testJD); console.log("testNutation: " + testNutation);
+                var testCorrectedNutation = calNutation(testCorrectedJD); console.log("testCorrectedNutation: " + testCorrectedNutation);
             }
             var JD   = calJD( ye, mo, da, ho, mi );
             var lst  = calLST( JD, ho, mi, lon );
