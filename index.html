@@ -15,7 +15,6 @@
         let currentLoShuHexagram = "FirePastPastData"
         let randomId = null
         let paperObjects = []
-        let testedOnce = false;
         
             /*
             * 0 Julian day
@@ -24,7 +23,7 @@
             * 13, 14 Longitude of Ascendant, MC(Mid heaven)
             * All value is expressed in degree, without Julian day.
             */
-        function calPlanetPosition2( ye, mo, da, ho, mi, lon, lat ){
+        function calPlanetPosition2( ye, mo, da, ho, mi, lon, lat, testedIt ){
             var i;
             console.log("ye " + ye)
             console.log("mo " + mo)
@@ -46,7 +45,7 @@
     const angle = [266.00167031046084, 193.392314254203];
     */
             { 
-                if (!testedOnce){
+                if (!testedIt){
                     var testJD   = calJD( 2022, 7, 31, 8, 44 ); console.log("testJD: " + testJD);
                     var testLST   = calLST( testJD, 8, 44, -112.2653190067936 ); console.log("testLST: " + testLST); 
                     var testCorrectedJD = testJD + correctTDT( testJD ); console.log("testCorrectedJD: " + testCorrectedJD);
@@ -59,7 +58,7 @@
                     var testCorrectedAngle = calGeoPoint( testCorrectedLST, 33.58238299981991, testCorrectedObl ); console.log("testCorrectedAngle: " + testCorrectedAngle);
                     var testNutation = calNutation(testJD); console.log("testNutation: " + testNutation);
                     var testCorrectedNutation = calNutation(testCorrectedJD); console.log("testCorrectedNutation: " + testCorrectedNutation);
-                    var positions = calPlanetPosition2( 2022, 7, 31, 8, 44, -112.2653190067936, 33.58238299981991 );
+                    var positions = calPlanetPosition2( 2022, 7, 31, 8, 44, -112.2653190067936, 33.58238299981991, true );
                     console.log("positions: " + positions);
                     testedOnce = true;
                 }
