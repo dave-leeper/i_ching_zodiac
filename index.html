@@ -48,11 +48,13 @@
                 var testJD   = calJD( 2022, 7, 31, 8, 44 ); console.log("testJD: " + testJD);
                 var testLST   = calLST( testJD, 8, 44, -112.2653190067936 ); console.log("testLST: " + testLST); 
                 var testCorrectedJD = correctTDT( testJD ); console.log("testCorrectedJD: " + testCorrectedJD);
+                var testCorrectedLST = calLST( testCorrectedJD, 8, 44, -112.2653190067936 ); console.log("testCorrectedLST: " + testCorrectedLST); 
                 var testDpsi = calNutation(testJD); console.log("testDpsi: " + testDpsi);
                 var testCorrectedDpsi = calNutation(testCorrectedJD); console.log("testCorrectedDpsi: " + testCorrectedDpsi);
                 var testObl = calOblique( testJD ); console.log("testObl: " + testObl);
                 var testCorrectedObl = calOblique( testCorrectedJD ); console.log("testCorrectedObl: " + testCorrectedObl);
                 var testAngle = calGeoPoint( testLST, 33.58238299981991, testObl ); console.log("testAngle: " + testAngle);
+                var testCorrectedAngle = calGeoPoint( testCorrectedLST, 33.58238299981991, testCorrectedObl ); console.log("testCorrectedAngle: " + testCorrectedAngle);
             }
             var JD   = calJD( ye, mo, da, ho, mi );
             var lst  = calLST( JD, ho, mi, lon );
