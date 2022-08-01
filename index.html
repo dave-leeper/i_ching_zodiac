@@ -32,6 +32,28 @@
             console.log("mi " + mi)
             console.log("lon " + lon)
             console.log("lat " + lat)
+            /*
+            const year = 2022;
+    const month = 7;
+    const day = 31;
+    const hour = 8;
+    const minute = 44;
+    const longitude = -112.2653190067936;
+    const latitude = 33.58238299981991;
+    const localSiderealTime = 192.32252224509193;
+    const oblique = 23.43804171005144;
+    const angle = [266.00167031046084, 193.392314254203];
+    */
+            { 
+                var testJD   = calJD( 2022, 7, 31, 8, 44 ); console.log("testJD: " + testJD);
+                var testLST   = calLST( testJD, 8, 44, -112.2653190067936 ); console.log("testLST: " + testLST); 
+                var testCorrectedJD = correctTDT( testJD ); console.log("testCorrectedJD: " + testCorrectedJD);
+                var testDpsi = calNutation(testJD); console.log("testDpsi: " + testDpsi);
+                var testCorrectedDpsi = calNutation(testCorrectedJD); console.log("testCorrectedDpsi: " + testCorrectedDpsi);
+                var testObl = calOblique( testJD ); console.log("testObl: " + testObl);
+                var testCorrectedObl = calOblique( testCorrectedJD ); console.log("testCorrectedObl: " + testCorrectedObl);
+                var testAngle = calGeoPoint( testLST, 33.58238299981991, testObl ); console.log("testAngle: " + testAngle);
+            }
             var JD   = calJD( ye, mo, da, ho, mi );
             var lst  = calLST( JD, ho, mi, lon );
             console.log("lst " + lst)
