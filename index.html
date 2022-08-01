@@ -46,19 +46,19 @@
     const angle = [266.00167031046084, 193.392314254203];
     */
             { 
-                var testJD   = calJD( 2022, 7, 31, 8, 44 ); console.log("testJD: " + testJD);
-                var testLST   = calLST( testJD, 8, 44, -112.2653190067936 ); console.log("testLST: " + testLST); 
-                var testCorrectedJD = testJD + correctTDT( testJD ); console.log("testCorrectedJD: " + testCorrectedJD);
-                var testCorrectedLST = calLST( testCorrectedJD, 8, 44, -112.2653190067936 ); console.log("testCorrectedLST: " + testCorrectedLST); 
-                var testDpsi = calNutation(testJD); console.log("testDpsi: " + testDpsi);
-                var testCorrectedDpsi = calNutation(testCorrectedJD); console.log("testCorrectedDpsi: " + testCorrectedDpsi);
-                var testObl = calOblique( testJD ); console.log("testObl: " + testObl);
-                var testCorrectedObl = calOblique( testCorrectedJD ); console.log("testCorrectedObl: " + testCorrectedObl);
-                var testAngle = calGeoPoint( testLST, 33.58238299981991, testObl ); console.log("testAngle: " + testAngle);
-                var testCorrectedAngle = calGeoPoint( testCorrectedLST, 33.58238299981991, testCorrectedObl ); console.log("testCorrectedAngle: " + testCorrectedAngle);
-                var testNutation = calNutation(testJD); console.log("testNutation: " + testNutation);
-                var testCorrectedNutation = calNutation(testCorrectedJD); console.log("testCorrectedNutation: " + testCorrectedNutation);
                 if (!testedOnce){
+                    var testJD   = calJD( 2022, 7, 31, 8, 44 ); console.log("testJD: " + testJD);
+                    var testLST   = calLST( testJD, 8, 44, -112.2653190067936 ); console.log("testLST: " + testLST); 
+                    var testCorrectedJD = testJD + correctTDT( testJD ); console.log("testCorrectedJD: " + testCorrectedJD);
+                    var testCorrectedLST = calLST( testCorrectedJD, 8, 44, -112.2653190067936 ); console.log("testCorrectedLST: " + testCorrectedLST); 
+                    var testDpsi = calNutation(testJD); console.log("testDpsi: " + testDpsi);
+                    var testCorrectedDpsi = calNutation(testCorrectedJD); console.log("testCorrectedDpsi: " + testCorrectedDpsi);
+                    var testObl = calOblique( testJD ); console.log("testObl: " + testObl);
+                    var testCorrectedObl = calOblique( testCorrectedJD ); console.log("testCorrectedObl: " + testCorrectedObl);
+                    var testAngle = calGeoPoint( testLST, 33.58238299981991, testObl ); console.log("testAngle: " + testAngle);
+                    var testCorrectedAngle = calGeoPoint( testCorrectedLST, 33.58238299981991, testCorrectedObl ); console.log("testCorrectedAngle: " + testCorrectedAngle);
+                    var testNutation = calNutation(testJD); console.log("testNutation: " + testNutation);
+                    var testCorrectedNutation = calNutation(testCorrectedJD); console.log("testCorrectedNutation: " + testCorrectedNutation);
                     var positions = calPlanetPosition2( 2022, 7, 31, 8, 44, -112.2653190067936, 33.58238299981991 );
                     console.log("positions: " + positions);
                     testedOnce = true;
